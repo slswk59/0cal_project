@@ -1,0 +1,225 @@
+
+--회원정보
+CREATE TABLE member
+(   id           VARCHAR2(20) NOT NULL,
+    user_name    VARCHAR2(20) NOT NULL,
+    nick_name    VARCHAR2(45) NOT NULL,
+    user_pass    VARCHAR2(20) NOT NULL,
+    email        VARCHAR2(20) NOT NULL,
+    post         VARCHAR2(20) NOT NULL,
+    address      VARCHAR2(50) NOT NULL,
+    phone        VARCHAR2(20) NOT NULL,
+    date_of_birthday   date  NOT NULL,
+    gender       VARCHAR2(1)  NOT NULL,
+    user_type    CHAR(1)        NOT NULL,
+    CONSTRAINT PK_member PRIMARY KEY (id)
+                  );
+
+CREATE SEQUENCE id_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+INSERT INTO member
+VALUES( );
+
+                  
+DESC member; 
+
+DROP table member;
+DROP SEQUENCE member_seq;
+
+
+
+--고객센터
+CREATE TABLE service
+(   cs_key       number NOT NULL ,
+    cs_title     VARCHAR2(20) NOT NULL,
+    cs_comment   VARCHAR2(200)  NULL,
+    cs_reg_date  date NOT NULL,
+    id           VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (cs_key), 
+    FOREIGN KEY (id) REFERENCES member (id)
+                     );
+
+CREATE SEQUENCE cs_key_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;  
+
+INSERT INTO service
+VALUES( );
+
+DESC service; 
+
+DROP table service;
+DROP SEQUENCE cs_key_seq;
+
+
+
+--카테고리 
+CREATE TABLE category
+(   cate_key      number       NOT NULL,
+    cate_name     VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (cate_key)
+                     );
+
+CREATE SEQUENCE cate_key_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+INSERT INTO category
+VALUES( );
+
+DESC category; 
+
+DROP table category;
+DROP SEQUENCE cate_key_seq;
+
+--상품 
+CREATE TABLE product
+(   pr_key           number       NOT NULL,
+    pr_name          VARCHAR2(20) NOT NULL,
+    pr_thumbnails    BLOB         NOT NULL,
+    pr_price         number       NOT NULL,
+    pr_dcprice       number       NOT NULL,
+    pr_dc            number       NOT NULL,
+    pr_detail        number       NOT NULL,
+    pr_registration  number       NOT NULL,
+    pr_thema         VARCHAR2(20) NOT NULL,
+    cate_key         number       NOT NULL,
+    PRIMARY KEY (pr_key), 
+    FOREIGN KEY (cate_key) REFERENCES category (cate_key)
+                     );
+
+CREATE SEQUENCE pr_key_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+INSERT INTO product
+VALUES();
+
+DESC product; 
+
+DROP table product;
+DROP SEQUENCE pr_key_seq;
+
+--장바구니
+CREATE TABLE cart
+(   cart_key   number NOT NULL,
+    cart_num   number NOT NULL,
+    cart_sum   number NOT NULL,
+    pr_key     number NOT NULL,
+    id         VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (cart_key), 
+    FOREIGN KEY (pr_key) REFERENCES product (pr_key),
+    FOREIGN KEY (id) REFERENCES member (id)
+                     );
+                     
+CREATE SEQUENCE cart_key_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+INSERT INTO cart
+VALUES( );
+
+DESC cart; 
+
+DROP table cart;
+DROP SEQUENCE cart_key;
+
+--찜
+CREATE TABLE wish
+(   wish_key   number NOT NULL,
+    pr_key     number NOT NULL,  
+    id         VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (wish_key), 
+    FOREIGN KEY (pr_key) REFERENCES product (pr_key),
+    FOREIGN KEY (id) REFERENCES member (id)
+                     );
+                     
+CREATE SEQUENCE wish_key_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+INSERT INTO wish
+VALUES( );
+
+DESC wish; 
+
+DROP table wish;
+DROP SEQUENCE wish_key_seq;
+
+--배송지
+CREATE TABLE shipping_address
+(   ship_key         number       NOT NULL,
+    ship_people      VARCHAR2(20) NOT NULL,
+    ship_phone       VARCHAR2(20) NOT NULL,
+    ship_post        VARCHAR2(20) NOT NULL,
+    shipping_address VARCHAR2(20) NOT NULL,
+    id               VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (ship_key), 
+    FOREIGN KEY (id) REFERENCES member (id)
+                     );
+                     
+CREATE SEQUENCE ship_key_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+INSERT INTO shipping_address
+VALUES( );
+
+DESC shipping_address; 
+
+DROP table shipping_address;
+DROP SEQUENCE ship_key_seq;
+
+--주문내역 
+CREATE TABLE order1
+(   or_key        number       NOT NULL,
+    or_num        VARCHAR2(20) NOT NULL,
+    or_sum        VARCHAR2(20) NOT NULL,
+    or_date       date         NOT NULL,
+    or_detail     VARCHAR2(50) NOT NULL,    
+    ship_status   VARCHAR2(20) NULL,
+    pr_key        number NOT NULL, 
+    ship_key      number       NOT NULL,
+    id            VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (or_key,or_date), 
+    FOREIGN KEY (ship_key) REFERENCES shipping_address (ship_key),
+    FOREIGN KEY (id) REFERENCES member (id)
+                     );
+                     
+CREATE SEQUENCE or_key_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+CREATE SEQUENCE or_detail_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;
+
+INSERT INTO order1
+VALUES( );
+
+DESC order1; 
+
+DROP table order1;
+DROP SEQUENCE or_key_seq;
+DROP SEQUENCE or_detail_seq;
+
