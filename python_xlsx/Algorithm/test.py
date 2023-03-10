@@ -15,13 +15,13 @@ print(exdt_grouped)
 exdt_max = exdt_grouped['상품수량.1'].groupby(level=0).idxmax()
 print(exdt_max)
 
-# 가장 많이 구매한 상품 코드를 기준으로 아이디별로 그룹화하고 상관관계 계산
-exdt_corr = exdt.groupby(exdt_max)[['상품코드.1', '상품수량.1']].apply(lambda x: x.groupby('상품코드.1')['상품수량.1'].sum())
-exdt_corr = exdt_corr.unstack().fillna(0)
-exdt_corr = exdt_corr.corr()
-print(exdt_corr)
+# bbini1109 아이디와 많이 구매한 상품 코드에 대한 상관관계 계산
+bbini_corr = exdt_corr.loc['bbini1109']
 
+# 다른 아이디들과의 상관관계 계산 후, 상위 3개 아이디 구하기
+top_3_corr = bbini_corr.drop('bbini1109').nlargest(3)
+top_3_ids = top_3_corr.index.tolist()
 
-
+print(top_3_ids)
 
 
