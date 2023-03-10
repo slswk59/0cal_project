@@ -1,0 +1,16 @@
+.search_icon {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 9px auto 16px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIHN0cm9rZT0iI0Q5RDlEOSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgICAgIDxwYXRoIGQ9Ik0zNy42MTMgMTkuMzEyYzAgNS43NjgtMi41MDggMTAuNzgzLTYuNTIgMTQuMDQ0LTMuMjYgMi43NTgtNy4yNzIgNC4yNjMtMTEuNzg2IDQuMjYzQzkuMDI1IDM3LjYxOSAxIDI5LjM0MyAxIDE5LjMxMiAxIDkuMDMgOS4yNzYgMS4wMDYgMTkuMzA3IDEuMDA2IDI5LjMzNy43NTUgMzcuNjEzIDkuMDMgMzcuNjEzIDE5LjMxMnpNNDYuMTM5IDQ2LjEzOSAzMi43MDQgMzIuNzA0Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=')
+    50% 50% no-repeat;
+}
+
+.no_search {
+  font-size: 16px;
+  color: rgb(181, 181, 181);
+  text-align: center;
+  padding: 222px 0px 244px;
+}
