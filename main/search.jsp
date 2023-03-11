@@ -24,6 +24,9 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="./CSS/slider.css" />
     <link rel="stylesheet" href="./CSS/main.css" />
     <link rel="stylesheet" href="./CSS/search.css" />
+    <link rel="stylesheet" href="./CSS/category.css" />
+    <link rel="stylesheet" href="./CSS/goods.css" />
+
     <!-- Script -->
     <script
       src="https://kit.fontawesome.com/43fd0ad460.js"

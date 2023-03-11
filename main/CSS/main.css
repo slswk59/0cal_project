@@ -1,7 +1,7 @@
 main {
   position: relative;
   width: 1050px;
-  height: 100%;
+  /* height: 100%; */
   margin: 0 auto;
 }
 
@@ -31,8 +31,9 @@ section.recommend-items .recommend-slide-items {
 
 section.recommend-items .recommend-slide-item {
   width: 250px;
-  height: 390px;
+  height: 400px;
   margin: 0 6.25px;
+  cursor: pointer;
 }
 
 div.leftBtn.items,
