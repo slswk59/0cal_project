@@ -1,0 +1,134 @@
+#advertise_cate {
+  margin: 80px 0 40px;
+}
+
+#advertise_cate div {
+  width: 100%;
+  max-width: 1050px;
+  height: 140px;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+}
+
+#advertise_cate div.img1 {
+  background-image: url('../img/ads_1.webp');
+}
+#advertise_cate div.img2 {
+  background-image: url('../img/ads_2.webp');
+}
+#advertise_cate div.img3 {
+  background-image: url('../img/ads_3.webp');
+}
+
+section.recommend-items_cate {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  color: #000000;
+  padding: 32px 0 40px 0;
+}
+
+section.recommend-items_cate h2 {
+  margin: 20px auto 50px;
+  text-align: center;
+  font-size: 28px;
+}
+
+section.recommend-items_cate .recommend-slide-items {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+section.recommend-items_cate .recommend-slide-item {
+  width: 250px;
+  height: 400px;
+  margin: 0 6.25px;
+}
+
+div.item-img-container {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  overflow: hidden;
+}
+img.item-img {
+  position: absolute;
+  width: 250px;
+  height: 320px;
+}
+
+button.cart_button {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  cursor: pointer;
+}
+
+div.sorting_div {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  line-height: 20px;
+  flex-direction: row-reverse;
+}
+
+ul.sorting_div_ul {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+li.sorting_group {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  margin-left: 8px;
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+}
+
+a.li_sorting {
+  letter-spacing: -0.3px;
+  font-weight: 500;
+  color: rgb(153, 153, 153);
+  /* color: #000000; */
+  cursor: pointer;
+}
+
+div.paging_group {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 36px;
+}
+
+a.paging_atag {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-top: 1px solid rgb(221, 221, 221);
+  border-left: 1px solid rgb(221, 221, 221);
+  border-right: 1px solid rgb(221, 221, 221);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  border-image: initial;
+  cursor: pointer;
+}
