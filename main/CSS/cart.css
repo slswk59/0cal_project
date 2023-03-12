@@ -1,0 +1,320 @@
+section.cart_main {
+  width: 1050px;
+  margin: 0px auto;
+  position: relative;
+  color: #000000;
+  padding: 32px 0 40px 0;
+}
+
+section.cart_main h2 {
+  margin: 20px auto 50px;
+  text-align: center;
+  font-size: 28px;
+}
+
+div.cart_group {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  letter-spacing: -0.5px;
+}
+
+div.cart_goods {
+  width: 742px;
+}
+
+div.cart_delivery_dest {
+  position: relative;
+  width: 284px;
+  min-height: 942px;
+}
+
+div.all_check {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 18px 10px 11px 2px;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+label.all_choose {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px;
+  color: rgb(51, 51, 51);
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  vertical-align: top;
+}
+
+span.l {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: rgb(221, 221, 221);
+  margin: 6px 21px 0px 22px;
+  vertical-align: top;
+}
+
+input.goods_checkbox {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0px, 0px, 0px, 0px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+}
+
+div.check_icon_group {
+  margin-right: 12px;
+}
+
+span.l {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: rgb(221, 221, 221);
+  margin: 6px 21px 0px 22px;
+  vertical-align: top;
+}
+
+button.all_reset {
+  font-size: 14px;
+  color: #333;
+  overflow: visible;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+div.cart_goodslist {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+li.cart_goodslist {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  padding: 20px 0px;
+  border-top: 1px solid rgb(244, 244, 244);
+  border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+a.cart_goodslist_image_a {
+  display: inline-block;
+  width: 60px;
+  height: 78px;
+  margin-right: 20px;
+}
+
+span.cart_goodslist_image_span {
+  display: block;
+  height: 100%;
+  background-image: url(https://drive.google.com/uc?id=1cDazD7rq82SKpTwP3hUBQtjAskzgHGF7);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+div.cart_gooslist_goodsname_group {
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+  margin-right: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+a.cart_gooslist_goodsname_group {
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+p.cart_gooslist_goodsname {
+  max-height: 54px;
+  padding-top: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+div.cart_goods_price {
+  display: flex;
+  flex-direction: column;
+  width: 127px;
+  text-align: right;
+  word-break: break-all;
+}
+
+span.cart_goods_dcprice {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(51, 51, 51);
+}
+
+span.cart_goods_price {
+  font-size: 14px;
+  line-height: 24px;
+  color: rgb(181, 181, 181);
+  text-decoration: line-through;
+  padding-top: 4px;
+}
+
+button.cart_cancle_button {
+  width: 30px;
+  height: 30px;
+  margin-left: 9px;
+  overflow: visible;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+span.cart_cancle_button_span {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMSA5Ljc2MiAyMC4yMzggOSAxNSAxNC4yMzggOS43NjIgOSA5IDkuNzYyIDE0LjIzOCAxNSA5IDIwLjIzOGwuNzYyLjc2MkwxNSAxNS43NjIgMjAuMjM4IDIxbC43NjItLjc2MkwxNS43NjIgMTV6IiBmaWxsPSIjQ0NDIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg==);
+  background-size: cover;
+  background-position: center center;
+}
+
+div.cart_delivery_dest_group {
+  position: relative;
+  width: 284px;
+  min-height: 942px;
+}
+
+div.cart_delivery_dest {
+  position: absolute;
+  width: 284px;
+  padding-top: 60px;
+}
+
+div.cart_destination {
+  padding: 23px 19px 20px;
+  border: 1px solid #f2f2f2;
+  border-bottom: 0;
+}
+
+h3.cart_destination_name {
+  padding-left: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  background: url(https://res.kurly.com/pc/service/cart/2007/ico_location.svg) 0
+    50% no-repeat;
+  background-size: 20px 20px;
+}
+
+div.cart_destination_address_group {
+  padding-top: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+
+p.cart_destination_address {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  word-break: break-word;
+}
+
+button.cart_destination_change {
+  display: block;
+  padding: 0px 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 36px;
+  border-radius: 3px;
+  color: #ffa500;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ffa500;
+  cursor: pointer;
+}
+
+span.cart_destination_change {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+div.cart_price_group {
+  padding: 19px 18px 18px 20px;
+  border: 1px solid #f2f2f2;
+  background-color: #fafafa;
+}
+
+div.cart_price_group_under {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+span.cart_price_title {
+  width: 100px;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+span.cart_price_group_value {
+  width: 162px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: right;
+}
+
+strong.cart_price_group_value_strong {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+span.cart_price_group_value_won {
+  padding-left: 4px;
+  font-size: 16px;
+  vertical-align: 1px;
+}
+
+div.cart_order_button_div {
+  padding-top: 20px;
+}
+
+button.cart_order_button {
+  display: block;
+  padding: 0 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 56px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #ffa500;
+  border: 0 none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+span.cart_order_button_text {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+}
