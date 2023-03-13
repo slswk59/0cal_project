@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 글쓰기-0cal</title>
+    <link rel="stylesheet" href="../../css/admin.css" />
+</head>
+<body>
+    <body>
+        <div style="display: flex">
+          <div class="" style="width: 100px">사이드tab</div>
+          <div class="wrapper">
+            <div class="titleBox">
+              <h2 class="title">관리자 페이지</h2>
+            </div>
+            <div class="content">
+              <form>
+                <div class="inputBox">
+                  <div class="labelBox">
+                    <label for="inquiry-subject">제목<span class="">*</span></label>
+                  </div>
+                  <div class="subjectBox">
+                    <input
+                      id="inquiry-subject"
+                      name="subject"
+                      placeholder="제목을 입력해주세요"
+                      type="text"
+                      height="44"
+                      class=""
+                    />
+                  </div>
+                </div>
+    
+                <div class="inputBox">
+                  <div class="labelBox">
+                    <label for="inquiry-contents">내용<span class="">*</span></label>
+                  </div>
+                  <div class="contentBox">
+                    <textarea
+                      id="inquiry-contents"
+                      inputmode="text"
+                      aria-label="textarea-message"
+                      name="contents"
+                      class=""
+                      placeholder="내용을 입력해주세요."
+                    ></textarea>
+                  </div>
+                </div>
+    
+                <div class="writeBtnBox">
+                  <button type="submit" disabled="" class="">등록</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>

@@ -1,0 +1,56 @@
+.wrapper {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.login {
+    text-align: center;
+    padding-top: 50px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+.middle {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.loginid {
+    width: 300px;
+    height: 40px;
+    border: solid 1px rgb(174, 174, 173);
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.loginpw {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    width: 300px;
+    height: 40px;
+    border: solid 1px rgb(174, 174, 173);
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.loginsuc {
+    width: 200px;
+    display: block;
+    margin-top: 20px;
+    margin: auto;
+    height: 40px;
+    background-color: #f8ab1d;
+    color: #fff;
+    border: 1px solid #f8ab1d;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logintext {
+    font-size: 18px;
+    font-weight: 500;
+}

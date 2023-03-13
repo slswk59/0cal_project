@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개인정보수정-0cal</title>
+    <link rel="stylesheet" href="../../css/userInfoEdit.css" />
+  </head>
+  <body>
+    <div class="wrapper1">
+        <div style="display: flex">
+          <div class="" style="width: 100px">사이드tab</div>
+          <div class="wrapper" style="margin-left: 10px">
+            <div class="titlebox">
+              <h2 class="title">개인정보수정</h2>
+            </div>
+    
+            <div class="editlist">
+                <div class="user">
+                    <div class="id">
+                        <div class="front" id="userid">아이디&nbsp<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="로그인 되어있는 아이디가 보여짐."></input>                
+                    </div>
+        
+                    <div class="nick">
+                        <div class="front" id="nickname">현재&nbsp비밀번호&nbsp<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="비밀번호를 입력해주세요."></input>
+                    </div>
+        
+                    <div class="pw">
+                        <div class="front" id="userpw">비밀번호&nbsp<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="새 비밀번호를 입력해주세요."></input>
+                    </div>
+        
+                    <div class="pwcheck">
+                        <div class="front" id="userpwcheck">비밀번호 확인&nbsp<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="새 비밀번호를 한번 더 입력해주세요."></input>
+                    </div>
+        
+                    <div class="name">
+                        <div class="front" id="username">이름<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="로그인 되어있는 이름이 보여짐."></input>
+                    </div>
+        
+                    <div class="email">
+                        <div class="front" id="useremail">이메일&nbsp<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="로그인 되어있는 이메일이 보여짐."></input>
+                        <button class="doubleCheck">중복확인</button>
+                    </div>
+        
+                    <div class="phone">
+                        <div class="front" id="userphone">휴대폰<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="010&nbsp-&nbsp 0000 &nbsp-&nbsp 0000"></input>
+                    </div>
+        
+                    <div class="adress">
+                        <div class="front" id="useradress">주소<span class="star">*</span></div>
+                        <input type="text" class="middle" placeholder="주소 api 연결???"></input>
+                    </div>
+                    
+                    <div class="gender">
+                        <div class="front" id="usergender">성별</div>
+                        <div style="padding-right: 20px; display: flex; align-items: center;">
+                            <input type="radio" class="middle" value="1" id="check1"></input>
+                            <label for="check1">여성</label>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <input type="radio" class="middle" value="2" id="check2"></input>
+                            <label for="check2">남성</label>
+                        </div>
+                    </div>
+        
+                    <div class="birth">
+                        <div class="front" id="ymd">생년월일</div>
+                        <form>
+                            <p><input type="date" class="middle"></p>
+                        </form>
+                    </div>
+        
+                    <hr class="bottom">
+
+                    <div class="btns">
+                    <button type="submit" class="signupEnd"><b>회원정보수정</b></button>
+                    <button type="submit" class="editSuc"><span class="editText">탈퇴하기</span></button>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+  </body>
+</html>

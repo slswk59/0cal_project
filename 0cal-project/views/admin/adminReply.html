@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 답글-0cal</title>
+    <link rel="stylesheet" href="../../css/admin.css" />
+  </head>
+  <body>
+    <div style="display: flex">
+      <div class="" style="width: 100px">사이드tab</div>
+      <div class="wrapper">
+        <div class="titleBox">
+          <h2 class="title">관리자 페이지</h2>
+        </div>
+        <div class="content">
+          <form>
+            <div class="inputBox">
+              <div class="labelBox">
+                <label for="inquiry-subject">제목<span class="">*</span></label>
+              </div>
+              <div class="subjectBox">
+                <input
+                  id="inquiry-subject"
+                  name="subject"
+                  placeholder="기존 글제목이 보여짐."
+                  type="text"
+                  height="44"
+                  class=""
+                />
+              </div>
+            </div>
+
+            <div class="inputBox">
+              <div class="labelBox">
+                <label for="inquiry-contents">내용<span class="">*</span></label>
+              </div>
+              <div class="contentBox">
+                <textarea
+                  id="inquiry-contents"
+                  inputmode="text"
+                  aria-label="textarea-message"
+                  name="contents"
+                  class=""
+                  placeholder="기존 글 내용이 보여짐."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="buttonBox">
+              <div class="updateBtnBox">
+                <button type="submit" disabled="" class="">답변</button>
+              </div>
+
+              <div class="deleteBtnBox">
+                <button type="submit" disabled="" class="">삭제</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
