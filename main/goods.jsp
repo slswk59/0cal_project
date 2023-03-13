@@ -28,6 +28,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="./CSS/goods.css" />
     <link rel="stylesheet" href="./CSS/cart.css" />
     <link rel="stylesheet" href="./CSS/wish.css" />
+    <link rel="stylesheet" href="./CSS/order.css" />
 
     <!-- Script -->
     <script
@@ -147,7 +148,7 @@ pageEncoding="UTF-8"%>
     <div id="description" class="description">
       <div class="pic">
         <img
-          src="https://drive.google.com/uc?id=1sbsVmxA6dPrMcS4KNs_GnrD8LPZk92vX"
+          src="https://drive.google.com/uc?id=1_ImXAdt6xcrdKLPmA6obW4xfzKN0t1AC"
         />
       </div>
     </div>

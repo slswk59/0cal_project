@@ -28,6 +28,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="./CSS/goods.css" />
     <link rel="stylesheet" href="./CSS/cart.css" />
     <link rel="stylesheet" href="./CSS/wish.css" />
+    <link rel="stylesheet" href="./CSS/order.css" />
 
     <!-- Script -->
     <script

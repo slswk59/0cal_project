@@ -1,0 +1,187 @@
+.wrapper1 {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 820px;
+  margin: 0 auto;
+}
+
+/*개인정보수정 진입 페이지 css*/
+.titleBox {
+  width: 100%;
+  padding-bottom: 27px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 24px;
+  color: rgb(51, 51, 51);
+  letter-spacing: -0.5px;
+  line-height: 48px;
+}
+
+.pwText {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.pwText2 {
+  padding-top: 5px;
+  font-size: 5px;
+  color: #626161;
+}
+
+.list {
+  /* display: flex; */
+  width: 100%;
+  padding: 20px 0px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  border-bottom: 1px solid rgb(180, 175, 175);
+  border-top: 2px solid rgb(51, 51, 51);
+}
+
+.editInput {
+  width: 520px;
+  margin: 0 auto;
+}
+
+.star {
+  color: orange;
+}
+
+.list .middle {
+  width: 300px;
+  height: 40px;
+  padding: 0px 11px 1px 15px;
+  color: darkgray;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 15px;
+}
+.editText {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* 개인정보수정 페이지 css*/
+
+.middle {
+  width: 300px;
+  height: 40px;
+  padding: 0px 11px 1px 15px;
+  color: darkgray;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 15px;
+}
+
+/*중복확인 버튼 글씨 까맣게 하는법...?*/
+.doubleCheck {
+  margin-left: 20px;
+  height: 40px;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+  color: #d78314;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 14px;
+}
+.doubleCheck > span {
+  color: 'black';
+}
+
+.star {
+  color: orange;
+}
+
+.gender {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.gender input#check1 {
+  font-size: 1em;
+  width: 1.25em; /* 너비 설정 */
+  height: 1.25em; /* 높이 설정 */
+  vertical-align: middle;
+  margin-top: unset;
+}
+
+.gender input#check2 {
+  font-size: 1em;
+  width: 1.25em; /* 너비 설정 */
+  height: 1.25em; /* 높이 설정 */
+  vertical-align: middle;
+}
+
+#ymd {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.bottom {
+  width: 100%;
+  margin-top: 40px;
+  border: solid 0.1px;
+  color: rgb(31, 30, 30);
+}
+
+.signupEdit {
+  width: 150px;
+  border: 1px;
+  outline: none;
+  font-size: 15px;
+  background: rgb(248, 171, 29);
+  color: white;
+  padding: 10px;
+  padding-left: 1px;
+  padding-right: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 30px auto;
+  display: inline-block;
+}
+
+button.signupEdit:hover {
+  color: white;
+  background: orange;
+}
+
+.btns {
+  text-align: center;
+}
+
+.editSuc {
+  width: 150px;
+  border: 1px;
+  outline: none;
+  font-size: 15px;
+  background: rgb(248, 171, 29);
+  color: white;
+  padding: 10px;
+  padding-left: 1px;
+  padding-right: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 30px auto;
+  display: inline-block;
+}
+
+div.signup_edit_div {
+  text-align: center;
+  padding-top: 10px;
+  font-size: xx-large;
+  margin-bottom: 30px;
+  color: black;
+}

@@ -25,6 +25,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="./CSS/goods.css" />
     <link rel="stylesheet" href="./CSS/cart.css" />
     <link rel="stylesheet" href="./CSS/wish.css" />
+    <link rel="stylesheet" href="./CSS/order.css" />
 
     <!-- Script -->
     <script src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
@@ -40,44 +41,15 @@ pageEncoding="UTF-8"%>
     <div class="slide-section">
       <div class="slide-wrapper">
         <div class="slide-item">
-          <a href="#" style="background-image: url('./img/slide1.webp')"></a>
+          <a href="#" style="background-image: url('./img/배너1.jpg')"></a>
         </div>
         <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide2.webp')"></a>
+          <a href="#" style="background-image: url('./img/배너2.jpg')"></a>
         </div>
         <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide3.webp')"></a>
+          <a href="#" style="background-image: url('./img/배너3.jpg')"></a>
         </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide4.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide5.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide6.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide7.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide8.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide9.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide10.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide11.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide12.webp')"></a>
-        </div>
-        <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./img/slide13.webp')"></a>
-        </div>
+    
         <!-- <div class="slide-item"><a href="#" style="background-image: url('./img/slide14.webp');"></a></div> -->
       </div>
     <main role="main">

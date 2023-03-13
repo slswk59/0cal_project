@@ -5,20 +5,20 @@
 #advertise_cate div {
   width: 100%;
   max-width: 1050px;
-  height: 140px;
+  height: 200px;
   margin: 0 auto;
   background-position: center;
   background-size: cover;
 }
 
 #advertise_cate div.img1 {
-  background-image: url('../img/ads_1.webp');
+  background-image: url('../img/배너1.jpg');
 }
 #advertise_cate div.img2 {
-  background-image: url('../img/ads_2.webp');
+  background-image: url('../img/배너2.jpg');
 }
 #advertise_cate div.img3 {
-  background-image: url('../img/ads_3.webp');
+  background-image: url('../img/배너3.jpg');
 }
 
 section.recommend-items_cate {

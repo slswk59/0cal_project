@@ -28,6 +28,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="./CSS/goods.css" />
     <link rel="stylesheet" href="./CSS/cart.css" />
     <link rel="stylesheet" href="./CSS/wish.css" />
+    <link rel="stylesheet" href="./CSS/order.css" />
 
     <!-- Script -->
     <script
@@ -81,8 +82,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -105,8 +106,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -128,8 +129,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -151,8 +152,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -178,8 +179,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -202,8 +203,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -225,8 +226,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -248,8 +249,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -275,8 +276,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -299,8 +300,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -322,8 +323,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -345,8 +346,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -372,8 +373,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -396,8 +397,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -419,8 +420,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -442,8 +443,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -469,8 +470,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -493,8 +494,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -516,8 +517,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -539,8 +540,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -566,8 +567,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -590,8 +591,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -613,8 +614,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>
@@ -636,8 +637,8 @@ pageEncoding="UTF-8"%>
                     alt="장바구니 아이콘"
                   >
                     <i
-                      class="fa-solid fa-cart-shopping fa-3x"
-                      style="color: orange"
+                      class="fa-solid fa-cart-shopping fa-2x"
+                      style="color: grey"
                     ></i>
                   </button>
                 </div>

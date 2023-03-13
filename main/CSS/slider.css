@@ -11,12 +11,13 @@ div.slide-wrapper {
 div.slide-item a {
   display: block;
   width: 100vw;
-  height: 370px;
+  height: 350px;
   background-position: 50% center;
   background-size: cover;
 }
 
-div.leftBtn, div.rightBtn {
+div.leftBtn,
+div.rightBtn {
   z-index: 10000;
   width: 52px;
   height: 52px;
@@ -32,5 +33,5 @@ div.leftBtn.slide {
 
 div.rightBtn.slide {
   right: 150px;
-  background-image: url(../img/rightArrow.svg) ;
+  background-image: url(../img/rightArrow.svg);
 }

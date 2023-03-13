@@ -3,10 +3,7 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>0칼로리 :: 디저트는 빵칼로리</title>
+    <title>로그인-0cal</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,6 +26,8 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="./CSS/cart.css" />
     <link rel="stylesheet" href="./CSS/wish.css" />
     <link rel="stylesheet" href="./CSS/order.css" />
+    <link rel="stylesheet" href="./CSS/signUp.css" />
+    <link rel="stylesheet" href="./CSS/login.css" />
 
     <!-- Script -->
     <script
@@ -44,16 +43,29 @@ pageEncoding="UTF-8"%>
     <header>
       <jsp:include page="header.jsp" />
     </header>
+    <div class="wrapper">
+      <div class="login"><b>로그인</b></div>
 
-    <main role="main">
-      <section class="recommend-items">
-        <h2>""에 대한 검색결과</h2>
-        <div class="no_search">
-          <div class="search_icon"></div>
-          "검색된 상품이 없습니다."
-        </div>
-      </section>
-    </main>
+      <div class="middle_login">
+        <input
+          type="text"
+          class="loginid"
+          placeholder="아이디를 입력해주세요."
+        />
+      </div>
+
+      <div class="middle_login">
+        <input
+          type="text"
+          class="loginpw"
+          placeholder="비밀번호를 입력해주세요."
+        />
+      </div>
+
+      <button type="submit" class="loginsuc">
+        <span class="logintext">로그인</span>
+      </button>
+    </div>
     <footer>
       <jsp:include page="footer.jsp" />
     </footer>
