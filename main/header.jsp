@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
       </div>
       <div id="logo-box" class="clear">
         <h1 id="logo">
-          <a href="#"><img src="./img/logo.webp" alt="Logo" /></a>
+          <a href="#"><img src="./img/로고-2.jpg" alt="Logo" /></a>
         </h1>
       </div>
       <div id="menu">
