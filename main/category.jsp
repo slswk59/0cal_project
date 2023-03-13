@@ -27,6 +27,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="./CSS/category.css" />
     <link rel="stylesheet" href="./CSS/goods.css" />
     <link rel="stylesheet" href="./CSS/cart.css" />
+    <link rel="stylesheet" href="./CSS/wish.css" />
 
     <!-- Script -->
     <script
@@ -37,8 +38,6 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
-    <script src="./JavaScript/timer.js" defer></script>
-    <script src="./JavaScript/scrollTop.js" defer></script>
   </head>
   <body>
     <header>
