@@ -189,7 +189,7 @@ button.main_under_goods_list_buttons_add {
   height: 36px;
   border-radius: 4px;
   color: black;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffa500;
   border: 1px solid black;
 }
 span.main_under_goods_list_buttons_add {
