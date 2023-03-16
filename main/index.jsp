@@ -54,7 +54,7 @@ pageEncoding="UTF-8"%>
       </div>
     <main role="main">
       <section class="recommend-items">
-        <h2>최근 본 상품</h2>
+        <h2>따근따끈한 신상품</h2>
         <div class="leftBtn items"></div>
         <div class="rightBtn items"></div>
         <div class="recommend-slide">
