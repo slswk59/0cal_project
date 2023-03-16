@@ -36,24 +36,7 @@ plusButton.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
-
-
-// function toggleColor() {
-//   var heartIcon = document.querySelector('.fa-heart-o');
-//   var currentColor = heartIcon.style.color;
-//   if (currentColor === '' || currentColor === 'initial') {
-//     heartIcon.style.color = 'red';
-//   } else {
-//     heartIcon.style.color = '';
-//   }
-// }
-
-
+//찜 하트 변경 및 삭제 알림 
 var isWished = false;
 
 function toggleWishList() {
