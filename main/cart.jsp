@@ -39,6 +39,10 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
+    <script src="./JavaScript/cartcount.js" defer></script>
+    <script src="./JavaScript/cartselectdelete.js" defer></script>
+    <script src="./JavaScript/cartselectchoose.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <header>
@@ -51,7 +55,7 @@ pageEncoding="UTF-8"%>
           <div class="cart_goods">
             <div class="all_check">
               <label class="all_choose">
-                <input type="checkbox" class="goods_checkbox" checked />
+                <input type="checkbox" class="all_choose_checkbox" checked />
                 <div class="check_icon_group">
                   <svg
                     width="24"
@@ -81,7 +85,7 @@ pageEncoding="UTF-8"%>
             <div class="cart_goodslist">
               <ul class="cart_goodslist">
                 <li class="cart_goodslist">
-                  <label class="all_choose">
+                  <label class="all_choose2">
                     <input type="checkbox" class="goods_checkbox" checked />
                     <div class="check_icon_group">
                       <svg
@@ -149,7 +153,7 @@ pageEncoding="UTF-8"%>
                   </button>
                 </li>
                 <li class="cart_goodslist">
-                  <label class="all_choose">
+                  <label class="all_choose2_1">
                     <input type="checkbox" class="goods_checkbox" checked />
                     <div class="check_icon_group">
                       <svg
@@ -217,7 +221,7 @@ pageEncoding="UTF-8"%>
                   </button>
                 </li>
                 <li class="cart_goodslist">
-                  <label class="all_choose">
+                  <label class="all_choose2_2">
                     <input type="checkbox" class="goods_checkbox" checked />
                     <div class="check_icon_group">
                       <svg
@@ -301,8 +305,15 @@ pageEncoding="UTF-8"%>
                     height="36"
                     radius="3"
                   >
+                    <a
+                      href="http://localhost:8090/csa.jsp"
+                      target="_blank"
+                      class="btn_transparent"
+                      id="delivery_edit_btn"
+                    >
                     <span class="cart_destination_change">배송지 변경</span>
                   </button>
+                </a>
                 </div>
               </div>
               <div class="cart_price_group">
