@@ -40,6 +40,19 @@ div.all_check {
   font-weight: 500;
 }
 
+input.all_choose_checkbox {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px;
+  color: rgb(51, 51, 51);
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  vertical-align: top;
+  cursor: pointer;
+}
+
 label.all_choose {
   display: inline-flex;
   font-size: 14px;
@@ -50,6 +63,46 @@ label.all_choose {
   -webkit-box-align: center;
   align-items: center;
   vertical-align: top;
+  cursor: pointer;
+}
+
+label.all_choose2 {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px;
+  color: rgb(51, 51, 51);
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+label.all_choose2_1 {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px;
+  color: rgb(51, 51, 51);
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+label.all_choose2_2 {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0px;
+  color: rgb(51, 51, 51);
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  vertical-align: top;
+  cursor: pointer;
 }
 
 span.l {
@@ -317,4 +370,14 @@ span.cart_order_button_text {
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
+}
+
+/* 체크박스가 체크된 경우 */
+.goods_checkbox:checked + .check_icon_group svg path:first-of-type {
+  fill: #ffa500;
+}
+
+/* 체크박스가 체크되지 않은 경우 */
+.goods_checkbox:not(:checked) + .check_icon_group svg path:first-of-type {
+  fill: #c1c1c1;
 }
