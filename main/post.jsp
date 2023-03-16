@@ -61,55 +61,29 @@ pageEncoding="UTF-8"%>
       }
     </script>
     <script src="./js/script.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-      h2 {
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 30px;
-        color: #007bff;
-      }
-      form {
-        width: 400px;
-        margin: 0 auto;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-        padding: 30px;
-      }
-      label {
-        display: block;
-        margin-bottom: 10px;
-        color: #666;
-        font-size: 16px;
-      }
-      input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        font-size: 16px;
-        margin-bottom: 20px;
-      }
-      input[type="button"] {
-        padding: 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        width: 100%;
-        margin-top: 20px;
-      }
-      input[type="button"]:hover {
-        background-color: #0056b3;
-      }
-    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/header.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/navbar.css" />
+    <link rel="stylesheet" href="./CSS/slider.css" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="stylesheet" href="./CSS/search.css" />
+    <link rel="stylesheet" href="./CSS/category.css" />
+    <link rel="stylesheet" href="./CSS/goods.css" />
+    <link rel="stylesheet" href="./CSS/cart.css" />
+    <link rel="stylesheet" href="./CSS/wish.css" />
+    <link rel="stylesheet" href="./CSS/order.css" />
+    <link rel="stylesheet" href="./CSS/post.css" />
   </head>
 
   <body>
