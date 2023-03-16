@@ -135,10 +135,10 @@ pageEncoding="UTF-8"%>
             height="56"
             radius="3"
             style="cursor: pointer"
-            onclick="alert('찜 목록에 추가되었습니다.')"
+            onclick="toggleWishList()"
           >
             <span class="wish_button_span">
-              <i class="fa-regular fa-heart fa-2x"></i>
+              <i class="fa fa-heart-o" style="font-size: 36px"></i>
             </span>
           </button>
 
