@@ -39,6 +39,9 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
+    <script src="./JavaScript/deletecommend.js" defer></script>
+
+    
 
     <style>
 
