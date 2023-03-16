@@ -40,7 +40,7 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
 			/WEB-INF/spring/appServlet/common-context.xml
-			<!--/WEB-INF/spring/appServlet/shopping-context.xml-->
+			/WEB-INF/spring/appServlet/shopping-context.xml
 			/WEB-INF/spring/appServlet/member-context.xml
 			</param-value>
 		</init-param>

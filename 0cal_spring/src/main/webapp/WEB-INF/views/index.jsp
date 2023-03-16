@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
+ <c:set var="contextPath" value="${pageContext.request.contextPath}" /> <!-- /myapp 프로젝트 경로 리턴 -->
+ 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,14 +33,14 @@ pageEncoding="UTF-8"%>
 
     <!-- Script -->
     <script src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/resources/JavaScript/img-slider.js"></script>
-    <script type="text/javascript" src="/resources/JavaScript/menu.js"></script>
-    <script type="text/javascript" src="/resources/JavaScript/recommend-slider.js"></script>
-    <script type="text/javascript" src="/resources/JavaScript/advertisement.js"></script>
+    <script type="text/javascript" src="./resources/JavaScript/img-slider.js" defer></script>
+    <script type="text/javascript" src="./resources/JavaScript/menu.js" defer></script>
+    <script type="text/javascript" src="./resources/JavaScript/recommend-slider.js" defer></script>
+    <script type="text/javascript" src="./resources/JavaScript/advertisement.js" defer></script>
   </head>
   <body>
     <header>
-      <jsp:include page="member/header.jsp" />
+      <jsp:include page="/WEB-INF/views/common/header.jsp" />
     </header>
     <div class="slide-section">
       <div class="slide-wrapper">
@@ -273,7 +276,7 @@ pageEncoding="UTF-8"%>
       </section>
     </main>
     <footer>
-      <jsp:include page="member/footer.jsp" />
+      <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     </footer>
   </body>
 </html>

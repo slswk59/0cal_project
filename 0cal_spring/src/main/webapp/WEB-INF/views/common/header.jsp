@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
  
 <div id="wrap">
   <div id="container">
@@ -8,10 +10,10 @@ pageEncoding="UTF-8"%>
       <div id="header">
         <ul id="userMenu" class="right">
           <li class="menu-item">
-            <a href="member/signup.do" class="link_menu">회원가입</a>
+            <a href="${pageContext.request.contextPath}/member/signup.do" class="link_menu">회원가입</a>
           </li>
           <li class="menu-item">
-            <a href="member/login.do" class="link_menu">로그인</a>
+            <a href="${pageContext.request.contextPath}/member/login.do" class="link_menu">로그인</a>
           </li>
           <li id="csCenter" class="menu-item">
             <a href="#" class="link_menu">고객센터</a>
@@ -20,7 +22,9 @@ pageEncoding="UTF-8"%>
       </div>
       <div id="logo-box" class="clear">
         <h1 id="logo">
-          <img src="./resources/img/로고-2.jpg" alt="Logo" />
+        <a href="${pageContext.request.contextPath}/index.do">
+          <img src="${pageContext.request.contextPath}/resources/img/로고-2.jpg" alt="Logo" />
+          </a>
         </h1>
       </div>
       <div id="menu">
@@ -71,7 +75,7 @@ pageEncoding="UTF-8"%>
               </ul>
             </li>
             <li class="main-menu-item">
-              <a href="#">신상품</a>
+              <a href="${pageContext.request.contextPath}/shopping/newlist.do">신상품</a>
             </li>
             <li class="main-menu-item">
               <a href="#">베스트</a>
@@ -91,18 +95,18 @@ pageEncoding="UTF-8"%>
             placeholder="검색어를 입력해주세요."
           />
           <button type="button" id="search-button">
-            <img src="./resources/img/search.webp" alt="" width="30px" height="30px" />
+            <img src="${pageContext.request.contextPath}/resources/img/search.webp" alt="" width="30px" height="30px" />
           </button>
         </div>
         <ul class="icons">
           <li>
             <a href="#">
-              <img src="./resources/img/heart.svg" alt="관심있는 상품" />
+              <img src="${pageContext.request.contextPath}/resources/img/heart.svg" alt="관심있는 상품" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="./resources/img/cart.svg" alt="장바구니" />
+              <img src="${pageContext.request.contextPath}/resources/img/cart.svg" alt="장바구니" />
             </a>
           </li>
         </ul>

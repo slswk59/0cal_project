@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <header>
-      <jsp:include page="header.jsp" />
+      <jsp:include page="../common/header.jsp" />
     </header>
     <form name="login" method="post"  action="login.do" >
     <div class="wrapper">
@@ -72,7 +72,7 @@ pageEncoding="UTF-8"%>
     </form>
     
     <footer>
-      <jsp:include page="footer.jsp" />
+      <jsp:include page="../common/footer.jsp" />
     </footer>
   </body>
 </html>

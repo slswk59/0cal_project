@@ -11,7 +11,7 @@ div.slide-wrapper {
 div.slide-item a {
   display: block;
   width: 100vw;
-  height: 350px;
+  height: 310px;
   background-position: 50% center;
   background-size: cover;
 }

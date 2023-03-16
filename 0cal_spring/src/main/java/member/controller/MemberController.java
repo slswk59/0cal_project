@@ -22,7 +22,7 @@ import member.dto.ChangePwdCommand;
 
 @Controller
 public class MemberController {
-private MemberService memberService;
+	private MemberService memberService;
 	
 	public MemberController() {
 	}
@@ -126,6 +126,5 @@ private MemberService memberService;
 		return "redirect:/index.do";
 	}
 	
-
 
 }

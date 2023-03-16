@@ -48,7 +48,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <header>
-        <jsp:include page="header.jsp" />
+        <jsp:include page="../common/header.jsp" />
       </header>
     <div class="wrapper">
         <div class="signup">회원가입</div>
@@ -127,7 +127,7 @@ pageEncoding="UTF-8"%>
         </form>
     </div>
     <footer>
-        <jsp:include page="footer.jsp" />
+        <jsp:include page="../common/footer.jsp" />
       </footer>
 
 </body>

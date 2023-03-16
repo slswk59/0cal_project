@@ -63,7 +63,7 @@ pageEncoding="UTF-8"%>
     </head>
   <body>
     <header>
-        <jsp:include page="header.jsp" />
+        <jsp:include page="../common/header.jsp" />
       </header>
 
       <main role="main">
@@ -173,7 +173,7 @@ pageEncoding="UTF-8"%>
     </div>
     </main>
         <footer>
-            <jsp:include page="footer.jsp" />
+            <jsp:include page="../common/footer.jsp" />
         </footer>
   </body>
 </html>
