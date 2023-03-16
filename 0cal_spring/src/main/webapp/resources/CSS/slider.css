@@ -1,0 +1,37 @@
+div.slide-section {
+  position: relative;
+}
+
+div.slide-wrapper {
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+}
+
+div.slide-item a {
+  display: block;
+  width: 100vw;
+  height: 350px;
+  background-position: 50% center;
+  background-size: cover;
+}
+
+div.leftBtn,
+div.rightBtn {
+  z-index: 10000;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 45%;
+  border-radius: 50%;
+}
+
+div.leftBtn.slide {
+  left: 150px;
+  background-image: url(../img/leftArrow.svg);
+}
+
+div.rightBtn.slide {
+  right: 150px;
+  background-image: url(../img/rightArrow.svg);
+}

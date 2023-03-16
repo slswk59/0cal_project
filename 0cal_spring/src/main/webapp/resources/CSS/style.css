@@ -1,0 +1,77 @@
+/* Main Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+
+  font-family: 'Noto Sans', sans-serif;
+  color: #ffffff;
+}
+
+#container {
+  width: 100vw;
+  position: relative;
+}
+
+/* RESET Style */
+
+a {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Hidden */
+.hidden {
+  display: none !important;
+}
+
+/* Float */
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.grid {
+  display: grid;
+}
+
+/* BTN */
+div.leftBtn {
+  background-image: url(../img/leftArrow.svg);
+}
+
+div.rightBtn {
+  background-image: url(../img/rightArrow.svg);
+}
+
+div.scrollTop {
+  width: 58px;
+  height: 58px;
+
+  overflow: hidden;
+  position: fixed;
+  right: 31px;
+  bottom: -58px;
+
+  transition: all 0.5s;
+}

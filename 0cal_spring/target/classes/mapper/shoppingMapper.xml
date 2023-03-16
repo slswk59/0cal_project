@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="shopping">
+    
+    <!-- 상품관련 -->
+	<select id="productCount" resultType="int">
+		SELECT count(*) FROM product;
+	</select>
+	
+	<select id="selectOneProduct" parameterType="int" resultType="shopping.dto.ProductDTO">
+		SELECT * FROM product WHERE pr_key=#{pr_key};
+	</select>
+	
+
+	<select id="productNewList" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+		<![CDATA[ 
+		SELECT b.*
+			FROM(SELECT rownum AS rm, a.*
+                FROM(SELECT * FROM product 
+                ORDER BY pr_reg_date desc)a
+                )b
+		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
+		]]>
+	</select>
+	
+	<select id="productSaleList" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+		<![CDATA[ 
+		SELECT b.*
+			FROM(SELECT rownum AS rm, a.*
+                FROM(SELECT * FROM product 
+                ORDER BY pr_dcper desc)a
+                )b
+		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
+		]]>
+	</select>
+	
+	<select id="productthemeList_drama" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+		<![CDATA[ 
+		SELECT b.*
+			FROM(SELECT rownum AS rm, a.*
+                FROM(SELECT * FROM product 
+                WHERE pr_theme='드라마정주행')a
+                )b
+		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
+		]]>
+	</select>
+	
+	<select id="productthemeList_organic" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+		<![CDATA[ 
+		SELECT b.*
+			FROM(SELECT rownum AS rm, a.*
+                FROM(SELECT * FROM product 
+                WHERE pr_theme='올가닉제품')a
+                )b
+		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
+		]]>
+	</select>
+	
+
+	
+	<!-- 상품 구입횟수가 많은 상품은 추후 구현! 어려움. 구매횟수가 많은 것 -->
+	
+	<!-- 상품 검색어 기능은 추후 구현! 너무 어려움. -->
+
+	
+
+
+</mapper>

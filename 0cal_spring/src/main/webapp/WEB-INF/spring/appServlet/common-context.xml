@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+
+
+		<!--  [1] DataSource 빈 선언 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
+		<property name="username" value="project01"/>
+		<property name="password" value="project01"/>
+	</bean>
+	
+	<!--  [2]SqlSessionFactoryBean 빈 선언 -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations">
+			<list>
+				<!--  <value>classpath:mapper/shoppingMapper.xml</value>-->
+				<value>classpath:mapper/memberMapper.xml</value>
+			</list>
+		</property>
+		
+	</bean>
+	
+	<!-- [3] SqlSessionTemplate 빈 선언 
+	SqlSessionTemplate은 생성자 인자로 SqlSessionFactory를 사용해서 생성될 수 있다.-->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean" />
+	</bean>
+
+
+	<!-- 선언적 트랜잭션 : <tx:advice>태그를 이용한 트랜젝션 -->
+
+	<!--  Spring JDBC나 Mybatis를 이용해서 DB연동을 처리하는 경우
+      DataSourceTransactionManager이 트랜잭션 관리자로 사용된다. -->
+      
+      <!--  [4] TransactionManager 빈 선언 -->
+		<bean id="transactionManager"
+			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource" />	
+		</bean>
+		
+		<!-- [5] 선언적 트랜잭션 : <tx:advice>태그를 이용한 트랜잭션 처리 -->
+		<tx:advice id="txAdvice" transaction-manager="transactionManager">
+			<tx:attributes>
+				<tx:method name="*Process" rollback-for="org.springframework.dao.DuplicateKeyException"/>
+			</tx:attributes>
+		</tx:advice>
+		
+		<aop:config>
+			<aop:pointcut expression="execution(*  service.*ServiceImp.*Process(..))" id="aa" />
+			<aop:advisor advice-ref="txAdvice" pointcut-ref="aa"/>
+		</aop:config>
+
+
+	<!-- controller -->
+	<bean class="com.mycompany.myapp.HomeController"/>
+	
+
+	<!-- ViewResolver(사용자에게 결과를 랜더링하여 보여주기 위하여 사용) -->
+	
+	<!--논리적인 뷰 이름과 동일한 ID를 갖는 <bean>으로 등록된 view 객체를 찾음 -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="1" />
+	</bean>
+
+	
+	<!-- 웹 어필리케이션의 WAR파일 내에 포함된 View 템플릿을 찾음. 경로는 논리적 View 이름에 접두사와 접미사를 붙여 구성
+	   항상 뷰 이름이 매핑되는 뷰 객체를 리터하므로 마지막 순위를 갖도록 지정 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="2" />
+	</bean>
+</beans>
