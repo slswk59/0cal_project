@@ -15,8 +15,8 @@
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
-		<property name="username" value="project01"/>
-		<property name="password" value="project01"/>
+		<property name="username" value="abc"/>
+		<property name="password" value="a1234"/>
 	</bean>
 	
 	<!--  [2]SqlSessionFactoryBean 빈 선언 -->
@@ -26,6 +26,7 @@
 			<list>
 				<value>classpath:mapper/shoppingMapper.xml</value>
 				<value>classpath:mapper/memberMapper.xml</value>
+				<value>classpath:mapper/wishMapper.xml</value>
 			</list>
 		</property>
 		

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="wish">
+    
+    <!-- 로그인한 사용자의 위시리스트 조회 -->
+    <select id="selectWishListById" parameterType="string" resultType="WishDTO">
+        SELECT w.wish_key, w.wish_reg_date, w.pr_key, p.pr_name, p.pr_price, p.pr_image, p.pr_desc
+        FROM wish w JOIN product p ON w.pr_key = p.pr_key
+        WHERE w.id = #{id}
+            AND w.wish_del_date IS NULL
+    </select>
+    
+    <!-- 위시리스트에서 선택된 상품 삭제 -->
+    <update id="deleteWish" parameterType="int">
+        UPDATE wish
+        SET wish_del_date = SYSDATE
+        WHERE wish_key = #{wishKey}
+    </update>
+    
+    <!-- 위시리스트에서 선택된 상품 장바구니로 이동 -->
+    <insert id="addCartFromWish" parameterType="map">
+        INSERT INTO cart (cart_key, cart_reg_date, pr_key, id)
+        VALUES (cart_key_seq.NEXTVAL, SYSDATE, #{wishKey}, #{id})
+    </insert>
+    
+</mapper>

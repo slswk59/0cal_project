@@ -42,6 +42,7 @@
 			/WEB-INF/spring/appServlet/common-context.xml
 			/WEB-INF/spring/appServlet/shopping-context.xml
 			/WEB-INF/spring/appServlet/member-context.xml
+			/WEB-INF/spring/appServlet/wish-context.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
