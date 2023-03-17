@@ -1,9 +1,16 @@
 label {
-  color: black;
+  color: #2e1c08;
+  font-size: 20px;
+  font-style: normal;
 }
 
 div.cbox {
   position: relative;
   top: 50px;
   left: 820px;
+  margin-left: 7px;
+  width: 250px;
+  height: 96px;
+  background-size: 210;
+  background-image: url(../img/필터.jpg);
 }

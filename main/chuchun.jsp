@@ -31,6 +31,10 @@ pageEncoding="UTF-8"%>
 
     <!-- Script -->
     <!-- <script src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
+    <script src="./JavaScript/img-slider.js" defer></script>
+    <script src="./JavaScript/menu.js" defer></script>
+    <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
     <script src="./JavaScript/roulette.js" defer></script>
     <script src="./JavaScript/filter_button.js" defer></script>
@@ -52,38 +56,37 @@ pageEncoding="UTF-8"%>
         </div>
         </div>
 
-      <div class="cbox">
-        <label><input type='radio' name='gender' value='F' onclick='checkOnlyOne(this)'/> 여자</label>
-        <label><input type='radio' name='gender' value='M' onclick='checkOnlyOne(this)'/> 남자</label>
         <br  >
-        <br  >
-        <label><input type='radio' name='age' value='date_1' onclick='getCheckboxValue()'/> 10대</label>
-        <label><input type='radio' name='age' value='date_2' onclick='getCheckboxValue()'/> 20대</label>
-        <label><input type='radio' name='age' value='date_3' onclick='getCheckboxValue()'/> 30대 이상</label>
-      </div>
-      <br  >
-      <br  >
-      <section class="recommend-items_cate">
-        <h2>간식, 과자, 떡</h2>
-        <div class="sorting_div">
-          <ul class="sorting_div_ul">
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_recommend">추천순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_new">신상품순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_sales">판매량순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_low">낮은가격순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_high">높은가격순</a>
-            </li>
-          </ul>
+        <div class="cbox">
+          <label>
+            <input type='radio' name='gender' value='F' onclick='checkOnlyOne(this)'/>
+            <span>여자</span>
+          </label>
+          <label>
+            <input type='radio' name='gender' value='M' onclick='checkOnlyOne(this)'/>
+            <span>남자</span>
+          </label>
+          <br>
+          <br>
+          <label>
+            <input type='radio' name='age' value='date_1' onclick='getCheckboxValue()'/>
+            <span>10대</span>
+          </label>
+          <label>
+            <input type='radio' name='age' value='date_2' onclick='getCheckboxValue()'/>
+            <span>20대</span>
+          </label>
+          <label>
+            <input type='radio' name='age' value='date_3' onclick='getCheckboxValue()'/>
+            <span>30대 이상</span>
+          </label>
         </div>
+
+      <br  >
+      <br  >
+      
+      <section class="recommend-items_cate">
+        <h2>나에게 꼭 맞는 상품 추천</h2>
         <div class="recommend-slide">
           <ul class="recommend-slide-items">
             <li class="recommend-slide-item">

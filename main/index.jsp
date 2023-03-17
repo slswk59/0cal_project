@@ -203,74 +203,593 @@ pageEncoding="UTF-8"%>
         </div>
       </section>
 
+         <!-- 서브배너 -->
       <section id="advertise">
         <div class="ad-img"></div>
+      </section> 
+
+      <section class="recommend-items_cate">
+        <h2>드라마 정주행 간식</h2>
+        <div class="recommend-slide">
+          <ul class="recommend-slide-items">
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="recommend-slide">
+          <ul class="recommend-slide-items">
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="recommend-slide">
+          <ul class="recommend-slide-items">
+          </ul>
+        </div>
+       
+      </section>
+      <br  >
+      <br  >
+
+      <section class="recommend-items_cate">
+        <h2>organic 디저트</h2>
+        <div class="recommend-slide">
+          <ul class="recommend-slide-items">
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="recommend-slide">
+          <ul class="recommend-slide-items">
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+            <li class="recommend-slide-item">
+              <div class="item-img-container">
+                <a href="goods.jsp">
+                  <img class="item-img" src="./img/item1.jpg" alt="추천 상품" />
+                </a>
+                <div class="cart_button_class">
+                  <a href="goods.jsp">
+                    <button
+                      type="button"
+                      class="cart_button"
+                      alt="장바구니 아이콘"
+                    >
+                      <i
+                        class="fa-solid fa-cart-shopping fa-2x"
+                        style="color: grey"
+                      ></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <a href="goods.jsp">
+                <h3 class="item-name">[알라] 크림치즈 2종</h3>
+              </a>
+              <a href="goods.jsp">
+                <p class="current-price">
+                  <span class="discount-rate">15%</span>
+                  2,890원
+                </p>
+              </a>
+              <a href="goods.jsp">
+                <p class="regular-price">3,400원</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="recommend-slide">
+          <ul class="recommend-slide-items">
+          </ul>
+        </div>
+      
       </section>
 
-      <section class="today-items">
-        <h2>홍길동님 맞춤 추천 상품</h2>
-        <div class="today-items2">
-        <div class="today-item">
-          <div class="today-wrapper">
-            <div class="today-img-container">
-              <img class="today-img" src="./img/today1.jpg" alt="오늘 특가" />
-            </div>
-            <p class="today-desc">신선하게 즐기는 보랏빛 달콤함</p>
-            <h3 class="today-name">국산 블루베리 100g (특대)</h3>
-            <p class="today-price">
-              <span class="discount-rate">46%</span>
-              4,765원
-              <span class="today-regular-price"> 8,990원 </span>
-            </p>
-          </div>
-        </div>
-        <div class="today-item">
-          <div class="today-wrapper">
-            <div class="today-img-container">
-              <img class="today-img" src="./img/today1.jpg" alt="오늘 특가" />
-            </div>
-            <p class="today-desc">신선하게 즐기는 보랏빛 달콤함</p>
-            <h3 class="today-name">국산 블루베리 100g (특대)</h3>
-            <p class="today-price">
-              <span class="discount-rate">46%</span>
-              4,765원
-              <span class="today-regular-price"> 8,990원 </span>
-            </p>
-          </div>
-        </div>  
-      </div>
-      <div class="today-items2">
-        <div class="today-item">
-          <div class="today-wrapper">
-            <div class="today-img-container">
-              <img class="today-img" src="./img/today1.jpg" alt="오늘 특가" />
-            </div>
-            <p class="today-desc">신선하게 즐기는 보랏빛 달콤함</p>
-            <h3 class="today-name">국산 블루베리 100g (특대)</h3>
-            <p class="today-price">
-              <span class="discount-rate">46%</span>
-              4,765원
-              <span class="today-regular-price"> 8,990원 </span>
-            </p>
-          </div>
-        </div>
-        <div class="today-item">
-          <div class="today-wrapper">
-            <div class="today-img-container">
-              <img class="today-img" src="./img/today1.jpg" alt="오늘 특가" />
-            </div>
-            <p class="today-desc">신선하게 즐기는 보랏빛 달콤함</p>
-            <h3 class="today-name">국산 블루베리 100g (특대)</h3>
-            <p class="today-price">
-              <span class="discount-rate">46%</span>
-              4,765원
-              <span class="today-regular-price"> 8,990원 </span>
-            </p>
-          </div>
-        </div>  
-      </div>
-      </section>
     </main>
+
     <footer>
       <jsp:include page="footer.jsp" />
     </footer>

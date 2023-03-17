@@ -1,3 +1,8 @@
+function getCheckboxValue() {
+  const selectedAge = document.querySelector('input[name="age"]:checked').value;
+  console.log(selectedAge);
+}
+
 function checkgen(element) {
   const checkboxes = document.getElementsByName("gen");
 
