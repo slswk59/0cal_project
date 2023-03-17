@@ -40,7 +40,6 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
     <script src="./JavaScript/cartcount.js" defer></script>
-    <script src="./JavaScript/cartselectdelete.js" defer></script>
     <script src="./JavaScript/cartselectchoose.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>

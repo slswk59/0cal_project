@@ -40,12 +40,9 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
-  // 선택 삭제 버튼 클릭 시
-  $('.select_delete').click(function () {
-    // 선택된 체크박스를 찾아서 삭제
-    $('.choose_checkbox:checked').each(function () {
-      $(this).closest('tr').remove();
-    });
-  });
-});
+function deleteSelected() {
+  var checkedBoxes = $('input[name="choose_checkbox"]:checked');
+
+  // 체크된 체크박스를 삭제
+  checkedBoxes.parent().parent().remove();
+}

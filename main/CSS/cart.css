@@ -371,13 +371,3 @@ span.cart_order_button_text {
   font-size: 16px;
   font-weight: 500;
 }
-
-/* 체크박스가 체크된 경우 */
-.goods_checkbox:checked + .check_icon_group svg path:first-of-type {
-  fill: #ffa500;
-}
-
-/* 체크박스가 체크되지 않은 경우 */
-.goods_checkbox:not(:checked) + .check_icon_group svg path:first-of-type {
-  fill: #c1c1c1;
-}
