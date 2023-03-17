@@ -36,20 +36,21 @@ section.recommend-items_cate h2 {
   font-size: 28px;
 }
 
+
+   
 section.recommend-items_cate .recommend-slide-items {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  cursor: pointer;
+  display: grid;
+   grid-template-columns: repeat(auto-fill, 249px);
+   gap: 31px 18px;
+   width: 100%;
 }
 
 section.recommend-items_cate .recommend-slide-item {
-  width: 250px;
-  height: 400px;
-  margin: 0 6.25px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
 }
 
 div.item-img-container {
