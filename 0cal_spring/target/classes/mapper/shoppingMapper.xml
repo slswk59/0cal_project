@@ -6,11 +6,11 @@
     <mapper namespace="shopping">
     <!-- 상품관련 -->
 	<select id="productCount" resultType="int">
-		SELECT count(*) FROM product;
+		SELECT count(*) FROM product
 	</select>
 	
 	<select id="selectOneProduct" parameterType="int" resultType="shopping.dto.ProductDTO">
-		SELECT * FROM product WHERE pr_key=#{pr_key};
+		SELECT * FROM product WHERE pr_key=#{pr_key}
 	</select>
 	
 
