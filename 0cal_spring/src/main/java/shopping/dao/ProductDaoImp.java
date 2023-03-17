@@ -26,7 +26,7 @@ public class ProductDaoImp implements ProductDAO{
 
 	@Override
 	public ProductDTO selectOne(int pr_key) {
-		return sqlSession.selectOne("shopping.selectOneProduct");
+		return sqlSession.selectOne("shopping.selectOneProduct", pr_key);
 	}
 
 	@Override

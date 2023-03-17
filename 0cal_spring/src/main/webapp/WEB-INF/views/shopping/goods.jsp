@@ -59,11 +59,11 @@ pageEncoding="UTF-8"%>
           <h1 class="goods_title_h1">${dto.pr_name}</h1>
         </div>
         <h2 class="goods_pricegroup">
-          <span class="goods_dcper">${dto.pr_dcper}</span>
+          <span class="goods_dcper"><fmt:formatNumber type="percent" value="${dto.pr_dcper}" /></span>
           <span class="goods_dcprice">${dto.pr_dcprice}</span>
           <span class="goods_pricewon">원</span>
         </h2>
-        <span class="goods_price">${dto.pr_price}</span>
+        <span class="goods_price">${dto.pr_price}원</span>
         <div class="goods_descriptions_div">
           <dl class="goods_decription">
             <dt class="goods_key_dt">판매자</dt>

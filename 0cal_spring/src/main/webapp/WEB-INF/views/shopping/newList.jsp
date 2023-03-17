@@ -80,7 +80,7 @@ pageEncoding="UTF-8"%>
               <div class="item-img-container">
               	<span style="display:none;">{$dto.pr_key}</span>
                 <c:url var="path" value="goods.do">
-						<c:param name="pr_key" value="${dto.pr_key}" />
+					<c:param name="pr_key" value="${dto.pr_key}" />
 				</c:url>
 				<a href="${path}">
                   <img class="item-img" src="${dto.pr_thumbnail}" alt="추천 상품" />

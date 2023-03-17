@@ -28,6 +28,7 @@ public class ProductController {
 	//상품상세페이지 로딩
 	@RequestMapping("/shopping/goods.do")
 	public ModelAndView oneListExecute(int pr_key, ModelAndView mav) {
+		System.out.println("pr_key:" + pr_key);
 		mav.addObject("dto", productService.selectOneProcess(pr_key));
 		mav.setViewName("shopping/goods");
 		return mav;
