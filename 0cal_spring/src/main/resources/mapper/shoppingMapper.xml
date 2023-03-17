@@ -63,7 +63,7 @@
 
 
 	<!-- 구매내역관련 -->
-	<resultMap type="shopping.dto.OrdersDTO" id="listSelect" autoMapping="true">
+	 <resultMap type="shopping.dto.OrdersDTO" id="listSelect" autoMapping="true">
 		<association property="memberDTO" javaType="member.dto.MemberDTO">
 			<result column="id" property="id"/>
 		</association>
@@ -82,5 +82,26 @@
 			) WHERE RankNO = 1
 	</select>
 
+
+	<resultMap type="shopping.dto.OrdersDTO" id="detailListSelect" autoMapping="true">
+		<association property="productDTO" javaType="shopping.dto.ProductDTO">
+			<result column="pr_name" property="pr_name"/>
+			<result column="pr_thumbnail" property="pr_thumbnail"/>
+			<result column="pr_price" property="pr_price"/>
+			<result column="pr_dcprice" property="pr_dcprice"/>
+		</association>
+		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
+			<result column="or_detail_key" property="or_detail_key"/>
+			<result column="or_pr_count" property="or_pr_count"/>
+		</association>
+	</resultMap>
+	
+	<select id="orderDetailList" parameterType="int" resultMap="detailListSelect">
+			SELECT o.or_key, t.or_detail_key, t.or_pr_count,
+		    p.pr_name, p.pr_thumbnail, p.pr_price, p.pr_dcprice
+			FROM orders o, or_detail t, product p
+			WHERE o.or_key = t.or_key AND p.pr_key = t.pr_key AND o.or_key=#{or_key}
+			ORDER BY or_detail_key ASC, or_date ASC
+	</select>
 
 </mapper>

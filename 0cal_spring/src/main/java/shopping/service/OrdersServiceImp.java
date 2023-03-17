@@ -21,4 +21,9 @@ public class OrdersServiceImp implements OrdersService{
 		// TODO Auto-generated method stub
 		return ordersDao.orderslist(id);
 	}
+	@Override
+	public List<OrdersDTO> ordersDetailProcess(int or_key) {
+		// TODO Auto-generated method stub
+		return ordersDao.ordersDetailList(or_key);
+	}
 }

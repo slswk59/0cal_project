@@ -12,6 +12,7 @@ public class OrdersDTO {
 	private String del_status;
 	private MemberDTO memberDTO;
 	private ProductDTO productDTO;
+	private Or_detailDTO or_detailDTO;
 	
 
 	public OrdersDTO() {
@@ -73,6 +74,15 @@ public class OrdersDTO {
 	public void setProductDTO(ProductDTO productDTO) {
 		this.productDTO = productDTO;
 	}
+
+	public Or_detailDTO getOr_detailDTO() {
+		return or_detailDTO;
+	}
+
+	public void setOr_detailDTO(Or_detailDTO or_detailDTO) {
+		this.or_detailDTO = or_detailDTO;
+	}
+
 
 	
 	

@@ -23,6 +23,12 @@ public class OrdersDaoImp implements OrdersDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("shopping.orderlist", id);
 	}
+
+	@Override
+	public List<OrdersDTO> ordersDetailList(int or_key) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("shopping.orderDetailList", or_key);
+	}
 	
 
 }
