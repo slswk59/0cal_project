@@ -1,0 +1,9 @@
+label {
+  color: black;
+}
+
+div.cbox {
+  position: relative;
+  top: 50px;
+  left: 820px;
+}
