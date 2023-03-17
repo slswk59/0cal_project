@@ -40,6 +40,7 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
     <script src="./JavaScript/cartcount.js" defer></script>
+    <script src="./JavaScript/cartselectdelete.js" defer></script>
     <script src="./JavaScript/cartselectchoose.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
@@ -121,12 +122,14 @@ pageEncoding="UTF-8"%>
                       class="goods_minusbutton"
                       type="button"
                       aria-label="수량내리기"
+                      style="cursor: pointer"
                     ></button>
                     <div class="goods_countnumber">1</div>
                     <button
                       class="goods_plusbutton"
                       type="button"
                       aria-label="수량올리기"
+                      style="cursor: pointer"
                     ></button>
                   </div>
                   <div class="cart_goods_price">
@@ -189,12 +192,14 @@ pageEncoding="UTF-8"%>
                       class="goods_minusbutton"
                       type="button"
                       aria-label="수량내리기"
+                      style="cursor: pointer"
                     ></button>
                     <div class="goods_countnumber">1</div>
                     <button
                       class="goods_plusbutton"
                       type="button"
                       aria-label="수량올리기"
+                      style="cursor: pointer"
                     ></button>
                   </div>
                   <div class="cart_goods_price">
@@ -257,12 +262,14 @@ pageEncoding="UTF-8"%>
                       class="goods_minusbutton"
                       type="button"
                       aria-label="수량내리기"
+                      style="cursor: pointer"
                     ></button>
                     <div class="goods_countnumber">1</div>
                     <button
                       class="goods_plusbutton"
                       type="button"
                       aria-label="수량올리기"
+                      style="cursor: pointer"
                     ></button>
                   </div>
                   <div class="cart_goods_price">
@@ -303,16 +310,11 @@ pageEncoding="UTF-8"%>
                     type="button"
                     height="36"
                     radius="3"
+                    style="cursor: pointer"
+                    onclick="window.open('http://localhost:8090/delivery.jsp', 'btn-add-delivery', 'width=600, height=400')"
                   >
-                    <a
-                      href="http://localhost:8090/csa.jsp"
-                      target="_blank"
-                      class="btn_transparent"
-                      id="delivery_edit_btn"
-                    >
-                    <span class="cart_destination_change">배송지 변경</span>
+                    새 배송지 추가
                   </button>
-                </a>
                 </div>
               </div>
               <div class="cart_price_group">
