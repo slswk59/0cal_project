@@ -45,13 +45,13 @@ pageEncoding="UTF-8"%>
     <div class="slide-section">
       <div class="slide-wrapper">
         <div class="slide-item">
-          <a href="#" style="background-image: url('./resources/img/배너1.jpg')"></a>
+          <a href="#" style="background-image: url('./resources/img/img1.jpg')"></a>
         </div>
         <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./resources/img/배너2.jpg')"></a>
+          <a href="#" style="background-image: url('./resources/img/img2.jpg')"></a>
         </div>
         <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./resources/img/배너3.jpg')"></a>
+          <a href="#" style="background-image: url('./resources/img/img3.jpg')"></a>
         </div>
     
         <!-- <div class="slide-item"><a href="#" style="background-image: url('./img/slide14.webp');"></a></div> -->

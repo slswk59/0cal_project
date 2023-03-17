@@ -1,5 +1,8 @@
 package shopping.dto;
 
+import member.dto.MemberDTO;
+
+
 public class OrdersDTO {
 
 	private int or_key;
@@ -7,7 +10,10 @@ public class OrdersDTO {
 	private int or_price;
 	private String or_date;
 	private String del_status;
+	private MemberDTO memberDTO;
+	private ProductDTO productDTO;
 	
+
 	public OrdersDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -51,6 +57,23 @@ public class OrdersDTO {
 	public void setDel_status(String del_status) {
 		this.del_status = del_status;
 	}
+	
+	public MemberDTO getMemberDTO() {
+		return memberDTO;
+	}
+
+	public void setMemberDTO(MemberDTO memberDTO) {
+		this.memberDTO = memberDTO;
+	}
+
+	public ProductDTO getProductDTO() {
+		return productDTO;
+	}
+
+	public void setProductDTO(ProductDTO productDTO) {
+		this.productDTO = productDTO;
+	}
+
 	
 	
 }

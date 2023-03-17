@@ -12,13 +12,13 @@
 }
 
 #advertise_cate div.img1 {
-  background-image: url('../img/배너1.jpg');
+  background-image: url('../img/img1.jpg');
 }
 #advertise_cate div.img2 {
-  background-image: url('../img/배너2.jpg');
+  background-image: url('../img/img2.jpg');
 }
 #advertise_cate div.img3 {
-  background-image: url('../img/배너3.jpg');
+  background-image: url('../img/img3.jpg');
 }
 
 section.recommend-items_cate {

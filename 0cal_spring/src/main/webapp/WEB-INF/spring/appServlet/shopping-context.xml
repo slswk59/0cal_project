@@ -2,19 +2,37 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-
-	<!-- ShoppingDaoImp 빈 선언 -->
+	<!-- Product 관련 -->
+	<!-- ProductDaoImp 빈 선언 -->
 	<bean id="productDao" class="shopping.dao.ProductDaoImp">
 		<property name="sqlSession" ref="sqlSession" />
 	</bean>
 
-	<!-- ShoppingServiceImp 빈 선언 -->
+	<!-- ProductServiceImp 빈 선언 -->
 	<bean id="productService" class="shopping.service.ProductServiceImp">
 		<property name="productDao" ref="productDao" />
 	</bean>
 
-	<!--  ShoppingController 빈 선언 -->
+	<!--  ProductController 빈 선언 -->
 	<bean class="shopping.controller.ProductController">
 		<property name="productService" ref="productService" />
 	</bean>
+	
+	
+	<!--  Orders 관련 -->
+	<!-- OrdersDaoImp 빈 선언 -->
+	<bean id="ordersDao" class="shopping.dao.OrdersDaoImp">
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
+
+	<!-- OrdersServiceImp 빈 선언 -->
+	<bean id="ordersService" class="shopping.service.OrdersServiceImp">
+		<property name="ordersDao" ref="ordersDao" />
+	</bean>
+
+	<!--  ShoppingController 빈 선언 -->
+	<bean class="shopping.controller.OrdersController">
+		<property name="ordersService" ref="ordersService" />
+	</bean>
+	
 </beans>

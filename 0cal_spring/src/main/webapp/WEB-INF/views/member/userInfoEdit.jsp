@@ -75,7 +75,7 @@ pageEncoding="UTF-8"%>
             <div class="main_under_div_left_text">마이칼로리</div>
             <ul class="main_user_div_left_list">
               <li class="main_user_div_left_column_li">
-                <a class="main_user_div_left_column_a">주문 내역<span class="css-e41glx e1x0rfoo0"></span></a>
+                <a class="main_user_div_left_column_a" href="${pageContext.request.contextPath}/shopping/orders.do" >주문 내역<span class="css-e41glx e1x0rfoo0"></span></a>
               </li>
               <li class="main_user_div_left_column_li">
                 <a class="main_user_div_left_column_a">찜한 상품<span class="css-e41glx e1x0rfoo0"></span></a>
@@ -84,7 +84,7 @@ pageEncoding="UTF-8"%>
                 <a class="main_user_div_left_column_a">배송지 관리<span class="css-e41glx e1x0rfoo0"></span></a>
               </li>
               <li class="main_user_div_left_column_li">
-                <a class="main_user_div_left_column_a">개인 정보 수정<span class="css-e41glx e1x0rfoo0"></span></a>
+                <a class="main_user_div_left_column_a" href="${pageContext.request.contextPath}/member/userInfoEdit.do" >개인 정보 수정<span class="css-e41glx e1x0rfoo0"></span></a>
               </li>
             </ul>
             <a href="#" class="inquery_atag"><div class="inquery_atag_div">
