@@ -17,8 +17,7 @@ pageEncoding="UTF-8"%>
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
-
-    <!-- CSS -->
+   <!-- CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/CSS/header.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/footer.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/style.css" />" >
@@ -31,13 +30,15 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="<c:url value="/resources/CSS/cart.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/wish.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/order.css" />" >
-
-    <!-- Script -->
+    
+   <!-- Script -->
     <script src="https://kit.fontawesome.com/43fd0ad460.js"crossorigin="anonymous"></script>
     <script type="text/javascript" src="../resources/JavaScript/img-slider.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/menu.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/recommend-slider.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/advertisement.js" defer></script>
+    <script type="text/javascript" src="../resources/JavaScript/deletecommend.js" defer></script>
+
   </head>
   <body>
     <header>
@@ -84,62 +85,71 @@ pageEncoding="UTF-8"%>
               ><i class="fa-solid fa-angle-right fa-lg"></i></span
           ></a>
         </div>
-        
+
+
 
         <div class="main_under_div_right">
           <div class="main_under_div_right_title_div">
-            <h2 class="main_under_div_right_title_div_h2">주문 내역</h2>
+            <h2 class="main_under_div_right_title_div_h2">주문내역 상세보기</h2>
           </div>
+         
+          
           <div class="main_under_div_right_line_div"></div>
+          
+         <c:forEach items="${aList}" var="dto">
           <div class="main_under_goods_list">
           
-    		<c:forEach items="${aList}" var="dto">
-            <div class="cart_goodslist_order">
-              <div class="ordertime_group_div">
-              	<span style="display:none;">{$dto.pr_key}</span>
-                <span class="ordertime_detail">${dto.or_date}</span>
-                <c:url var="path" value="or_detail.do">
-					<c:param name="or_key" value="${dto.or_key}" />
-				</c:url>
-                <a class="ordertime_detail_menu" href="${path}">주문내역 상세보기</a>
-              </div>
-              <div class="orderlist_group_div">
+               <div class="orderlist_group_div">
+               
                 <div class="orderlist_picture_text_div">
                   <a class="cart_goodslist_image_a">
+                  <span style="display:none;">{$dto.or_detailDTO.or_detail_key}</span>
                     <span class="cart_goodslist_image_span" style="background-image: url(${dto.productDTO.pr_thumbnail})"></span>
                   </a>
                   <div class="orderlist_group_div_textlist">
                     <dl class="orderlist_group_div_text_dl">
                       <dt class="orderlist_group_div_text_dt">상품명</dt>
-                      <dd class="orderlist_group_div_text_dd">${dto.productDTO.pr_name}외 다수</dd>
+                      <dd class="orderlist_group_div_text_dd">${dto.productDTO.pr_name}</dd>
                     </dl>
                     <dl class="orderlist_group_div_text_dl">
-                      <dt class="orderlist_group_div_text_dt">주문번호</dt>
-                      <dd class="orderlist_group_div_text_dd">${dto.or_key}</dd>
+                      <dt class="orderlist_group_div_text_dt">수량</dt>
+                      <dd class="orderlist_group_div_text_dd">${dto.or_detailDTO.or_pr_count}</dd>
                     </dl>
                     <dl class="orderlist_group_div_text_dl">
                       <dt class="orderlist_group_div_text_dt">결제금액</dt>
-                      <dd class="orderlist_group_div_text_dd">${dto.or_price}원</dd>
+                      <dd class="orderlist_group_div_text_dd">${dto.productDTO.pr_dcprice}원</dd>
                     </dl>
                   </div>
                 </div>
-                <div class="orderlist_orderstatus_inqury_div">
-                  <span class="orderlist_orderstatus_span">배송완료</span>
+
+            <div class="orderlist_cart_inqury_div">
                   <div class="orderlist_inqury_div">
                     <button
-                      class="orderlist_inqury_buttons cart_review_button"
+                      class="orderlist_inqury_buttons cart_input_button"
                       type="button"
                       height="36"
                       radius="3"
+                      style="cursor: pointer"
                     >
-                      <span class="orderlist_inqury_span">1:1 문의</span>
+                      <span class="orderlist_inqury_span">장바구니 담기</span>
                     </button>
                   </div>
+                  <div class="orderlist_inqury_div new-inqury-div">
+                    <button class="orderlist_inqury_buttons cart_review_button" 
+                     type="button"
+                    width="104"
+                    height="36"
+                    radius="4"
+                    style="cursor: pointer"
+                    >
+                    <span class="orderlist_inqury_span">후기작성</span>
+                </button>
+            </div>
                 </div>
               </div>
             </div>
-		</c:forEach>
-     
+ 		</c:forEach>
+       
             
           </div>
         </div>

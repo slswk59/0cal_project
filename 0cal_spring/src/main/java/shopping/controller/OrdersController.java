@@ -37,5 +37,15 @@ public class OrdersController {
 		return mav;
 	}
 	
+	//주문상세페이지 로딩
+	@RequestMapping("/shopping/or_detail.do")
+	public ModelAndView oneListExecute(int or_key, ModelAndView mav) {
+		System.out.println("or_key:" + or_key);
+		mav.addObject("aList", ordersService.ordersDetailProcess(or_key));
+		mav.setViewName("shopping/or_detail");
+		return mav;
+	}
+	
+	
 
 }

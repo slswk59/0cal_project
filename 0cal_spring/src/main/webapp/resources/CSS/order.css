@@ -80,9 +80,18 @@ dd.orderlist_group_div_text_dd {
 }
 
 div.orderlist_orderstatus_inqury_div {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+div.orderlist_cart_inqury_div {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-left: 40px;
+    gap: 6px;
 }
 
 span.orderlist_orderstatus_span {
@@ -98,7 +107,7 @@ div.orderlist_inqury_div {
   width: 96px;
 }
 
-button.orderlist_inqury_button {
+button.orderlist_inqury_buttons {
   display: block;
   padding: 0px 10px;
   text-align: center;
@@ -108,7 +117,18 @@ button.orderlist_inqury_button {
   border-radius: 3px;
   color: black;
   background-color: rgb(255, 255, 255);
-  border: 1px solid black;
+}
+
+button.cart_input_button{
+	color: rgb(255, 255, 255);
+    background-color: orange;
+    border: 0px none;
+}
+
+button.cart_review_button{
+	color: orange;
+    background-color: white;
+    border: 1px solid orange;
 }
 
 span.orderlist_inqury_span {
