@@ -40,10 +40,7 @@ pageEncoding="UTF-8"%>
       crossorigin="anonymous"
     ></script>
   <script type="text/javascript" src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../resources/JavaScript/img-slider.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/menu.js" defer></script>
-    <script type="text/javascript" src="../resources/JavaScript/recommend-slider.js" defer></script>
-    <script type="text/javascript" src="../resources/JavaScript/advertisement.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/goodscount.js" defer></script>
   </head>
   <body>
@@ -117,7 +114,7 @@ pageEncoding="UTF-8"%>
                   </div>
                   <div class="goods_choice_countdiv_price">
                     <span class="goods_choice_countdiv_price_span"
-                      >13500원</span
+                      >${dto.pr_dcprice}원</span
                     >
                   </div>
                 </div>
@@ -129,7 +126,7 @@ pageEncoding="UTF-8"%>
         <div class="goods_cartprice_upperdiv">
           <div class="goods_cartprice_div">
             <span class="goods_cartprice_div_title">총 상품금액 :</span>
-            <span class="goods_cartprice_div_price">13,500</span>
+            <span class="goods_cartprice_div_price">${dto.pr_dcprice}</span>
             <span class="goods_cartprice_div_text">원</span>
           </div>
         </div>
