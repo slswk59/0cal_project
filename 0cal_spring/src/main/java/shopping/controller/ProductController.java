@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import shopping.dto.PageDTO;
@@ -27,9 +28,8 @@ public class ProductController {
 	
 	//상품상세페이지 로딩
 	@RequestMapping("/shopping/goods.do")
-	public ModelAndView oneListExecute(int pr_key, ModelAndView mav) {
-		System.out.println("pr_key:" + pr_key);
-		mav.addObject("dto", productService.selectOneProcess(pr_key));
+	public ModelAndView oneListExecute(String pr_key, ModelAndView mav) {
+		mav.addObject("dto", productService.selectOneProcess(Integer.parseInt(pr_key)));
 		mav.setViewName("shopping/goods");
 		return mav;
 	}
@@ -67,6 +67,38 @@ public class ProductController {
 		mav.setViewName("shopping/salesList");
 		return mav;
 	}
+	
+	//카테고리페이지 로딩
+	@RequestMapping("/shopping/ctgProductList.do")
+	public ModelAndView ctgProductListExecute(@ModelAttribute("pv") PageDTO pv, ModelAndView mav, @RequestParam String category) {
+		System.out.println(pv);
+		int totalRecord = productService.ctgProductCountProcess(category); // product의 전체 카운트를 가지고 온다.
+		//mav.addObject("count", totalRecord);
+		if(totalRecord >=1) {
+			if(pv.getCurrentPage() == 0)
+				pv.setCurrentPage(1);
+			this.pdto = new PageDTO(pv.getCurrentPage(), totalRecord, pv.getCategory());
+			
+			mav.addObject("pv", this.pdto);
+			mav.addObject("aList", productService.ctgProductListProcess(this.pdto));
+		}
+		
+			String viewName = "shopping/ctgProductList?categorList=" + category;
+			System.out.println(viewName);
+			
+			mav.addObject("ctgProductList", category);	
+			mav.setViewName("shopping/ctgProductList");
+			return mav;
+		}
+	
+//		//상세페이지 로딩
+//		@RequestMapping("/shopping/goods.do")
+//		public ModelAndView cateListExecute(int cate_key, ModelAndView mav) {
+//			mav.addObject("dto", productService.selectOneProcess(cate_key));
+//			mav.setViewName("shopping/goods");
+//		return mav;
+//		}
+
 	
 //	//추천페이지-드라마 로딩
 //	@RequestMapping("/shopping/dThemeList.do")

@@ -16,6 +16,8 @@ public class PageDTO {
 	private String searchKey;
 	private String searchWord; 
 	
+	private String category;
+	
 	public PageDTO() {
 
 	}
@@ -53,6 +55,11 @@ public class PageDTO {
 		this(currentPage, totalCount);
 		this.searchKey = searchKey;
 		this.searchWord = searchWord;
+	}
+	
+	public PageDTO(int currentPage, int totalCount, String category) {
+		this(currentPage, totalCount);
+		this.category = category;
 	}
 
 	public int getCurrentPage() {
@@ -149,6 +156,14 @@ public class PageDTO {
 
 	public void setSearchWord(String searchWord) {
 		this.searchWord = searchWord;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 }

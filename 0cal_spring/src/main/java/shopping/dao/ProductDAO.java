@@ -13,5 +13,6 @@ public interface ProductDAO {
 	public List<ProductDTO> salesList(PageDTO pv);
 	public List<ProductDTO> dThemeList(PageDTO pv);
 	public List<ProductDTO> oThemeList(PageDTO pv);
-
+	public List<ProductDTO> ctgProductList(PageDTO pv);
+	public int ctgProductCount(String category);
 }

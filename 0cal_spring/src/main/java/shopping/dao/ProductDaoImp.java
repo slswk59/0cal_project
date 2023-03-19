@@ -49,6 +49,17 @@ public class ProductDaoImp implements ProductDAO{
 		return sqlSession.selectList("shopping.productthemeList_organic", pv);
 	}
 
+	@Override
+	public List<ProductDTO> ctgProductList(PageDTO pv) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("shopping.ctgProductList", pv);
+	}
+
+	@Override
+	public int ctgProductCount(String category) {
+		return sqlSession.selectOne("shopping.ctgProductCount", category);
+	}
+
 	
 
 
