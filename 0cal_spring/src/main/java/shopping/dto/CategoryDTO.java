@@ -3,6 +3,7 @@ package shopping.dto;
 public class CategoryDTO {
 	private int cate_key;
 	private String cate_name;
+	private ProductDTO productDTO;
 	
 	public CategoryDTO() {
 		// TODO Auto-generated constructor stub
@@ -22,6 +23,14 @@ public class CategoryDTO {
 
 	public void setCate_name(String cate_name) {
 		this.cate_name = cate_name;
+	}
+
+	public ProductDTO getProductDTO() {
+		return productDTO;
+	}
+
+	public void setProductDTO(ProductDTO productDTO) {
+		this.productDTO = productDTO;
 	}
 	
 	

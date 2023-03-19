@@ -22,11 +22,17 @@ public class MemberServiceImp implements MemberService {
 		return new AuthInfo(dto.getId(), dto.getUser_name(), dto.getUser_pass());
 	}
 
+	//중복확인
+	@Override
+	public int dupCheckId(String userId) {
+		return memberDao.dupCheckId(userId);
+	}
+	
 	//로그인처리
 	@Override
 	public AuthInfo loginProcess(MemberDTO dto) {
 		MemberDTO member = memberDao.selectById(dto.getId());
-		return new AuthInfo(member.getId(), member.getUser_pass());
+		return new AuthInfo(member.getId(), member.getUser_name(), member.getUser_pass());
 	}
 
 	//특정id조회

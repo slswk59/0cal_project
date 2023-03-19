@@ -48,4 +48,12 @@ public class MemberDaoImp implements MemberDAO{
 		sqlSession.delete("member.deleteMember", id);
 	}
 
+	//중복확
+	@Override
+	public int dupCheckId(String userId) {
+		return sqlSession.selectOne("member.dupCheckId", userId);
+		// TODO Auto-generated method stub
+		
+	}
+
 }

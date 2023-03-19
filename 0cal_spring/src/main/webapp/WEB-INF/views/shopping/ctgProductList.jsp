@@ -40,11 +40,30 @@ pageEncoding="UTF-8"%>
     <script type="text/javascript" src="../resources/JavaScript/menu.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/recommend-slider.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/advertisement.js" defer></script>
-    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+    function init(){
+    	if(${ctgProductList} == 1){
+    		document.getElementById("title").innerHTML = "과자,스낵,쿠키";
+    	} else if(${ctgProductList} == 2) {
+    		document.getElementById("title").innerHTML = "초콜릿,젤리,캔디";
+    	} else if(${ctgProductList} == 3) {
+    		document.getElementById("title").innerHTML = "떡,한과";
+    	} else if(${ctgProductList} == 4) {
+    		document.getElementById("title").innerHTML = "아이스크림";
+    	} else if(${ctgProductList} == 5) {
+    		document.getElementById("title").innerHTML = "식빵,빵류";
+    	} else if(${ctgProductList} == 6) {
+    		document.getElementById("title").innerHTML = "케이크,파이,디저트";
+    	}
+    }
+    </script>
+    
   </head>
-  <body>
+  <body onload="init();">
     <header>
-      <jsp:include page="../common/header.jsp" />
+      <jsp:include page="../common/header.jsp"/>
     </header>
     <main role="main">
       <section id="advertise_cate">
@@ -52,6 +71,9 @@ pageEncoding="UTF-8"%>
       </section>
 
       <section class="recommend-items_cate">
+      	<div>
+ 	      <span class="category-name" id="title"></span>
+      	</div>
         <div class="sorting_div">
           <ul class="sorting_div_ul">
             <li class="sorting_group">
@@ -81,10 +103,10 @@ pageEncoding="UTF-8"%>
               <div class="item-img-container">
               	<span style="display:none;">{$dto.pr_key}</span>
                 <c:url var="path" value="goods.do">
-					<c:param name="pr_key" value="${dto.pr_key}" />
+						<c:param name="pr_key" value="${dto.pr_key}" />
 				</c:url>
 				<a href="${path}">
-                  <img class="item-img" src="${dto.pr_thumbnail}" alt="추천 상품" />
+                  <img class="item-img" src="${dto.pr_detailimage}" alt="추천 상품" />
                 </a>
                 <div class="cart_button_class">
                   <a href="${path}">
@@ -121,14 +143,14 @@ pageEncoding="UTF-8"%>
         
         <div class="paging_group">
      
-          <a class="paging_atag" href="newList.do?currentPage=1">
+          <a class="paging_atag" href="ctgProductList.do?currentPage=1">
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
               alt="처음 페이지로 이동하기 아이콘"
             />
           </a>
           	<c:if test="${pv.currentPage>1}">
-          	<a class="paging_atag" href="newList.do?currentPage=${pv.startPage-pv.blockPage}">
+          	<a class="paging_atag" href="ctgProductList.do?currentPage=${pv.startPage-pv.blockPage}&category=${pv.category}">
             	<img
 	              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
 	              alt="이전 페이지로 이동하기 아이콘"
@@ -138,28 +160,28 @@ pageEncoding="UTF-8"%>
           	<c:forEach var="i" begin="${pv.startPage}" end="${pv.endPage}">
           		<c:choose>
           			<c:when test="${i==pv.currentPage}">
-          				<a class="paging_atag" style="color: orange;" href="newList.do?currentPage=${i}">${i}</a>
+          				<a class="paging_atag" style="color: orange;" href="ctgProductList.do?currentPage=${i}&category=${pv.category}">${i}</a>
           			</c:when>
          			 <c:otherwise>
-         				 <a class="paging_atag" href="newList.do?currentPage=${i}">${i}</a>
+         				 <a class="paging_atag" href="ctgProductList.do?currentPage=${i}&category=${pv.category}">${i}</a>
          			 </c:otherwise>
        			</c:choose>
           </c:forEach>
 			<c:if test="${pv.endPage < pv.totalPage}">
-	          <a class="paging_atag" href="newList.do?currentPage=${pv.startPage + pv.blockPage}">
+	          <a class="paging_atag" href="ctgProductList.do?currentPage=${pv.startPage + pv.blockPage}&category=${pv.category}">
 	            <img
 	              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
 	              alt="다음 페이지로 이동하기 아이콘"
 	            />
 	          </a>
           </c:if>
-          <a class="paging_atag" href="newList.do?currentPage=${pv.totalPage}">
+          <a class="paging_atag" href="ctgProductList.do?currentPage=${pv.totalPage}&category=${pv.category}">
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
               alt="마지막 페이지로 이동하기 아이콘"
             />
           </a>
-        </div>
+        </div> 
       </section>
     </main>
     <footer>

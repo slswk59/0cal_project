@@ -33,9 +33,9 @@ pageEncoding="UTF-8"%>
 
     <!-- Script -->
     <script
-      src="https://kit.fontawesome.com/43fd0ad460.js"
-      crossorigin="anonymous"
-    ></script>
+      src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
+    <script type="module" defer src="/myapp/resources/JavaScript/jquery-1.12.4.js"></script>
+    <script type="module" defer src="/myapp/resources/JavaScript/jquery-1.12.4.min.js"></script>
     <script src="./JavaScript/img-slider.js" defer></script>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>

@@ -8,5 +8,6 @@ public interface MemberDAO {
 	public void updateMember(MemberDTO dto); //개인정보수정
 	public void updateByPass(MemberDTO dto); //비번변경
 	public void deleteMember(String id); //회원탈퇴
+	public int dupCheckId(String userId); //중복체
 	
 }

@@ -2,14 +2,20 @@ package member.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import member.dto.AuthInfo;
@@ -32,10 +38,10 @@ public class MemberController {
 	}
 	
 	//홈화면
-		@RequestMapping(value="/index.do", method=RequestMethod.GET)
-		public String index() {
-			return "index";
-		}
+	@RequestMapping(value="/index.do", method=RequestMethod.GET)
+	public String index() {
+		return "index";
+	}
 
 	//회원가입 폼 불러오기
 	@RequestMapping(value="/member/signup.do", method=RequestMethod.GET)
@@ -43,7 +49,18 @@ public class MemberController {
 		mav.setViewName("member/signup");
 		return mav;
 	}
-
+	
+	//중복체크
+	@RequestMapping(value="/member/dupCheck.do", method=RequestMethod.POST)
+	@ResponseBody
+	public int dupCheck(@RequestBody HttpServletRequest request, HttpSession session) {
+		String userId = request.getParameter("userId");
+				
+		int result = memberService.dupCheckId(userId);
+		System.out.println(result);
+		return result;
+	}
+		
 	//회원가입 처리
 	@RequestMapping(value="/member/signup.do", method=RequestMethod.POST)
 	public String addMember(MemberDTO memberDto, HttpSession session) {
@@ -54,8 +71,9 @@ public class MemberController {
 	}
 	
 	//로그아웃 처리
-	@RequestMapping(value="/logout.do")
+	@RequestMapping(value="/logout.do", method=RequestMethod.GET)
 	public String logoutMember(HttpSession session) {
+		
 		session.invalidate();
 		return "redirect:/index.do";
 	}
@@ -65,7 +83,6 @@ public class MemberController {
 	public String loginMember() {
 		return "member/login";
 	}
-	
 	
 	//로그인 처리
 	@RequestMapping(value="/member/login.do", method=RequestMethod.POST)
@@ -81,7 +98,7 @@ public class MemberController {
 				rememberCookie.setMaxAge(0);
 			}
 			resp.addCookie(rememberCookie);
-			return "redirect:/member/userInfoEdit.do";
+			return "redirect:/index.do";
 		}catch(Exception e) {
 			resp.setContentType("text/html;charset=UTF-8");
 			
@@ -124,6 +141,17 @@ public class MemberController {
 		memberService.deleteMemberProcess(authInfo.getId());
 		System.out.println(authInfo.getId());
 		return "redirect:/index.do";
+	}
+	
+	@RequestMapping(value="/member/loginCheck.do", method=RequestMethod.GET, produces="application/text; charset=UTF-8")
+	@ResponseBody
+	public String loginCheck(HttpSession session) {
+		AuthInfo authInfo = (AuthInfo)session.getAttribute("authInfo");
+		if(authInfo != null) {
+			return authInfo.getUser_name();
+		}
+		
+		return null;
 	}
 	
 

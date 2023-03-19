@@ -37,6 +37,10 @@ pageEncoding="UTF-8"%>
     <script type="text/javascript" src="./resources/JavaScript/menu.js" defer></script>
     <script type="text/javascript" src="./resources/JavaScript/recommend-slider.js" defer></script>
     <script type="text/javascript" src="./resources/JavaScript/advertisement.js" defer></script>
+    <script type="module" defer src="./resources/JavaScript/jquery-1.12.4.js"></script>
+    <!-- 로그인 상태 체크 ajax 호출하기 위해 header.jsp import 하는 파일에서 선언 필요 -->
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    
   </head>
   <body>
     <header>

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
  
 <div id="wrap">
   <div id="container">
@@ -10,10 +8,10 @@ pageEncoding="UTF-8"%>
       <div id="header">
         <ul id="userMenu" class="right">
           <li class="menu-item">
-            <a href="${pageContext.request.contextPath}/member/signup.do" class="link_menu">회원가입</a>
+            <a id="userMenu1Path" href="${pageContext.request.contextPath}/member/signup.do" class="link_menu"><span id="userMenu1Text">회원가입</span></a>
           </li>
           <li class="menu-item">
-            <a href="${pageContext.request.contextPath}/member/login.do" class="link_menu">로그인</a>
+            <a id="userMenu2Path" href="${pageContext.request.contextPath}/member/login.do" class="link_menu"><span id="userMenu2Text">로그인</span></a>
           </li>
           <li id="csCenter" class="menu-item">
             <a href="#" class="link_menu">고객센터</a>
@@ -37,37 +35,37 @@ pageEncoding="UTF-8"%>
               </a>
               <ul class="sub-menu hidden">
                 <li class="sub-menu-item">
-                  <a href="#"
+                  <a href="${pageContext.request.contextPath}/shopping/ctgProductList.do?category=1"
                     ><i class="fa-solid fa-cookie-bite fa-fw fa-lg"></i
                     >&nbsp;&nbsp;&nbsp;과자,스낵,쿠키</a
                   >
                 </li>
                 <li class="sub-menu-item">
-                  <a href="#"
+                  <a href="${pageContext.request.contextPath}/shopping/ctgProductList.do?category=2"
                     ><i class="fa-solid fa-candy-cane fa-fw fa-lg"></i
                     >&nbsp;&nbsp;&nbsp;초콜릿,젤리,캔디</a
                   >
                 </li>
                 <li class="sub-menu-item">
-                  <a href="#"
+                  <a href="${pageContext.request.contextPath}/shopping/ctgProductList.do?category=3"
                     ><i class="fa-solid fa-hockey-puck fa-fw fa-lg"></i
                     >&nbsp;&nbsp;&nbsp;떡,한과</a
                   >
                 </li>
                 <li class="sub-menu-item">
-                  <a href="#"
+                  <a href="${pageContext.request.contextPath}/shopping/ctgProductList.do?category=4"
                     ><i class="fa-solid fa-ice-cream fa-fw fa-lg"></i
                     >&nbsp;&nbsp;&nbsp;아이스크림</a
                   >
                 </li>
                 <li class="sub-menu-item">
-                  <a href="#"
+                  <a href="${pageContext.request.contextPath}/shopping/ctgProductList.do?category=5"
                     ><i class="fa-solid fa-bread-slice fa-fw fa-lg"></i
                     >&nbsp;&nbsp;&nbsp;식빵,빵류</a
                   >
                 </li>
                 <li class="sub-menu-item">
-                  <a href="#"
+                  <a href="${pageContext.request.contextPath}/shopping/ctgProductList.do?category=6"
                     ><i class="fa-solid fa-cake-candles fa-fw fa-lg"></i
                     >&nbsp;&nbsp;&nbsp;케이크,파이,디저트</a
                   >
@@ -114,3 +112,30 @@ pageEncoding="UTF-8"%>
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+	  $.ajax({
+             type : "get",
+             url : "${pageContext.request.contextPath}/member/loginCheck.do",
+			 dataType: "text",
+             async: false, 
+             success : function(data){
+             	if (data) {
+             		$("#userMenu1Path").attr("href", "${pageContext.request.contextPath}/member/userInfoEdit.do");
+             		$("#userMenu1Text").text(data);
+             		$("#userMenu2Path").attr("href", "${pageContext.request.contextPath}/member/logout.do");
+             		$("#userMenu2Text").text("로그아웃");
+             	} else {
+             		$("#userMenu1Path").attr("href", "${pageContext.request.contextPath}/member/signup.do");
+             		$("#userMenu1Text").text("회원가입");
+             		$("#userMenu2Path").attr("href", "${pageContext.request.contextPath}/member/login.do");
+             		$("#userMenu2Text").text("로그인");
+             	}
+             },
+             error : function(request) {
+                console.log("error : " + request.responseText);
+             }
+         })
+  });
+</script>
