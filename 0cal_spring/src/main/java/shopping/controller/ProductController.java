@@ -1,9 +1,6 @@
 package shopping.controller;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import shopping.dto.PageDTO;
-import shopping.dto.ProductDTO;
 import shopping.service.ProductService;
 
 
@@ -94,36 +90,6 @@ public class ProductController {
 			mav.setViewName("shopping/ctgProductList");
 			return mav;
 		}
-	
-	@RequestMapping(value="/index.do", method=RequestMethod.GET)
-	public String index(@ModelAttribute("pv") PageDTO pv, Model model) {
-		pv.setStartRow(0);
-		pv.setEndRow(12);
-		List<ProductDTO> list =  productService.newListProcess(pv);
-		
-		model.addAttribute("prdList" , list);
-		
-		return "index";
-	}
-	
-	
-	@RequestMapping(value="/search.do", method=RequestMethod.GET)
-	public String search(@ModelAttribute("pv") PageDTO pv, Model model) {
-		try {
-			List<ProductDTO> list =  productService.searchProcess(pv);
-			System.out.println(list);
-			model.addAttribute("searchList" , list);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return "searchResult";
-	}
-	
-	
-	
-	
-	
 	
 //		//상세페이지 로딩
 //		@RequestMapping("/shopping/goods.do")

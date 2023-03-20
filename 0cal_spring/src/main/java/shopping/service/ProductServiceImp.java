@@ -57,10 +57,5 @@ public class ProductServiceImp implements ProductService {
 	public int ctgProductCountProcess(String category) {
 		return productDao.ctgProductCount(category);
 	}
-	
-	@Override
-	public List<ProductDTO> searchProcess(PageDTO pv) {
-		return productDao.searchList(pv);
-	}
 
 }

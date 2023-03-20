@@ -59,11 +59,6 @@ public class ProductDaoImp implements ProductDAO{
 	public int ctgProductCount(String category) {
 		return sqlSession.selectOne("shopping.ctgProductCount", category);
 	}
-	
-	@Override
-	public List<ProductDTO> searchList(PageDTO pv) {
-		return sqlSession.selectList("shopping.searchList", pv);
-	}
 
 	
 

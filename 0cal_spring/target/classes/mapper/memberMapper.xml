@@ -14,12 +14,6 @@
 	 	]]>
 	 </insert>
 	 
- 	 <!-- id 중복체크 -->
- 	<select id="dupCheckId" parameterType="string" resultType="int">
- 		SELECT Count(*) FROM member
- 		WHERE id = #{userId}
- 	</select>
- 	
  	 <!-- id조회 -->
  	<select id="selectById" parameterType="string" resultType="member.dto.MemberDTO">
  		SELECT * FROM member
