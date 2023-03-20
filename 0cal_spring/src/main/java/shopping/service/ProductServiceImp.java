@@ -47,4 +47,21 @@ public class ProductServiceImp implements ProductService {
 		return productDao.oThemeList(pv);
 	}
 
+	@Override
+	public List<ProductDTO> ctgProductListProcess(PageDTO pv) {
+		// TODO Auto-generated method stub
+		return productDao.ctgProductList(pv);
+	}
+
+	@Override
+	public int ctgProductCountProcess(String category) {
+		return productDao.ctgProductCount(category);
+	}
+	
+
+	@Override
+	public List<ProductDTO> searchProcess(PageDTO pv) {
+		return productDao.searchList(pv);
+	}
+
 }

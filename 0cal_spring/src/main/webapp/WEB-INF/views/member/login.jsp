@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="<c:url value="/resources/CSS/cart.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/wish.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/order.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/signUp.css" />" >
+    <link rel="stylesheet" href="<c:url value="/resources/CSS/signup.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/login.css" />" >
 
     <!-- Script -->
@@ -38,41 +38,35 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
+    <script src="./JavaScript/login.js" defer></script>
   </head>
   <body>
     <header>
-      <jsp:include page="header.jsp" />
+      <jsp:include page="../common/header.jsp" />
     </header>
     <form name="login" method="post"  action="login.do" >
     <div class="wrapper">
-      <div class="login"><b>로그인</b></div>
+ <div class="login"><b>로그인</b></div>
 
       <div class="middle_login">
-        <input
-          type="text"
-          class="loginid"
-          name="id"
-          placeholder="아이디를 입력해주세요."
-        />
+        <input type="text" id="inputId" name="id" class="loginid" placeholder="아이디를 입력해주세요."/>
       </div>
 
       <div class="middle_login">
-        <input
-          type="text"
-          class="loginpw"
-          name="user_pass"
-          placeholder="비밀번호를 입력해주세요."
-        />
+        <input type="password" id="inputPw" name="user_pass" class="loginpw" placeholder="비밀번호를 입력해주세요."/>
       </div>
 
-      <button type="submit" class="loginsuc">
+      <button type="submit" class="loginsuc" onclick="submit()">
         <span class="logintext">로그인</span>
       </button>
     </div>
+    
+    
     </form>
     
+    
     <footer>
-      <jsp:include page="footer.jsp" />
+      <jsp:include page="../common/footer.jsp" />
     </footer>
   </body>
 </html>

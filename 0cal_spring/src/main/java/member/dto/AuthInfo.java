@@ -27,6 +27,7 @@ public class AuthInfo {
 		this.user_pass = user_pass;
 	}
 
+	
 
 
 	public String getId() {

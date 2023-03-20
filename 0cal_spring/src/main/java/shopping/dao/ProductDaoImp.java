@@ -26,7 +26,7 @@ public class ProductDaoImp implements ProductDAO{
 
 	@Override
 	public ProductDTO selectOne(int pr_key) {
-		return sqlSession.selectOne("shopping.selectOneProduct");
+		return sqlSession.selectOne("shopping.selectOneProduct", pr_key);
 	}
 
 	@Override
@@ -47,6 +47,22 @@ public class ProductDaoImp implements ProductDAO{
 	@Override
 	public List<ProductDTO> oThemeList(PageDTO pv) {
 		return sqlSession.selectList("shopping.productthemeList_organic", pv);
+	}
+
+	@Override
+	public List<ProductDTO> ctgProductList(PageDTO pv) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("shopping.ctgProductList", pv);
+	}
+
+	@Override
+	public int ctgProductCount(String category) {
+		return sqlSession.selectOne("shopping.ctgProductCount", category);
+	}
+	
+	@Override
+	public List<ProductDTO> searchList(PageDTO pv) {
+		return sqlSession.selectList("shopping.searchList", pv);
 	}
 
 	

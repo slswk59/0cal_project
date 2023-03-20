@@ -39,6 +39,7 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
+    <script src="./JavaScript/deletecommend.js" defer></script>
   </head>
   <body>
     <header>
@@ -117,6 +118,7 @@ pageEncoding="UTF-8"%>
                     width="104"
                     height="36"
                     radius="4"
+                    style="cursor: pointer"
                   >
                     <span class="main_under_goods_list_buttons_cancle"
                       >삭제</span
@@ -127,6 +129,7 @@ pageEncoding="UTF-8"%>
                     width="104"
                     height="36"
                     radius="4"
+                    style="cursor: pointer"
                   >
                     <span class="main_under_goods_list_buttons_add"
                       ><img
@@ -139,6 +142,7 @@ pageEncoding="UTF-8"%>
                 </div>
               </div>
             </li>
+
             <li class="cart_goodslist">
               <a class="cart_goodslist_image_a">
                 <span class="cart_goodslist_image_span"></span>
@@ -165,6 +169,7 @@ pageEncoding="UTF-8"%>
                     width="104"
                     height="36"
                     radius="4"
+                    style="cursor: pointer"
                   >
                     <span class="main_under_goods_list_buttons_cancle"
                       >삭제</span
@@ -175,54 +180,7 @@ pageEncoding="UTF-8"%>
                     width="104"
                     height="36"
                     radius="4"
-                  >
-                    <span class="main_under_goods_list_buttons_add"
-                      ><img
-                        src="./img/cart.svg"
-                        alt=""
-                        class="main_under_goods_list_buttons_add_img"
-                      />담기</span
-                    >
-                  </button>
-                </div>
-              </div>
-            </li>
-            <li class="cart_goodslist">
-              <a class="cart_goodslist_image_a">
-                <span class="cart_goodslist_image_span"></span>
-              </a>
-              <div class="main_under_goods_list_title_button">
-                <div class="main_under_goods_list_title_button_underdiv">
-                  <div class="main_under_goods_list_title_only">
-                    <a
-                      href="https://drive.google.com/uc?id=1cDazD7rq82SKpTwP3hUBQtjAskzgHGF7"
-                      class="main_under_goods_list_title_only_a"
-                      >베리 까눌레</a
-                    >
-                  </div>
-                  <div class="main_under_goods_list_price_div">
-                    <span class="main_under_goods_list_price_dcper">10%</span
-                    ><span class="main_under_goods_list_dcprice">13500원</span
-                    ><span class="main_under_goods_list_price">15000원</span>
-                  </div>
-                </div>
-                <div class="main_under_goods_list_buttons">
-                  <button
-                    class="main_under_goods_list_buttons_cancle"
-                    type="button"
-                    width="104"
-                    height="36"
-                    radius="4"
-                  >
-                    <span class="main_under_goods_list_buttons_cancle"
-                      >삭제</span
-                    ></button
-                  ><button
-                    class="main_under_goods_list_buttons_add"
-                    type="button"
-                    width="104"
-                    height="36"
-                    radius="4"
+                    style="cursor: pointer"
                   >
                     <span class="main_under_goods_list_buttons_add"
                       ><img

@@ -14,5 +14,7 @@ public interface ProductService {
 	public List<ProductDTO> salesListProcess(PageDTO pv);
 	public List<ProductDTO> dThemeListProcess(PageDTO pv);
 	public List<ProductDTO> oThemeListProcess(PageDTO pv);
-
+	public List<ProductDTO> ctgProductListProcess(PageDTO pv);
+	public int ctgProductCountProcess(String category);
+	public List<ProductDTO> searchProcess(PageDTO pv);
 }

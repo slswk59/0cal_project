@@ -33,9 +33,9 @@ pageEncoding="UTF-8"%>
 
     <!-- Script -->
     <script
-      src="https://kit.fontawesome.com/43fd0ad460.js"
-      crossorigin="anonymous"
-    ></script>
+      src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
+    <script type="module" defer src="/myapp/resources/JavaScript/jquery-1.12.4.js"></script>
+    <script type="module" defer src="/myapp/resources/JavaScript/jquery-1.12.4.min.js"></script>
     <script src="./JavaScript/img-slider.js" defer></script>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>
@@ -63,7 +63,7 @@ pageEncoding="UTF-8"%>
     </head>
   <body>
     <header>
-        <jsp:include page="header.jsp" />
+        <jsp:include page="../common/header.jsp" />
       </header>
 
       <main role="main">
@@ -75,7 +75,7 @@ pageEncoding="UTF-8"%>
             <div class="main_under_div_left_text">마이칼로리</div>
             <ul class="main_user_div_left_list">
               <li class="main_user_div_left_column_li">
-                <a class="main_user_div_left_column_a">주문 내역<span class="css-e41glx e1x0rfoo0"></span></a>
+                <a class="main_user_div_left_column_a" href="${pageContext.request.contextPath}/shopping/orders.do" >주문 내역<span class="css-e41glx e1x0rfoo0"></span></a>
               </li>
               <li class="main_user_div_left_column_li">
                 <a class="main_user_div_left_column_a">찜한 상품<span class="css-e41glx e1x0rfoo0"></span></a>
@@ -84,7 +84,7 @@ pageEncoding="UTF-8"%>
                 <a class="main_user_div_left_column_a">배송지 관리<span class="css-e41glx e1x0rfoo0"></span></a>
               </li>
               <li class="main_user_div_left_column_li">
-                <a class="main_user_div_left_column_a">개인 정보 수정<span class="css-e41glx e1x0rfoo0"></span></a>
+                <a class="main_user_div_left_column_a" href="${pageContext.request.contextPath}/member/userInfoEdit.do" >개인 정보 수정<span class="css-e41glx e1x0rfoo0"></span></a>
               </li>
             </ul>
             <a href="#" class="inquery_atag"><div class="inquery_atag_div">
@@ -173,7 +173,7 @@ pageEncoding="UTF-8"%>
     </div>
     </main>
         <footer>
-            <jsp:include page="footer.jsp" />
+            <jsp:include page="../common/footer.jsp" />
         </footer>
   </body>
 </html>

@@ -105,5 +105,5 @@ public class MemberDTO {
 			throw new Exception();
 		this.user_pass = newPassword;
 	}
-	
+
 }

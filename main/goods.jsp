@@ -99,12 +99,14 @@ pageEncoding="UTF-8"%>
                       class="goods_minusbutton"
                       type="button"
                       aria-label="수량내리기"
+                      style="cursor: pointer"
                     ></button>
                     <div class="goods_countnumber">1</div>
                     <button
                       class="goods_plusbutton"
                       type="button"
                       aria-label="수량올리기"
+                      style="cursor: pointer"
                     ></button>
                   </div>
                   <div class="goods_choice_countdiv_price">
@@ -121,7 +123,7 @@ pageEncoding="UTF-8"%>
         <div class="goods_cartprice_upperdiv">
           <div class="goods_cartprice_div">
             <span class="goods_cartprice_div_title">총 상품금액 :</span>
-            <span class="goods_cartprice_div_price">13500</span>
+            <span class="goods_cartprice_div_price">13,500</span>
             <span class="goods_cartprice_div_text">원</span>
           </div>
         </div>
@@ -132,14 +134,22 @@ pageEncoding="UTF-8"%>
             width="56"
             height="56"
             radius="3"
+            style="cursor: pointer"
+            onclick="toggleWishList()"
           >
             <span class="wish_button_span">
-              <i class="fa-regular fa-heart fa-2x"></i>
+              <i class="fa fa-heart-o" style="font-size: 36px"></i>
             </span>
           </button>
 
           <div class="cart_button_div">
-            <button class="goods_cart_button" type="button" radius="3">
+            <button
+              class="goods_cart_button"
+              type="button"
+              radius="3"
+              style="cursor: pointer"
+              onclick="alert('장바구니 목록에 추가되었습니다.')"
+            >
               <span class="cart_button_span">장바구니 담기</span>
             </button>
           </div>

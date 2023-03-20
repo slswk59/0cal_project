@@ -124,3 +124,9 @@ div.main_under_div_right_line_div {
   align-items: center;
   border-bottom: 2px solid rgb(51, 51, 51);
 }
+
+.new-inqury-div button.orderlist_inqury_button {
+  margin: 1px;
+  background-color: #ffa500;
+}
+

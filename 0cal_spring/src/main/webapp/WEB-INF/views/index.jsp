@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
+ <c:set var="contextPath" value="${pageContext.request.contextPath}" /> <!-- /myapp 프로젝트 경로 리턴 -->
+ 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,26 +32,30 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="<c:url value="/resources/CSS/order.css"/>" >
 
     <!-- Script -->
-    <script src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/resources/JavaScript/img-slider.js"></script>
-    <script type="text/javascript" src="/resources/JavaScript/menu.js"></script>
-    <script type="text/javascript" src="/resources/JavaScript/recommend-slider.js"></script>
-    <script type="text/javascript" src="/resources/JavaScript/advertisement.js"></script>
+    <script type="text/javascript" src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./resources/JavaScript/img-slider.js" defer></script>
+    <script type="text/javascript" src="./resources/JavaScript/menu.js" defer></script>
+    <script type="text/javascript" src="./resources/JavaScript/recommend-slider.js" defer></script>
+    <script type="text/javascript" src="./resources/JavaScript/advertisement.js" defer></script>
+    <script type="module" defer src="./resources/JavaScript/jquery-1.12.4.js"></script>
+    <!-- 로그인 상태 체크 ajax 호출하기 위해 header.jsp import 하는 파일에서 선언 필요 -->
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    
   </head>
   <body>
     <header>
-      <jsp:include page="member/header.jsp" />
+      <jsp:include page="/WEB-INF/views/common/header.jsp" />
     </header>
     <div class="slide-section">
       <div class="slide-wrapper">
         <div class="slide-item">
-          <a href="#" style="background-image: url('./resources/img/배너1.jpg')"></a>
+          <a href="#" style="background-image: url('./resources/img/img1.jpg')"></a>
         </div>
         <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./resources/img/배너2.jpg')"></a>
+          <a href="#" style="background-image: url('./resources/img/img2.jpg')"></a>
         </div>
         <div class="hidden slide-item">
-          <a href="#" style="background-image: url('./resources/img/배너3.jpg')"></a>
+          <a href="#" style="background-image: url('./resources/img/img3.jpg')"></a>
         </div>
     
         <!-- <div class="slide-item"><a href="#" style="background-image: url('./img/slide14.webp');"></a></div> -->
@@ -273,7 +280,7 @@ pageEncoding="UTF-8"%>
       </section>
     </main>
     <footer>
-      <jsp:include page="member/footer.jsp" />
+      <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     </footer>
   </body>
 </html>

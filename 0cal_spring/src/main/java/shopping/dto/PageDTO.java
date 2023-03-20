@@ -4,7 +4,7 @@ public class PageDTO {
 
 	private int currentPage; // 현재페이지
 	private int totalCount; // 총 레코드수
-	private int blockCount = 5; // 한 페이지에 보여줄 레코드 수
+	private int blockCount = 12; // 한 페이지에 보여줄 레코드 수
 	private int blockPage = 3; // 한 블록에 보여줄 페이지 수
 	private int totalPage; // 총 페이지수
 	private int startRow; // 시작 레코드 번호
@@ -15,6 +15,8 @@ public class PageDTO {
 
 	private String searchKey;
 	private String searchWord; 
+	
+	private String category;
 	
 	public PageDTO() {
 
@@ -53,6 +55,11 @@ public class PageDTO {
 		this(currentPage, totalCount);
 		this.searchKey = searchKey;
 		this.searchWord = searchWord;
+	}
+	
+	public PageDTO(int currentPage, int totalCount, String category) {
+		this(currentPage, totalCount);
+		this.category = category;
 	}
 
 	public int getCurrentPage() {
@@ -150,5 +157,17 @@ public class PageDTO {
 	public void setSearchWord(String searchWord) {
 		this.searchWord = searchWord;
 	}
+
+	public String getCategory() {
+		return category;
+	}
 	
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+
+
+
 }

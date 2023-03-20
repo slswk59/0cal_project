@@ -39,6 +39,10 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/menu.js" defer></script>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script>
+    <script src="./JavaScript/cartcount.js" defer></script>
+    <script src="./JavaScript/cartselectdelete.js" defer></script>
+    <script src="./JavaScript/cartselectchoose.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <header>
@@ -51,9 +55,9 @@ pageEncoding="UTF-8"%>
           <div class="cart_goods">
             <div class="all_check">
               <label class="all_choose">
-                <input type="checkbox" class="goods_checkbox" checked />
+                <input type="checkbox" class="all_choose_checkbox" checked />
                 <div class="check_icon_group">
-                  <svg
+                  <!--<svg
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -71,20 +75,20 @@ pageEncoding="UTF-8"%>
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     ></path>
-                  </svg>
+                  </svg>-->
                 </div>
                 <span class="all_choose">전체선택</span>
               </label>
               <span class="l"></span>
-              <button class="all_reset">선택삭제</button>
+              <button class="select_delete">선택삭제</button>
             </div>
             <div class="cart_goodslist">
               <ul class="cart_goodslist">
                 <li class="cart_goodslist">
-                  <label class="all_choose">
-                    <input type="checkbox" class="goods_checkbox" checked />
+                  <label class="all_choose2">
+                    <input type="checkbox" class="choose_checkbox" checked />
                     <div class="check_icon_group">
-                      <svg
+                      <!--<svg
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -102,7 +106,7 @@ pageEncoding="UTF-8"%>
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         ></path>
-                      </svg>
+                      </svg>-->
                     </div>
                   </label>
                   <a class="cart_goodslist_image_a">
@@ -118,12 +122,14 @@ pageEncoding="UTF-8"%>
                       class="goods_minusbutton"
                       type="button"
                       aria-label="수량내리기"
+                      style="cursor: pointer"
                     ></button>
                     <div class="goods_countnumber">1</div>
                     <button
                       class="goods_plusbutton"
                       type="button"
                       aria-label="수량올리기"
+                      style="cursor: pointer"
                     ></button>
                   </div>
                   <div class="cart_goods_price">
@@ -149,10 +155,10 @@ pageEncoding="UTF-8"%>
                   </button>
                 </li>
                 <li class="cart_goodslist">
-                  <label class="all_choose">
-                    <input type="checkbox" class="goods_checkbox" checked />
+                  <label class="all_choose2_1">
+                    <input type="checkbox" class="choose_checkbox" checked />
                     <div class="check_icon_group">
-                      <svg
+                      <!--<svg
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -170,7 +176,7 @@ pageEncoding="UTF-8"%>
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         ></path>
-                      </svg>
+                      </svg>-->
                     </div>
                   </label>
                   <a class="cart_goodslist_image_a">
@@ -186,12 +192,14 @@ pageEncoding="UTF-8"%>
                       class="goods_minusbutton"
                       type="button"
                       aria-label="수량내리기"
+                      style="cursor: pointer"
                     ></button>
                     <div class="goods_countnumber">1</div>
                     <button
                       class="goods_plusbutton"
                       type="button"
                       aria-label="수량올리기"
+                      style="cursor: pointer"
                     ></button>
                   </div>
                   <div class="cart_goods_price">
@@ -217,10 +225,10 @@ pageEncoding="UTF-8"%>
                   </button>
                 </li>
                 <li class="cart_goodslist">
-                  <label class="all_choose">
-                    <input type="checkbox" class="goods_checkbox" checked />
+                  <label class="all_choose2_2">
+                    <input type="checkbox" class="choose_checkbox" checked />
                     <div class="check_icon_group">
-                      <svg
+                      <!--<svg
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -238,7 +246,7 @@ pageEncoding="UTF-8"%>
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         ></path>
-                      </svg>
+                      </svg>-->
                     </div>
                   </label>
                   <a class="cart_goodslist_image_a">
@@ -254,12 +262,14 @@ pageEncoding="UTF-8"%>
                       class="goods_minusbutton"
                       type="button"
                       aria-label="수량내리기"
+                      style="cursor: pointer"
                     ></button>
                     <div class="goods_countnumber">1</div>
                     <button
                       class="goods_plusbutton"
                       type="button"
                       aria-label="수량올리기"
+                      style="cursor: pointer"
                     ></button>
                   </div>
                   <div class="cart_goods_price">
@@ -300,8 +310,10 @@ pageEncoding="UTF-8"%>
                     type="button"
                     height="36"
                     radius="3"
+                    style="cursor: pointer"
+                    onclick="window.open('http://localhost:8090/delivery.jsp', 'btn-add-delivery', 'width=600, height=400')"
                   >
-                    <span class="cart_destination_change">배송지 변경</span>
+                    새 배송지 추가
                   </button>
                 </div>
               </div>

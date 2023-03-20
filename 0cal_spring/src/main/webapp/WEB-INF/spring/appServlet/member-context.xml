@@ -3,19 +3,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	
-<!-- MembersDaoImp 빈 선언 -->
-<bean id="memberDao" class="member.dao.MemberDaoImp">
-	<property name="sqlSession" ref="sqlSession" />
-</bean>
-
-<!-- MembersServiceImp 빈 선언 -->
-<bean id="memberService" class="member.service.MemberServiceImp">
-	<property name="memberDao" ref="memberDao" />
-</bean>
-
-<!-- MembersController 빈 선언 -->
-<bean class="member.controller.MemberController">
-	<property name="memberService" ref="memberService"></property>
-</bean>
+	<!-- MemberDaoImp 빈 선언 -->
+	<bean id="memberDao" class="member.dao.MemberDaoImp">
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
+	
+	<!-- MemberServiceImp 빈 선언 -->
+	<bean id="memberService" class="member.service.MemberServiceImp">
+		<property name="memberDao" ref="memberDao" />
+	</bean>
+	
+	<!-- MemberController 빈 선언 -->
+	<bean class="member.controller.MemberController">
+		<property name="memberService" ref="memberService"></property>
+	</bean>
 
 </beans>
