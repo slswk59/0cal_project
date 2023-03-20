@@ -84,6 +84,15 @@
 
 	<!-- 상품 구입횟수가 많은 상품은 추후 구현! 어려움. 구매횟수가 많은 것 -->
 	<!-- 상품 검색어 기능은 추후 구현! 너무 어려움. -->
+	<select id="searchList" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+		<![CDATA[ 
+		SELECT b.*
+			FROM(SELECT rownum AS rm, a.*
+                FROM(SELECT * FROM product WHERE REPLACE(pr_name,' ','') LIKE '%' ||  REPLACE(#{searchWord},' ','') || '%') a
+                )b
+		
+		]]>
+	</select>
 
 
 	<!-- 구매내역관련 -->
