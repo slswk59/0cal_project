@@ -46,6 +46,10 @@ public class OrdersController {
 		return mav;
 	}
 	
-	
+	//장바구니 폼
+		@RequestMapping(value="/shopping/cart_re.do", method=RequestMethod.GET)
+		public String cartExecute() {
+			return "shopping/cart_re";
+		}
 
 }

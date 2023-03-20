@@ -161,14 +161,14 @@ div.cart_goods_price {
   word-break: break-all;
 }
 
-span.cart_goods_dcprice {
+span.goods_choice_countdiv_price_span {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   color: rgb(51, 51, 51);
 }
 
-span.cart_goods_price {
+span.cart_goods_price_span {
   font-size: 14px;
   line-height: 24px;
   color: rgb(181, 181, 181);
