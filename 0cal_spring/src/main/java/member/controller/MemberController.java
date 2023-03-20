@@ -37,11 +37,7 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 	
-	//홈화면
-	@RequestMapping(value="/index.do", method=RequestMethod.GET)
-	public String index() {
-		return "index";
-	}
+
 
 	//회원가입 폼 불러오기
 	@RequestMapping(value="/member/signup.do", method=RequestMethod.GET)
