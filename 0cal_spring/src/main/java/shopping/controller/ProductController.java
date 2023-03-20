@@ -117,7 +117,7 @@ public class ProductController {
 			e.printStackTrace();
 		}
 		
-		return "searchResult";
+		return "search";
 	}
 	
 	

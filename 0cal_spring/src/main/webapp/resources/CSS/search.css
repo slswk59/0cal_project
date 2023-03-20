@@ -14,3 +14,14 @@
   text-align: center;
   padding: 222px 0px 244px;
 }
+
+ .no-result-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  .no-result-message p {
+    font-size: 20px;
+    color: gray;
+  }
