@@ -1,5 +1,6 @@
 package member.service;
 
+import common.execption.WrongIdPasswordException;
 import member.dao.MemberDAO;
 import member.dto.MemberDTO;
 import member.dto.AuthInfo;
@@ -28,10 +29,19 @@ public class MemberServiceImp implements MemberService {
 		return memberDao.dupCheckId(userId);
 	}
 	
-	//로그인처리
+	//로그인처리 0cal
 	@Override
 	public AuthInfo loginProcess(MemberDTO dto) {
 		MemberDTO member = memberDao.selectById(dto.getId());
+		
+		//회원이 아니면
+		if(member == null) {
+			throw new WrongIdPasswordException();
+		}
+		//비밀번호가 일치하지 않으
+		if(!member.matchPassword(dto.getUser_pass())) {
+			throw new WrongIdPasswordException();
+		}
 		return new AuthInfo(member.getId(), member.getUser_name(), member.getUser_pass());
 	}
 

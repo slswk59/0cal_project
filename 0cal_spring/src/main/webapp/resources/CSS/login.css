@@ -42,6 +42,7 @@
   width: 200px;
   display: block;
   margin-top: 20px;
+  margin-bottom: 10px;
   margin: auto;
   height: 40px;
   background-color: #f8ab1d;
@@ -54,4 +55,31 @@
 .logintext {
   font-size: 18px;
   font-weight: 500;
+}
+
+.loginbtn {
+	margin-bottom : 10px;
+}
+
+.signuptext{
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.signupbtn {
+	color: #fff;
+}
+
+.signuplink {
+	width: 200px;
+    display: block;
+    margin-top: 30px; 
+    margin: auto;
+    height: 40px;
+    background-color: #f8ab1d;
+    color: #fff;
+    border: 1px solid #f8ab1d;
+    border-radius: 4px;
+    cursor: pointer;
 }
