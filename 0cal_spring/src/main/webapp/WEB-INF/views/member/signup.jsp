@@ -291,7 +291,7 @@ pageEncoding="UTF-8"%>
     <div class="wrapper">
         <div class="signup">회원가입</div>
        
-	 <!--  <form class="validation-form" method="post" novalidate>  -->
+	<form class="validation-form" method="post" novalidate>
         <div class="user">
             <hr class="hrline"/>
             <div class="id">
@@ -371,11 +371,11 @@ pageEncoding="UTF-8"%>
             <div class="gender">
                 <div class="front" id="usergender">성별&nbsp<span class="star">*</span></div>
                 <div style="padding-right: 20px; display: flex; align-items: center; color: black;">
-                    <input type="radio" name="gender" class="middle" value="1" id="check1"></input>
+                    <input type="radio" name="gender" class="middle" value="F" id="check1"></input>
                     <label for="check1" class='check1'>&nbsp여성</label>
                 </div>
                 <div style="display: flex; align-items: center; color: black;">
-                    <input type="radio" name="gender" class="middle" value="2" id="check2"></input>
+                    <input type="radio" name="gender" class="middle" value="M" id="check2"></input>
                     <label for="check2" class='check2'>&nbsp남성</label>
                 </div>
             </div>
@@ -389,7 +389,7 @@ pageEncoding="UTF-8"%>
             <button type="submit" class="signupEnd" onclick="submit()"><b>가입하기</b></button>
             
         </div>
-<!--       </form> -->
+       </form>
      </div>
     <footer>
         <jsp:include page="../common/footer.jsp" />

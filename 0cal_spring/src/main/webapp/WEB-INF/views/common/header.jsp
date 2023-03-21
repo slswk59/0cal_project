@@ -131,40 +131,29 @@
 </div>
 
 <script>
-	$(document)
-			.ready(
-					function() {
-						$
-								.ajax({
-									type : "get",
-									url : "${pageContext.request.contextPath}/member/loginCheck.do",
-									dataType : "text",
-									async : false,
-									success : function(data) {
-										if (data) {
-											$("#userMenu1Path")
-													.attr("href",
-															"${pageContext.request.contextPath}/member/userInfoEdit.do");
-											$("#userMenu1Text").text(data);
-											$("#userMenu2Path")
-													.attr("href",
-															"${pageContext.request.contextPath}/member/logout.do");
-											$("#userMenu2Text").text("로그아웃");
-										} else {
-											$("#userMenu1Path")
-													.attr("href",
-															"${pageContext.request.contextPath}/member/signup.do");
-											$("#userMenu1Text").text("회원가입");
-											$("#userMenu2Path")
-													.attr("href",
-															"${pageContext.request.contextPath}/member/login.do");
-											$("#userMenu2Text").text("로그인");
-										}
-									},
-									error : function(request) {
-										console.log("error : "
-												+ request.responseText);
-									}
-								})
-					});
+
+  $(document).ready(function(){
+	  $.ajax({
+             type : "get",
+             url : "${pageContext.request.contextPath}/member/loginCheck.do",
+			 dataType: "text",
+             async: false, 
+             success : function(data){
+             	if (data) {
+             		$("#userMenu1Path").attr("href", "${pageContext.request.contextPath}/shopping/orders.do");
+             		$("#userMenu1Text").text(data);
+             		$("#userMenu2Path").attr("href", "${pageContext.request.contextPath}/member/logout.do");
+             		$("#userMenu2Text").text("로그아웃");
+             	} else {
+             		$("#userMenu1Path").attr("href", "${pageContext.request.contextPath}/member/signup.do");
+             		$("#userMenu1Text").text("회원가입");
+             		$("#userMenu2Path").attr("href", "${pageContext.request.contextPath}/member/login.do");
+             		$("#userMenu2Text").text("로그인");
+             	}
+             },
+             error : function(request) {
+                console.log("error : " + request.responseText);
+             }
+         })
+  });
 </script>

@@ -106,7 +106,7 @@ pageEncoding="UTF-8"%>
 						<c:param name="pr_key" value="${dto.pr_key}" />
 				</c:url>
 				<a href="${path}">
-                  <img class="item-img" src="${dto.pr_detailimage}" alt="추천 상품" />
+                  <img class="item-img" src="${dto.pr_thumbnail}" alt="추천 상품" />
                 </a>
                 <div class="cart_button_class">
                   <a href="${path}">

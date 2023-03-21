@@ -38,6 +38,7 @@ pageEncoding="UTF-8"%>
     <script type="text/javascript" src="../resources/JavaScript/menu.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/recommend-slider.js" defer></script>
     <script type="text/javascript" src="../resources/JavaScript/advertisement.js" defer></script>
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
   </head>
   <body>
     <header>
