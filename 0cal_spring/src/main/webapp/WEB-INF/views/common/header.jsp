@@ -122,7 +122,7 @@ pageEncoding="UTF-8"%>
              async: false, 
              success : function(data){
              	if (data) {
-             		$("#userMenu1Path").attr("href", "${pageContext.request.contextPath}/member/userInfoEdit.do");
+             		$("#userMenu1Path").attr("href", "${pageContext.request.contextPath}/shopping/orders.do");
              		$("#userMenu1Text").text(data);
              		$("#userMenu2Path").attr("href", "${pageContext.request.contextPath}/member/logout.do");
              		$("#userMenu2Text").text("로그아웃");
