@@ -1,6 +1,6 @@
 // img move function
 const SLIDER = document.querySelector('.slide-wrapper');
-const IMAGE = document.querySelectorAll('.slide-item');
+const IMAGE = document.querySelectorAll('.slide-item'); 
 const leftBtn = document.querySelector('.leftBtn');
 const rightBtn = document.querySelector('.rightBtn');
 

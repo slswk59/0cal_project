@@ -108,11 +108,13 @@ pageEncoding="UTF-8"%>
               <a href="${path}">
                 <p class="current-price">
                   <span class="discount-rate"><fmt:formatNumber type="percent" value="${dto.pr_dcper}" /></span>
-                  ${dto.pr_dcprice}원
+                  <fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
+										원
                 </p>
               </a>
               <a href="${path}">
-                <p class="regular-price">${dto.pr_price}원</p>
+                <p class="regular-price"><fmt:formatNumber type="number" value="${dto.pr_price}" />
+									</p>
               </a>
             </div>
             </c:forEach>

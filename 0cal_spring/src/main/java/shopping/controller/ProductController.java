@@ -95,18 +95,22 @@ public class ProductController {
 			return mav;
 		}
 	
+	//드라마 추천 
 	@RequestMapping(value="/index.do", method=RequestMethod.GET)
 	public String index(@ModelAttribute("pv") PageDTO pv, Model model) {
 		pv.setStartRow(0);
 		pv.setEndRow(12);
-		List<ProductDTO> list =  productService.newListProcess(pv);
-		
-		model.addAttribute("prdList" , list);
+		List<ProductDTO> listDrama =  productService.dThemeListProcess(pv);
+		List<ProductDTO> listOrganic =  productService.oThemeListProcess(pv);	
+		List<ProductDTO> saleList =  productService.salesListProcess(pv);
+		model.addAttribute("dramaList" , listDrama);
+		model.addAttribute("organicList" , listOrganic);
+		model.addAttribute("saleL" , saleList);
 		
 		return "index";
 	}
 	
-	
+	//검색
 	@RequestMapping(value="/search.do", method=RequestMethod.GET)
 	public String search(@ModelAttribute("pv") PageDTO pv, Model model) {
 		try {
@@ -120,9 +124,15 @@ public class ProductController {
 		return "search";
 	}
 	
-	
-	
-	
+//	  추천페이지-드라마 로딩 // 
+//	   @RequestMapping("/shopping/dThemeList.do") public ModelAndView 
+//	  dThemeListExecute(@ModelAttribute("pv") PageDTO pv, ModelAndView mav) { int totalRecord = productService.countProcess(); 
+//	  mav.addObject("pv", this.pdto);
+//	  mav.addObject("aList", productService.dThemeListProcess(this.pdto)); } 
+//	  mav.setViewName("shopping/dThemeList"); 
+//	  return mav; 
+//	  }
+
 	
 	
 //		//상세페이지 로딩
@@ -134,21 +144,7 @@ public class ProductController {
 //		}
 
 	
-//	//추천페이지-드라마 로딩
-//	@RequestMapping("/shopping/dThemeList.do")
-//	public ModelAndView dThemeListExecute(@ModelAttribute("pv") PageDTO pv, ModelAndView mav) {
-//		int totalRecord = productService.countProcess();
-//		//mav.addObject("count", totalRecord);
-//		if(totalRecord >=1) {
-//			if(pv.getCurrentPage() == 0)
-//				pv.setCurrentPage(1);
-//			this.pdto = new PageDTO(pv.getCurrentPage(), totalRecord);
-//			mav.addObject("pv", this.pdto);
-//			mav.addObject("aList", productService.dThemeListProcess(this.pdto));
-//		}
-//		mav.setViewName("shopping/dThemeList");
-//		return mav;
-//	}
+
 	
 	//추천페이지-올가닉 로딩
 //	@RequestMapping("/shopping/oThemeList.do")

@@ -55,11 +55,14 @@ div.item-img-container {
   width: 250px;
   height: 320px;
   overflow: hidden;
+  position: static; 
 }
 
-img.item-img {
+ img.item-img {
   width: 250px;
   height: 320px;
+  style : fix;
+  position: static; 
 }
 
 img.item-img:hover {
@@ -71,11 +74,15 @@ h3.item-name,
 p.current-price {
   margin-top: 8px;
   font-size: 16px;
+  word-wrap: break-word;
 }
 
 h3.item-name {
   font-weight: 400;
-}
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} 
 
 p.current-price {
   font-weight: 900;
@@ -187,4 +194,42 @@ span.today-regular-price {
   font-weight: 400;
   text-decoration: line-through;
   color: #999999;
+}
+ 
+section.main-items_cate {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  color: #000000;
+  padding: 32px 0 40px 0;
+}
+
+section.main-items_cate h2 {
+  margin: 20px auto 50px;
+  text-align: center;
+  font-size: 28px;
+}
+
+
+   
+section.main-items_cate .main-slide-items {
+  display: grid;
+   grid-template-columns: repeat(auto-fill, 249px);
+   gap: 31px 18px;
+   width: 100%;
+}
+
+section.main-items_cate .main-slide-item {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+}  
+  
+  
+  
+  
+  
 }

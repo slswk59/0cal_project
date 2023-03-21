@@ -1,5 +1,5 @@
-const slideSection = document.querySelector('.recommend-slide');
-const SLIDERS = document.querySelectorAll('.recommend-slide-items');
+const slideSection = document.querySelector('.main-slide');
+const SLIDERS = document.querySelectorAll('.main-slide-items');
 const leftItemBtn = document.querySelector('.leftBtn.items');
 const rightItemBtn = document.querySelector('.rightBtn.items');
 
@@ -37,3 +37,5 @@ rightItemBtn.addEventListener('click', () => {
 // SLIDERS[3].classList.toggle('hidden'); x x x o x x x o 
 
 // 01, 12, 23, 30, 01, 
+
+
