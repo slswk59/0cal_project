@@ -80,7 +80,7 @@ public class MemberController {
 		return "member/login";
 	}
 	
-	//로그인 처리
+	// 0cal 로그인 처리
 	@RequestMapping(value="/member/login.do", method=RequestMethod.POST)
 	public String loginMember(MemberDTO memberDTO, HttpSession session, HttpServletResponse resp) {
 		try {
@@ -102,7 +102,7 @@ public class MemberController {
 				PrintWriter out = resp.getWriter();
 //				out.print("아이디 비밀번호 불일치");
 //				out.print("<script>alert('아이디 비밀번호 불일치'); location.href='login.do';</script>");
-				out.print("<script>alert('아이디 비밀번호 불일치'); history.go(-1);</script>");
+				out.print("<script>alert('아이디 또는 비밀번호를 확인해주세요.'); history.go(-1);</script>");
 				out.flush();
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
