@@ -106,7 +106,7 @@
 					<div class="search-bar">
 						<input id="search-input" type="text" placeholder="검색어를 입력해주세요."
 							name="searchWord" value="${pv.searchWord}" />
-						<button type="button" id="search-button">
+						<button type="button" id="search-button"  style="cursor:pointer;">
 							<img
 								src="${pageContext.request.contextPath}/resources/img/search.webp"
 								alt="" width="30px" height="30px" />

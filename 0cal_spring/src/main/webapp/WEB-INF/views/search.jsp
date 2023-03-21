@@ -113,9 +113,7 @@
 					</div>
 				</c:otherwise>
 			</c:choose>
-
-
-			<footer>
+     		<footer>
 				<jsp:include page="./common/footer.jsp" />
 			</footer>
 </body>
