@@ -95,7 +95,7 @@
 						<li class="main-menu-item"><a
 							href="${pageContext.request.contextPath}/shopping/newList.do">신상품</a>
 						</li>
-						<li class="main-menu-item"><a href="#">베스트</a></li>
+						<li class="main-menu-item"><a href="${pageContext.request.contextPath}/shopping/best.do">베스트</a></li>
 						<li class="main-menu-item"><a href="#">추천</a></li>
 						<li class="main-menu-item"><a
 							href="${pageContext.request.contextPath}/shopping/salesList.do">특가</a>

@@ -64,4 +64,16 @@ public class ProductServiceImp implements ProductService {
 		return productDao.searchList(pv);
 	}
 
+	@Override
+	public List<ProductDTO> bestListProcess() {
+		// TODO Auto-generated method stub
+		return productDao.bestList();
+	}
+
+//	@Override
+//	public List<ProductDTO> bestListProcess(PageDTO pv) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 }
