@@ -61,7 +61,7 @@ pageEncoding="UTF-8"%>
           
             <div class="recommend-slide-item">
               <div class="item-img-container">
-              	<span style="display:none;">{$dto.pr_key}</span>
+              	<span style="display:none;">${dto.pr_key}</span>
                 <c:url var="path" value="goods.do">
 						<c:param name="pr_key" value="${dto.pr_key}" />
 				</c:url>
