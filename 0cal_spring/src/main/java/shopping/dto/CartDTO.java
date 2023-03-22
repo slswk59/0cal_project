@@ -1,5 +1,7 @@
 package shopping.dto;
 
+import member.dto.MemberDTO;
+
 public class CartDTO {
 	
 	private int cart_key;
@@ -7,6 +9,10 @@ public class CartDTO {
 	private int cart_price;
 	private String cart_reg_date;
 	private String cart_del_date;
+	private String id;
+	private int pr_key;
+	private MemberDTO memberDTO;
+	private ProductDTO productDTO;
 	
 	public CartDTO() {
 		// TODO Auto-generated constructor stub
@@ -51,7 +57,40 @@ public class CartDTO {
 	public void setCart_del_date(String cart_del_date) {
 		this.cart_del_date = cart_del_date;
 	}
-	
-	
 
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public int getPr_key() {
+		return pr_key;
+	}
+
+	public void setPr_key(int pr_key) {
+		this.pr_key = pr_key;
+	}
+
+	public MemberDTO getMemberDTO() {
+		return memberDTO;
+	}
+
+	public void setMemberDTO(MemberDTO memberDTO) {
+		this.memberDTO = memberDTO;
+	}
+
+	public ProductDTO getProductDTO() {
+		return productDTO;
+	}
+
+	public void setProductDTO(ProductDTO productDTO) {
+		this.productDTO = productDTO;
+	}
+
+
+	
+	
 }
