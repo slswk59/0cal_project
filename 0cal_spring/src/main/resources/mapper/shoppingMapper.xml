@@ -211,6 +211,7 @@
 		and m.id = #{id}
 	</select>
 
+
 	<delete id="deleteCart" parameterType="int">
 		DELETE FROM cart
 		WHERE
@@ -245,6 +246,7 @@
 		o.id=#{id}
 		) WHERE RankNO = 1
 	</select>
+
 
 	<resultMap type="shopping.dto.OrdersDTO"
 		id="detailListSelect" autoMapping="true">

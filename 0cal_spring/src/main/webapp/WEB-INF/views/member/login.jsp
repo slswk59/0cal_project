@@ -39,6 +39,10 @@ pageEncoding="UTF-8"%>
     <script src="./JavaScript/recommend-slider.js" defer></script>
     <script src="./JavaScript/advertisement.js" defer></script> -->
     <script src="./JavaScript/login.js" defer></script>
+    
+    <!-- 파비콘 -->
+<link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon">   
   </head>
   <body>
     <header>
