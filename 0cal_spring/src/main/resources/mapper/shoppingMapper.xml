@@ -106,7 +106,11 @@
 		
 		]]>
 	</select>
+	
+	
+	<!-- 장바구니 내역 관련 -->
 
+<<<<<<< HEAD
 	<!-- best 데이터베이스 -->
 	<!-- <select id="BestImages" resultType="shopping.dto.ProductDTO">
 		<![CDATA[
@@ -143,6 +147,72 @@
 	) o ON p.PR_KEY = o.PR_KEY
 	WHERE ROWNUM <= 16
 		]]>
+=======
+	 <insert id="insertCart" parameterType="shopping.dto.CartDTO">
+ 		INSERT INTO cart(cart_key, cart_count, cart_price, cart_reg_date, pr_key, id)
+ 		VALUES(cart_key_seq.nextval, #{cart_count}, #{cart_price}, to_char(sysdate, 'YYYY-MM-DD HH24:mi:SS'), #{pr_key}, #{id, jdbcType=VARCHAR})	
+	 </insert>
+
+	<select id="countCart" resultType="int">
+		SELECT count(*) FROM cart WHERE id=#{id, jdbcType=VARCHAR} and pr_key=#{pr_key}
+	</select>
+	
+	
+	<update id="modifyCart" parameterType="shopping.dto.CartDTO">
+ 		UPDATE cart
+ 		SET cart_count=#{cart_count}, cart_price=#{cart_price}, cart_reg_date=to_char(sysdate, 'YYYY-MM-DD HH24:mi:SS')
+ 		WHERE id=#{id,jdbcType=VARCHAR} and pr_key=#{pr_key}
+ 	</update>
+ 	
+ 	<update id="updateCart" parameterType="shopping.dto.CartDTO">
+ 		UPDATE cart
+ 		SET cart_count=cart_count+#{cart_count}, cart_price=cart_price+#{cart_price}, cart_reg_date=to_char(sysdate, 'YYYY-MM-DD HH24:mi:SS')
+ 		WHERE id=#{id,jdbcType=VARCHAR} and pr_key=#{pr_key}
+ 	</update>
+ 
+ 	
+ 	 <resultMap type="shopping.dto.CartDTO" id="cartlistSelect" autoMapping="true">
+		<association property="memberDTO" javaType="member.dto.MemberDTO">
+			<result column="id" property="id"/>
+		</association>
+		<association property="productDTO" javaType="shopping.dto.ProductDTO">
+			<result column="pr_key" property="pr_key"/>
+			<result column="pr_name" property="pr_name"/>
+			<result column="pr_thumbnail" property="pr_thumbnail"/>
+		</association>
+	</resultMap>
+	
+	<select id="cartlist" parameterType="String" resultMap="cartlistSelect">
+		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id, t.cart_price, t.cart_count, t.cart_key
+		FROM member m, product p, cart t
+		WHERE m.id = t.id and p.pr_key = t.pr_key
+		and m.id = #{id}
+	</select>
+ 
+ 	<delete id="deleteCart" parameterType="int">
+ 		DELETE FROM cart
+ 		WHERE cart_key=#{cart_key}
+ 	</delete>
+
+	<!-- 구매내역관련 -->
+	 <resultMap type="shopping.dto.OrdersDTO" id="listSelect" autoMapping="true">
+		<association property="memberDTO" javaType="member.dto.MemberDTO">
+			<result column="id" property="id"/>
+		</association>
+		<association property="productDTO" javaType="shopping.dto.ProductDTO">
+			<result column="pr_name" property="pr_name"/>
+			<result column="pr_thumbnail" property="pr_thumbnail"/>
+		</association>
+	</resultMap>
+	
+	<select id="orderlist" parameterType="String" resultMap="listSelect">
+			SELECT * 
+			FROM(SELECT o.id, o.or_key, o.or_price, o.or_date, t.pr_key, p.pr_name, p.pr_thumbnail,
+		    ROW_NUMBER() OVER(PARTITION BY o.or_key ORDER BY t.pr_key DESC) AS RankNO
+			FROM orders o, or_detail t, product p
+			WHERE o.or_key = t.or_key AND p.pr_key = t.pr_key AND o.id=#{id}
+			) WHERE RankNO = 1
+>>>>>>> 3fb90084201222a643b24f2ca3c253c5b093a075
 	</select>
 
 

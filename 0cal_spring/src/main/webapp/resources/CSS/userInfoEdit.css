@@ -6,6 +6,45 @@
 .wrapper {
   width: 820px;
   margin: 0 auto;
+  color : black;
+}
+
+.signup_edit_div {
+  text-align: center;
+  padding-top: 10px;
+  font-size: xx-large;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.hrline {
+  width: 100%%;
+  margin-bottom: 40px;
+  border: solid 0.1px;
+  color: rgb(31, 30, 30);
+}
+
+.user {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.front {
+  font-size: 15px;
+  width: 100px;
+  float: left;
+  color: black;
+}
+
+.middle {
+  width: 300px;
+  height: 40px;
+  padding: 10px 11px 1px 15px;
+  color: darkgray;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 15px;
 }
 
 /*개인정보수정 진입 페이지 css*/
@@ -178,10 +217,274 @@ button.signupEdit:hover {
   display: inline-block;
 }
 
-div.signup_edit_div {
+
+/*-----------------------------------------------------*/
+
+
+.wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.signup {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 50px;
   font-size: xx-large;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   color: black;
 }
+
+.signup2 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: xx-large;
+  margin-bottom: 80px;
+  color: black;
+}
+
+.hrline {
+  width: 100%;
+  margin-bottom: 40px;
+  border: solid 0.1px;
+  color: rgb(31, 30, 30);
+}
+/*
+.section {
+  padding: 200px 0;
+  clear: both;
+}
+*/
+.user {
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.id {
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.chk {
+  height:12px;
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.chk span{
+  font-size:x-small;
+}
+
+.nick {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.front {
+  font-size: 15px;
+  width: 100px;
+  float: left;
+  color: black;
+}
+
+.middle {
+  width: 300px;
+  height: 40px;
+  padding: 10px 11px 1px 15px;
+  color: darkgray;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 15px;
+}
+
+/*중복확인 버튼 글씨 까맣게 하는법...?*/
+.doubleCheck {
+  margin-left: 20px;
+  height: 40px;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+  color: #d78314;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.doubleCheck > span {
+  color: #d78314;
+  /* color: 'black'; */
+  border-color: #d78314;
+}
+
+.pw {
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.star {
+  color: orange;
+}
+
+.pwcheck {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.name {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.email {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.phone {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+/*주소검색 api 사용법*/
+.adress {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.adress2 {
+  font-size: 14px;
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.adress input[type='text'] {
+  width: 100px;
+  height: 20px;
+  padding: 10px 11px 1px 15px;
+  color: darkgray;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 15px;
+}
+
+.adress2 .left {
+  width: 200px;
+  height: 20px;
+  padding: 10px 11px 1px 15px;
+  color: darkgray;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 15px;
+}
+
+.adress2 .right {
+  margin-left: 5px;
+  width: 150px;
+  height: 20px;
+  padding: 10px 11px 1px 15px;
+  color: darkgray;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 15px;
+}
+
+.adress input[type='button'] {
+  margin-left: 20px;
+  width: 120px;
+  height: 30px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+  color: #7f8bd6;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: solid 1px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.gender {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.birth {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.gender input#check1 {
+  font-size: 1em;
+  width: 1.25em; /* 너비 설정 */
+  height: 1.25em; /* 높이 설정 */
+  vertical-align: middle;
+  margin-top: unset;
+}
+
+.gender input#check2 {
+  font-size: 1em;
+  width: 1.25em; /* 너비 설정 */
+  height: 1.25em; /* 높이 설정 */
+  vertical-align: middle;
+}
+
+#ymd {
+  font-size: 14px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.bottom {
+  width: 100%;
+  margin-top: 40px;
+  border: solid 0.1px;
+  color: rgb(31, 30, 30);
+}
+
+.signupEnd {
+  width: 200px;
+  border: 1px;
+  outline: none;
+  font-size: 17px;
+  background: rgb(248, 171, 29);
+  color: white;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 50px auto;
+  display: block;
+}
+
+button.signupEnd:hover {
+  color: white;
+  background: orange;
+}
+
+
+

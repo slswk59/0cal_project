@@ -63,7 +63,7 @@
 				</ul>
 			</div>
 
-		<c:choose>
+			<c:choose>
 				<c:when test="${not empty searchList}">
 					<div class="recommend-slide">
 						<div class="recommend-slide-items">
@@ -71,12 +71,14 @@
 								<div class="recommend-slide-item">
 									<div class="item-img-container">
 										<span style="display: none;">{$item.pr_key}</span>
-										<c:url var="path" value="goods.do">
+										<c:url var="path" value="/shopping/goods.do">
 											<c:param name="pr_key" value="${item.pr_key}" />
 										</c:url>
 										<a href="${path}"> <img class="item-img"
 											src="${item.pr_thumbnail}" alt="추천 상품" />
-										</a>
+										</a> <span style="display: none;">{$item.pr_key}</span>
+										
+									
 										<div class="cart_button_class">
 											<a href="${path}">
 												<button type="button" class="cart_button" alt="장바구니 아이콘">
@@ -113,7 +115,7 @@
 					</div>
 				</c:otherwise>
 			</c:choose>
-     		<footer>
+			<footer>
 				<jsp:include page="./common/footer.jsp" />
 			</footer>
 </body>

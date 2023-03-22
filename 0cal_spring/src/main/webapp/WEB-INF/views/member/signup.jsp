@@ -18,14 +18,14 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="<c:url value="/resources/CSS/footer.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/CSS/style.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/navbar.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/slider.css" />" >
+   <%-- <link rel="stylesheet" href="<c:url value="/resources/CSS/slider.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/main.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/search.css" />" >
+   <link rel="stylesheet" href="<c:url value="/resources/CSS/search.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/category.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/goods.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/cart.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/wish.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/order.css" />" >
+    <link rel="stylesheet" href="<c:url value="/resources/CSS/order.css" />" > --%>
     <link rel="stylesheet" href="<c:url value="/resources/CSS/signup.css" />" >
 
 
@@ -34,6 +34,8 @@ pageEncoding="UTF-8"%>
    <script type="module" defer src="/myapp/resources/JavaScript/jquery-1.12.4.js"></script>
    <script type="module" defer src="/myapp/resources/JavaScript/jquery-1.12.4.min.js"></script>
    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+
       <script>
 	  function init(){
 	  	alert("here");
@@ -255,32 +257,33 @@ pageEncoding="UTF-8"%>
             };
 
 
-            /*
+            
             if("" == document.getElementById("").value){
                 alert("아이디를 입력해주세요.");
-                return;
+                return; 
             }
+            
             if("" == document.getElementById("inputId").value){
                 alert("아이디를 입력해주세요.");
                 return;
             }
-            */
+            
 
             }
 
 
-//       const forms = document.getElementsByClassName('validation-form');
+       const forms = document.getElementsByClassName('validation-form');
 
-//       Array.prototype.filter.call(forms, (form) => {
-//         form.addEventListener('submit', function (event) {
-//           if (form.checkValidity() === false) {
-//             event.preventDefault();
-//             event.stopPropagation();
-//           }
+       Array.prototype.filter.call(forms, (form) => {
+         form.addEventListener('submit', function (event) {
+           if (form.checkValidity() === false) {
+             event.preventDefault();
+             event.stopPropagation();
+           }
 
-//           form.classList.add('was-validated');
-//         }, false);
-//       });
+           form.classList.add('was-validated');
+         }, false);
+       });
    
   </script>
 </head>

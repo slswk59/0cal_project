@@ -35,4 +35,20 @@
 		<property name="ordersService" ref="ordersService" />
 	</bean>
 	
+	
+	<!--  Cart 관련 -->
+	<!-- CartDaoImp 빈 선언 -->
+	<bean id="cartDto" class="shopping.dao.CartDaoImp">
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
+
+	<!-- CartServiceImp 빈 선언 -->
+	<bean id="cartService" class="shopping.service.CartServiceImp">
+		<property name="cartDto" ref="cartDto" />
+	</bean>
+
+	<!--  CartController 빈 선언 -->
+	<bean class="shopping.controller.CartController">
+		<property name="cartService" ref="cartService" />
+	</bean>
 </beans>
