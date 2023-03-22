@@ -39,6 +39,10 @@
 <script src="./resources/JavaScript/search.js" defer></script>
 </head>
 
+<!-- 파비콘 -->
+<link rel="shortcut icon" href="./resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="./resources/img/favicon.ico" type="image/x-icon">   
+
 <body>
 	<header>
 		<jsp:include page="./common/header.jsp" />

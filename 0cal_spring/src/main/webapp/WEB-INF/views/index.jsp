@@ -52,6 +52,10 @@
 <!-- 로그인 상태 체크 ajax 호출하기 위해 header.jsp import 하는 파일에서 선언 필요 -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+<!-- 파비콘 -->
+<link rel="shortcut icon" href="./resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="./resources/img/favicon.ico" type="image/x-icon">   	
 
 </head>
 <body>
