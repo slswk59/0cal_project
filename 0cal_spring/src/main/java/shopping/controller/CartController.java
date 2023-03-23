@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import member.dto.AuthInfo;
+import member.dto.MemberDTO;
 import shopping.dto.CartDTO;
 import shopping.service.CartService;
 
@@ -56,9 +58,25 @@ public class CartController {
 		}
 	
 	
+		//장바구니 내역 로딩
+		@RequestMapping("/shopping/cart.do")
+		public ModelAndView ordersExecute(HttpSession session, ModelAndView mav) {
+			AuthInfo authInfo =(AuthInfo)session.getAttribute("authInfo");
+			System.out.println(authInfo.getId());
+			mav.addObject("aList", cartService.listCartProcess(authInfo.getId()));
+			mav.setViewName("shopping/cart");
+			return mav;
+		}
 	
-	
-	
+		//장바구니 삭제 처리
+		@RequestMapping(value="/shopping/delete.do", method=RequestMethod.POST)
+		public String deleteMember(@ModelAttribute final CartDTO dto, HttpSession session) {
+			AuthInfo authInfo =(AuthInfo)session.getAttribute("authInfo");
+			System.out.println(dto.getCart_key());
+			cartService.deleteCartProcess(dto.getCart_key());
+			System.out.println(authInfo.getId());
+			return "redirect:/shopping/cart.do";
+		}
 	
 	
 

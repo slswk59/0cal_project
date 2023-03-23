@@ -199,6 +199,18 @@
 			javaType="member.dto.MemberDTO">
 			<result column="id" property="id" />
 		</association>
+<<<<<<< HEAD
+		<association property="productDTO" javaType="shopping.dto.ProductDTO">
+			<result column="pr_key" property="pr_key"/>
+			<result column="pr_name" property="pr_name"/>
+			<result column="pr_thumbnail" property="pr_thumbnail"/>
+			<result column="pr_dcprice" property="pr_dcprice"/>
+		</association>
+	</resultMap>
+	
+	<select id="cartlist" parameterType="String" resultMap="cartlistSelect">
+		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id, t.cart_price, t.cart_count, t.cart_key, p.pr_dcprice
+=======
 		<association property="productDTO"
 			javaType="shopping.dto.ProductDTO">
 			<result column="pr_key" property="pr_key" />
@@ -211,6 +223,7 @@
 		resultMap="cartlistSelect">
 		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id,
 		t.cart_price, t.cart_count, t.cart_key
+>>>>>>> 5f62bf5a9e9d548a3ff3249a26692fee02a31c66
 		FROM member m, product p, cart t
 		WHERE m.id = t.id and p.pr_key = t.pr_key
 		and m.id = #{id}
