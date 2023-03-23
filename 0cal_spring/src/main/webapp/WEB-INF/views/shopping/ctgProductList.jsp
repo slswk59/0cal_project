@@ -60,6 +60,10 @@ pageEncoding="UTF-8"%>
     }
     </script>
     
+          <!-- 파비콘 -->
+<link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon"> 
+    
   </head>
   <body onload="init();">
     <header>

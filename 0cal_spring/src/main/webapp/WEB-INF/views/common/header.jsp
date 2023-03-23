@@ -39,7 +39,6 @@
 
  
 <div id="wrap">
-
   <div id="container">
     <div id="top-header">
       <div id="header">
@@ -124,6 +123,7 @@
           </ul>
         </nav>
         <form method="get" name="form" id="searchForm" action="${pageContext.request.contextPath}/search.do">
+
 					<div class="search-bar">
 						<input id="search-input" type="text" placeholder="검색어를 입력해주세요."
 							name="searchWord" value="${pv.searchWord}" />

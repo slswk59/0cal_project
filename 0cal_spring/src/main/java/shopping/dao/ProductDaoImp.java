@@ -67,15 +67,16 @@ public class ProductDaoImp implements ProductDAO{
 
 	@Override
 	public List<ProductDTO> bestList() {
+		// TODO Auto-generated method stub
 		return sqlSession.selectList("shopping.BestImages");
 	}
 
-	@Override
-	public List<ProductDTO> chuchunList() {
-		return sqlSession.selectList("shopping.chuchunButton");
-	}
-	
-    
+//	@Override
+//	public List<ProductDTO> bestList(PageDTO pv) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 	
 
 
