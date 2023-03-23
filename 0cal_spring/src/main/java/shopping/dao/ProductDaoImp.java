@@ -65,6 +65,17 @@ public class ProductDaoImp implements ProductDAO{
 		return sqlSession.selectList("shopping.searchList", pv);
 	}
 
+	@Override
+	public List<ProductDTO> bestList() {
+		return sqlSession.selectList("shopping.BestImages");
+	}
+
+	@Override
+	public List<ProductDTO> chuchunList() {
+		return sqlSession.selectList("shopping.chuchunButton");
+	}
+	
+    
 	
 
 

@@ -26,6 +26,10 @@ pageEncoding="UTF-8"%>
       crossorigin="anonymous"
     ></script>
     <script src="./JavaScript/login.js" defer></script>
+    
+    <!-- 파비콘 -->
+<link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon">   
   </head>
   <body>
     <header>

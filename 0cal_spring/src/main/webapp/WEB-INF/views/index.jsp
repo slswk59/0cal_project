@@ -52,6 +52,10 @@
 <!-- 로그인 상태 체크 ajax 호출하기 위해 header.jsp import 하는 파일에서 선언 필요 -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+<!-- 파비콘 -->
+<link rel="shortcut icon" href="./resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="./resources/img/favicon.ico" type="image/x-icon">   	
 
 </head>
 <body>
@@ -91,21 +95,31 @@
 									step="1">
 									<li class="main-slide-item">
 										<div class="item-img-container">
-											<img class="item-img" src="${saleL[j].pr_thumbnail}"
-												alt="추천 상품" />
+											<span style="display: none;">${saleL[j].pr_key}</span>
+											<c:url var="path" value="/shopping/goods.do">
+												<c:param name="pr_key" value="${saleL[j].pr_key}" />
+											</c:url>
+											<a href="${path}"> <img class="item-img"
+												src="${saleL[j].pr_thumbnail}" alt="추천 상품" />
+											</a>
+
 										</div>
-										<h3 class="item-name">${saleL[j].pr_name}</h3>
-										<p class="current-price">
-											<span class="discount-rate"><fmt:formatNumber
-													value="${saleL[j].pr_dcper}" type="percent" /></span>
-											<fmt:formatNumber value="${saleL[j].pr_dcprice}"
-												type="number" />
-											원
-										</p>
-										<p class="regular-price">
-											<fmt:formatNumber value="${saleL[j].pr_price}" type="number" />
-											원
-										</p>
+										 <a href="${path}">
+											<h3 class="item-name">${saleL[j].pr_name}</h3>
+									</a> <a href="${path}">
+											<p class="current-price">
+												<span class="discount-rate"><fmt:formatNumber
+														value="${saleL[j].pr_dcper}" type="percent" /></span>
+												<fmt:formatNumber value="${saleL[j].pr_dcprice}"
+													type="number" />
+												원
+											</p>
+									</a> <a href="${path}">
+											<p class="regular-price">
+												<fmt:formatNumber value="${saleL[j].pr_price}" type="number" />
+												원
+											</p>
+									</a>
 									</li>
 								</c:forEach>
 							</ul>
@@ -126,9 +140,9 @@
 						<c:forEach items="${dramaList}" var="dto">
 							<div class="recommend-slide-item">
 								<div class="item-img-container">
-									<span style="display: none;">{$dto.pr_key}</span>
-									<c:url var="path" value="goods.do">
-										<c:param name="pr_theme" value="${dto.pr_theme}" />
+									<span style="display: none;">${dto.pr_key}</span>
+									<c:url var="path" value="/shopping/goods.do">
+										<c:param name="pr_key" value="${dto.pr_key}" />
 									</c:url>
 									<a href="${path}"> <img class="item-img"
 										src="${dto.pr_thumbnail}" alt="추천 상품" />
@@ -156,6 +170,7 @@
 									<p class="regular-price">
 										<fmt:formatNumber type="number" value="${dto.pr_price}" />
 										원
+									</p>
 								</a>
 							</div>
 						</c:forEach>
@@ -173,8 +188,8 @@
 							<div class="recommend-slide-item">
 								<div class="item-img-container">
 									<span style="display: none;">{$dto.pr_key}</span>
-									<c:url var="path" value="goods.do">
-										<c:param name="pr_theme" value="${dto.pr_theme}" />
+									<c:url var="path" value="/shopping/goods.do">
+										<c:param name="pr_key" value="${dto.pr_key}" />
 									</c:url>
 									<a href="${path}"> <img class="item-img"
 										src="${dto.pr_thumbnail}" alt="추천 상품" />

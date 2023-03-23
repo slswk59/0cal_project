@@ -16,4 +16,6 @@ public interface ProductDAO {
 	public List<ProductDTO> ctgProductList(PageDTO pv);
 	public int ctgProductCount(String category);
 	public List<ProductDTO> searchList(PageDTO pv);
+	public List<ProductDTO> bestList();
+	public List<ProductDTO> chuchunList();
 }
