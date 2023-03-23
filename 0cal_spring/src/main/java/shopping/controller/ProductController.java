@@ -124,16 +124,6 @@ public class ProductController {
 		return "search";
 	}
 
-//	// 베스트
-//	@RequestMapping(value = "/shopping/best.do", method = RequestMethod.GET)
-//	public ModelAndView BestListExecute(@ModelAttribute("pv") PageDTO pv, ModelAndView mav) { 
-//		List<ProductDTO> bestList = productService.bestListProcess();
-//		mav.addObject("bestList", bestList);
-//		mav.setViewName("shopping/best");
-//
-//		return mav;
-//	}
-
 	// 베스트
 	@RequestMapping(value = "/shopping/best.do", method = RequestMethod.GET)
 	public ModelAndView BestListExecute(ModelAndView mav) { 
@@ -141,6 +131,15 @@ public class ProductController {
 		mav.addObject("bestList", bestList);
 		mav.setViewName("shopping/best");
 
+		return mav;
+	}
+	
+	// 추천
+	@RequestMapping(value = "/shopping/chuchun.do", method = RequestMethod.GET)
+	public ModelAndView chuchunListExecute(ModelAndView mav) { 
+		List<ProductDTO> chuchunList = productService.chuchunListProcess();
+		mav.addObject("chuchunList", chuchunList);
+		mav.setViewName("shopping/chuchun");
 		return mav;
 	}
 	
