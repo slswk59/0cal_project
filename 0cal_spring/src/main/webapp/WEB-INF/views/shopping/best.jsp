@@ -48,7 +48,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <header>
-      <jsp:include page="../common/header.jsp" />
+     <jsp:include page="../common/header.jsp" />
     </header>
     <main role="main">
       <section id="advertise_cate">
@@ -56,30 +56,12 @@ pageEncoding="UTF-8"%>
       </section>
 
       <section class="recommend-items_cate">
-        <div class="sorting_div">
-          <ul class="sorting_div_ul">
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_recommend">추천순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_new">신상품순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_sales">판매량순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_low">낮은가격순</a>
-            </li>
-            <li class="sorting_group">
-              <a href="#" class="li_sorting li_high">높은가격순</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="recommend-slide">
+        <h2>베스트</h2>
+        
+         <div class="recommend-slide">
           <div class="recommend-slide-items">
           
-          <c:forEach items="${aList}" var="dto">
+          <c:forEach items="${bestList}" var="dto">
           
             <div class="recommend-slide-item">
               <div class="item-img-container">
@@ -125,52 +107,11 @@ pageEncoding="UTF-8"%>
             </c:forEach>
           </div>
         </div>
-        
-        <div class="paging_group">
-     
-          <a class="paging_atag" href="salesList.do?currentPage=1">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
-              alt="처음 페이지로 이동하기 아이콘"
-            />
-          </a>
-          	<c:if test="${pv.currentPage>1}">
-          	<a class="paging_atag" href="salesList.do?currentPage=${pv.startPage-pv.blockPage}">
-            	<img
-	              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
-	              alt="이전 페이지로 이동하기 아이콘"
-	            />
-          	</a>
-       		</c:if>
-          	<c:forEach var="i" begin="${pv.startPage}" end="${pv.endPage}">
-          		<c:choose>
-          			<c:when test="${i==pv.currentPage}">
-          				<a class="paging_atag" style="color: orange;" href="salesList.do?currentPage=${i}">${i}</a>
-          			</c:when>
-         			 <c:otherwise>
-         				 <a class="paging_atag" href="salesList.do?currentPage=${i}">${i}</a>
-         			 </c:otherwise>
-       			</c:choose>
-          </c:forEach>
-			<c:if test="${pv.endPage < pv.totalPage}">
-	          <a class="paging_atag" href="salesList.do?currentPage=${pv.startPage + pv.blockPage}">
-	            <img
-	              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
-	              alt="다음 페이지로 이동하기 아이콘"
-	            />
-	          </a>
-          </c:if>
-          <a class="paging_atag" href="salesList.do?currentPage=${pv.totalPage}">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
-              alt="마지막 페이지로 이동하기 아이콘"
-            />
-          </a>
-        </div>
+       
       </section>
     </main>
     <footer>
-      <jsp:include page="../common/footer.jsp" />
+     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     </footer>
   </body>
 </html>

@@ -64,4 +64,14 @@ public class ProductServiceImp implements ProductService {
 		return productDao.searchList(pv);
 	}
 
+	@Override
+	public List<ProductDTO> bestListProcess() {
+		return productDao.bestList();
+	}
+
+	@Override
+	public List<ProductDTO> chuchunListProcess() {
+		return productDao.chuchunList();
+	}
+
 }

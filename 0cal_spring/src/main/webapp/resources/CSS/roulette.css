@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+* {
+  font-family: Pretendard;
+}
+
+/* body {
+  background: #ffebca;
+} */
+/*hjhj*/
+/* 룰렛 회전 속도 */
+canvas {
+  transition: 2s;
+}
+
+.roll_image {
+  height: 100%;
+  position: relative;
+}
+
+button.roulette_button {
+  position: absolute;
+  width: 200px;
+  bottom: 4%;
+  background: #f6b270;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.2s;
+  cursor: pointer;
+  left: 50%;
+  margin-left: -100px;
+}
+
+/* 버튼이 눌렸을 때 */
+button:active {
+  background: #2e1c08;
+  color: #ffebca;
+}
+
+div.roulette_background {
+  position: relative;
+  width: 1050px;
+  height: 480px;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  background-image: url(../img/룰렛-배경\(수정\).jpg);
+  margin-top: 5px;
+}
+
+div.roulette_div {
+  position: absolute;
+  top: 35px;
+  left: 350px;
+  z-index: 1;
+}
+
+/*룰렛 바늘*/
+div.roulette_div::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  border-radius: 5px; /*모서리를 둥글게 */
+  background: #2e1c08;
+  top: -17px;
+  left: 50%;
+  margin-left: 0px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

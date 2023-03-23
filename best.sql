@@ -1,18 +1,41 @@
-SELECT*FROM p_list; 
+SELECT*FROM or_list;
 -- 구매 수량과 구매상품 고유 코드 목록 
--- P_CODE(상품코드), QUANTITY(구매수량)
+-- PR_KEY(상품코드), OR_NUM(구매수량)
 
-SELECT P_CODE, SUM(QUANTITY) AS 총구매개수
-FROM p_list
-GROUP BY P_CODE;
+SELECT * FROM tkdtp;
+-- PR_KEY(상품 코드), PR_NAME(상품 이름), PR_PRICE(원래 가격), PR_DCPRICE(할인가), PR_DC(할인율)
+
+SELECT PR_KEY, SUM(OR_NUM) AS SUM_NUM
+FROM or_list
+GROUP BY PR_KEY;
 -- 구매한 상품당 총구매개수를 정리
 
-SELECT *
-FROM (
-  SELECT P_CODE, SUM(QUANTITY) AS 총구매개수
-  FROM P_LIST
-  GROUP BY P_CODE
-  ORDER BY 총구매개수 DESC
-)
+SELECT t.PR_THUMBNAILS, p.PR_NAME, p.PR_PRICE, p.PR_DCPRICE, p.PR_DC
+FROM thum_url t
+JOIN (
+    SELECT PR_KEY, PR_NAME, PR_PRICE, PR_DCPRICE, PR_DC
+    FROM tkdtp
+) p ON t.PR_KEY_origin = p.PR_KEY
+JOIN (
+    SELECT PR_KEY, SUM(OR_NUM) AS SUM_NUM
+    FROM OR_LIST
+    GROUP BY PR_KEY
+    ORDER BY SUM_NUM DESC
+) o ON p.PR_KEY = o.PR_KEY
 WHERE ROWNUM <= 16;
+
 --가장 많이 판매된 상위 16개의 상품을 출력
+
+SELECT t.PR_THUMBNAIL, p.PR_NAME, p.PR_PRICE, p.PR_DCPRICE, p.PR_DCper
+FROM product t
+JOIN (
+    SELECT PR_KEY, PR_NAME, PR_PRICE, PR_DCPRICE, PR_DCper
+    FROM product
+) p ON t.PR_KEY = p.PR_KEY
+JOIN (
+    SELECT PR_KEY, SUM(OR_NUM) AS SUM_NUM
+    FROM OR_LIST
+    GROUP BY PR_KEY
+    ORDER BY SUM_NUM DESC
+) o ON p.PR_KEY = o.PR_KEY
+WHERE ROWNUM <= 16;

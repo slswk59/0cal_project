@@ -9,27 +9,40 @@
 	 <!-- 회원가입 -->
 	 <insert id="insertMember" parameterType="member.dto.MemberDTO">
 	 	<![CDATA[
-	 		INSERT INTO member(id, nick_name, user_pass, user_name, email, phone, address, gender, date_birthday)
-	 		VALUES(#{id, jdbcType=VARCHAR}, #{nick_name, jdbcType=VARCHAR}, #{user_pass, jdbcType=VARCHAR}, #{user_name, jdbcType=VARCHAR}, #{email, jdbcType=VARCHAR}, #{phone, jdbcType=VARCHAR}, #{address, jdbcType=VARCHAR}, #{gender, jdbcType=VARCHAR}, #{date_birthday, jdbcType=VARCHAR})	
-	 	]]>
+ 	 		INSERT INTO member(id, nick_name, user_pass, user_name, email, phone, address, postcode, roadAddress, jibunAddress, detailAddress, extraAddress, gender, date_birthday)
+ 	 		VALUES(#{id, jdbcType=VARCHAR}, #{nick_name, jdbcType=VARCHAR}, #{user_pass, jdbcType=VARCHAR}, #{user_name, jdbcType=VARCHAR}, #{email, jdbcType=VARCHAR}, #{phone, jdbcType=VARCHAR}, #{address, jdbcType=VARCHAR}, #{postcode, jdbcType=VARCHAR}, #{roadAddress, jdbcType=VARCHAR},#{jibunAddress, jdbcType=VARCHAR},#{detailAddress, jdbcType=VARCHAR},#{extraAddress, jdbcType=VARCHAR}, #{gender, jdbcType=VARCHAR}, #{date_birthday, jdbcType=VARCHAR})
+ 	 	]]>
 	 </insert>
 	 
  	 <!-- id 중복체크 -->
- 	<select id="dupCheckId" parameterType="string" resultType="int">
- 		SELECT Count(*) FROM member
- 		WHERE id = #{userId}
+ 	<select id="dupCheckId" parameterType="string" resultType="string">
+ 		SELECT Count(*) AS cnt FROM member
+ 		WHERE id = #{value}
+ 	</select>
+ 	
+ 	 <!-- nick 중복체크 -->
+ 	<select id="dupCheckNick" parameterType="string" resultType="string">
+ 		SELECT Count(*) AS cnt FROM member
+ 		WHERE nick_name = #{value}
+ 	</select>
+ 	
+ 	 <!-- mail 중복체크 -->
+ 	<select id="dupCheckMail" parameterType="string" resultType="string">
+ 		SELECT Count(*) AS cnt FROM member
+ 		WHERE email = #{value}
  	</select>
  	
  	 <!-- id조회 -->
  	<select id="selectById" parameterType="string" resultType="member.dto.MemberDTO">
- 		SELECT * FROM member
- 		WHERE id = #{id}
+ 		SELECT *
+ 		  FROM member
+ 		 WHERE id = #{id}
  	</select>
  
  	<!-- 회원 정보 수정 -->
  	<update id="updateMember" parameterType="member.dto.MemberDTO">
  		UPDATE member
- 		SET user_pass=#{user_pass,jdbcType=VARCHAR}, user_name=#{user_name, jdbcType=VARCHAR}, phone=#{phone, jdbcType=VARCHAR}, email=#{email, jdbcType=VARCHAR}, address=#{address, jdbcType=VARCHAR}, gender=#{gender, jdbcType=VARCHAR}, date_birthday=#{date_birthday, jdbcType=VARCHAR}
+ 		SET user_pass=#{user_pass,jdbcType=VARCHAR}, user_name=#{user_name, jdbcType=VARCHAR}, phone=#{phone, jdbcType=VARCHAR}, email=#{email, jdbcType=VARCHAR}, address=#{address, jdbcType=VARCHAR}, postcode=#{postcode, jdbcType=VARCHAR}, roadAddress=#{roadAddress, jdbcType=VARCHAR}, jibunAddress=#{jibunAddress, jdbcType=VARCHAR}, detailAddress=#{detailAddress, jdbcType=VARCHAR}, extraAddress=#{extraAddress, jdbcType=VARCHAR}, gender=#{gender, jdbcType=VARCHAR}, date_birthday=#{date_birthday, jdbcType=VARCHAR}
  		WHERE id=#{id}
  	</update>
  	

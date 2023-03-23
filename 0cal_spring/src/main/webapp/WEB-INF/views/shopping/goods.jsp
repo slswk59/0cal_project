@@ -47,7 +47,9 @@ pageEncoding="UTF-8"%>
    <!--  <script type="text/javascript" src="../resources/JavaScript/menu.js" defer></script> -->
     <script type="text/javascript" src="../resources/JavaScript/goodscount.js" defer></script>
     
-    
+          <!-- 파비콘 -->
+<link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon"> 
 
   </head>
   <body>
@@ -64,10 +66,10 @@ pageEncoding="UTF-8"%>
         </div>
         <h2 class="goods_pricegroup">
           <span class="goods_dcper"><fmt:formatNumber type="percent" value="${dto.pr_dcper}" /></span>
-          <span class="goods_dcprice">${dto.pr_dcprice}</span>
+          <span class="goods_dcprice"><fmt:formatNumber type="number" value="${dto.pr_dcprice}" /></span>
           <span class="goods_pricewon">원</span>
         </h2>
-        <span class="goods_price">${dto.pr_price}원</span>
+        <span class="goods_price"><fmt:formatNumber type="number" value="${dto.pr_price}" />원</span>
         <div class="goods_descriptions_div">
           <dl class="goods_decription">
             <dt class="goods_key_dt">판매자</dt>
@@ -154,7 +156,7 @@ pageEncoding="UTF-8"%>
           <div class="goods_cartprice_div">
             <span class="goods_cartprice_div_title">총 상품금액 :</span>
             <span class="goods_cartprice_div_price">
-            	${dto.pr_dcprice}
+            	<fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
             </span>
             <span class="goods_cartprice_div_text">원</span>
           </div>

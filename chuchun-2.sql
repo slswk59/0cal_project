@@ -1,0 +1,24 @@
+SELECT * FROM product;
+--PR_KEY, PR_NAME, PR_THUMBNAIL, PR_PRICE, PR_DCPRICE, PR_DCPER
+
+SELECT 
+  PR_KEY, 
+  PR_NAME, 
+  PR_THUMBNAIL, 
+  PR_PRICE, 
+  PR_DCPRICE, 
+  PR_DCPER
+FROM 
+(
+  SELECT 
+    PR_KEY, 
+    PR_NAME, 
+    PR_THUMBNAIL, 
+    PR_PRICE, 
+    PR_DCPRICE, 
+    PR_DCPER, 
+    ROW_NUMBER() OVER (ORDER BY dbms_random.value) rn
+  FROM product
+)
+WHERE rn <= 12;
+

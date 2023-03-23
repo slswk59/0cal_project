@@ -2,19 +2,22 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-    <mapper namespace="shopping">
-    <!-- 상품관련 -->
+
+<mapper namespace="shopping">
+	<!-- 상품관련 -->
 	<select id="productCount" resultType="int">
-		SELECT count(*) FROM product
+		SELECT count(*) FROM
+		product
 	</select>
-	
-	<select id="selectOneProduct" parameterType="int" resultType="shopping.dto.ProductDTO">
+
+	<select id="selectOneProduct" parameterType="int"
+		resultType="shopping.dto.ProductDTO">
 		SELECT * FROM product WHERE pr_key=#{pr_key}
 	</select>
-	
 
-	<select id="productNewList" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+
+	<select id="productNewList" parameterType="shopping.dto.PageDTO"
+		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
 		SELECT b.*
 			FROM(SELECT rownum AS rm, a.*
@@ -24,8 +27,10 @@
 		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
 		]]>
 	</select>
-	
-	<select id="productSaleList" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+
+	<select id="productSaleList"
+		parameterType="shopping.dto.PageDTO"
+		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
 		SELECT b.*
 			FROM(SELECT rownum AS rm, a.*
@@ -35,8 +40,10 @@
 		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
 		]]>
 	</select>
-	
-	<select id="productthemeList_drama" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+
+	<select id="productthemeList_drama"
+		parameterType="shopping.dto.PageDTO"
+		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
 		SELECT b.*
 			FROM(SELECT rownum AS rm, a.*
@@ -46,8 +53,10 @@
 		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
 		]]>
 	</select>
-	
-	<select id="productthemeList_organic" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+
+	<select id="productthemeList_organic"
+		parameterType="shopping.dto.PageDTO"
+		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
 		SELECT b.*
 			FROM(SELECT rownum AS rm, a.*
@@ -57,10 +66,11 @@
 		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
 		]]>
 	</select>
-	
+
 	<!-- 카테고리페이지 -->
-	
-	<select id="ctgProductCount" parameterType="String" resultType="int">
+
+	<select id="ctgProductCount" parameterType="String"
+		resultType="int">
 		<![CDATA[
 			select count(*) as count
 			from ( select *
@@ -68,9 +78,10 @@
 				where cate_key=#{category}
 			)
 		]]>
-	</select> 
-	
-	<select id="ctgProductList" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+	</select>
+
+	<select id="ctgProductList" parameterType="shopping.dto.PageDTO"
+		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
 		SELECT b.*
 			FROM(SELECT rownum AS rm, a.*
@@ -80,12 +91,13 @@
 		WHERE b.rm>=#{startRow} AND b.rm<=#{endRow}
 		]]>
 	</select>
-	
+
 
 	<!-- 상품 구입횟수가 많은 상품은 추후 구현! 어려움. 구매횟수가 많은 것 -->
 	<!-- 상품 검색어 기능은 추후 구현! 너무 어려움. -->
-	
-	<select id="searchList" parameterType="shopping.dto.PageDTO" resultType="shopping.dto.ProductDTO">
+
+	<select id="searchList" parameterType="shopping.dto.PageDTO"
+		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
 		SELECT b.*
 			FROM(SELECT rownum AS rm, a.*
@@ -145,46 +157,177 @@
  		WHERE cart_key=#{cart_key}
  	</delete>
 
-	<!-- 구매내역관련 -->
-	 <resultMap type="shopping.dto.OrdersDTO" id="listSelect" autoMapping="true">
-		<association property="memberDTO" javaType="member.dto.MemberDTO">
-			<result column="id" property="id"/>
-		</association>
-		<association property="productDTO" javaType="shopping.dto.ProductDTO">
-			<result column="pr_name" property="pr_name"/>
-			<result column="pr_thumbnail" property="pr_thumbnail"/>
-		</association>
-	</resultMap>
+	<!-- 장바구니 내역 관련 -->
+
+	<!-- best 데이터베이스 -->
+	<select id="BestImages" resultType="shopping.dto.ProductDTO">
+		<![CDATA[
+	SELECT t.PR_THUMBNAIL, p.PR_NAME, p.PR_PRICE, p.PR_DCPRICE, p.PR_DCper
+	FROM product t
+	JOIN (
+	    SELECT PR_KEY, PR_NAME, PR_PRICE, PR_DCPRICE, PR_DCper
+	    FROM product
+	) p ON t.PR_KEY = p.PR_KEY
+	JOIN (
+	    SELECT PR_KEY, SUM(OR_pr_count) AS SUM_NUM
+	    FROM or_detail
+	    GROUP BY PR_KEY
+	    ORDER BY SUM_NUM DESC
+	) o ON p.PR_KEY = o.PR_KEY
+	WHERE ROWNUM <= 16
+		]]>
+		</select>
+		
+
+		<!-- chuchun -->
+		<select id="chuchunButton" resultType="shopping.dto.ProductDTO">
+	<![CDATA[
+	SELECT 
+	  PR_KEY, 
+	  PR_NAME, 
+	  PR_THUMBNAIL, 
+	  PR_PRICE, 
+	  PR_DCPRICE, 
+	  PR_DCPER
+	FROM 
+	(
+	  SELECT 
+	    PR_KEY, 
+	    PR_NAME, 
+	    PR_THUMBNAIL, 
+	    PR_PRICE, 
+	    PR_DCPRICE, 
+	    PR_DCPER, 
+	    ROW_NUMBER() OVER (ORDER BY dbms_random.value) rn
+	  FROM product
+	)
+	WHERE rn <= 12
+		]]>
+		</select>
+
 	
-	<select id="orderlist" parameterType="String" resultMap="listSelect">
-			SELECT * 
-			FROM(SELECT o.id, o.or_key, o.or_price, o.or_date, t.pr_key, p.pr_name, p.pr_thumbnail,
-		    ROW_NUMBER() OVER(PARTITION BY o.or_key ORDER BY t.pr_key DESC) AS RankNO
-			FROM orders o, or_detail t, product p
-			WHERE o.or_key = t.or_key AND p.pr_key = t.pr_key AND o.id=#{id}
-			) WHERE RankNO = 1
+	<insert id="insertCart" parameterType="shopping.dto.CartDTO">
+		INSERT INTO cart(cart_key,
+		cart_count, cart_price, cart_reg_date, pr_key,
+		id)
+		VALUES(cart_key_seq.nextval, #{cart_count}, #{cart_price},
+		to_char(sysdate, 'YYYY-MM-DD
+		HH24:mi:SS'), #{pr_key}, #{id,
+		jdbcType=VARCHAR})
+	</insert>
+
+	<select id="countCart" resultType="int">
+		SELECT count(*) FROM cart
+		WHERE id=#{id, jdbcType=VARCHAR} and pr_key=#{pr_key}
 	</select>
 
 
-	<resultMap type="shopping.dto.OrdersDTO" id="detailListSelect" autoMapping="true">
-		<association property="productDTO" javaType="shopping.dto.ProductDTO">
-			<result column="pr_name" property="pr_name"/>
-			<result column="pr_thumbnail" property="pr_thumbnail"/>
-			<result column="pr_price" property="pr_price"/>
-			<result column="pr_dcprice" property="pr_dcprice"/>
+	<update id="modifyCart" parameterType="shopping.dto.CartDTO">
+		UPDATE cart
+		SET
+		cart_count=#{cart_count}, cart_price=#{cart_price},
+		cart_reg_date=to_char(sysdate, 'YYYY-MM-DD HH24:mi:SS')
+		WHERE
+		id=#{id,jdbcType=VARCHAR} and pr_key=#{pr_key}
+	</update>
+
+	<update id="updateCart" parameterType="shopping.dto.CartDTO">
+		UPDATE cart
+		SET
+		cart_count=cart_count+#{cart_count},
+		cart_price=cart_price+#{cart_price}, cart_reg_date=to_char(sysdate,
+		'YYYY-MM-DD HH24:mi:SS')
+		WHERE id=#{id,jdbcType=VARCHAR} and
+		pr_key=#{pr_key}
+	</update>
+
+
+	<resultMap type="shopping.dto.CartDTO" id="cartlistSelect"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
 		</association>
-		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
-			<result column="or_detail_key" property="or_detail_key"/>
-			<result column="or_pr_count" property="or_pr_count"/>
+		<association property="productDTO"
+			javaType="shopping.dto.ProductDTO">
+			<result column="pr_key" property="pr_key" />
+			<result column="pr_name" property="pr_name" />
+			<result column="pr_thumbnail" property="pr_thumbnail" />
 		</association>
 	</resultMap>
-	
-	<select id="orderDetailList" parameterType="int" resultMap="detailListSelect">
-			SELECT o.or_key, t.or_detail_key, t.or_pr_count,
-		    p.pr_name, p.pr_thumbnail, p.pr_price, p.pr_dcprice
-			FROM orders o, or_detail t, product p
-			WHERE o.or_key = t.or_key AND p.pr_key = t.pr_key AND o.or_key=#{or_key}
-			ORDER BY or_detail_key ASC, or_date ASC
+
+	<select id="cartlist" parameterType="String"
+		resultMap="cartlistSelect">
+		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id,
+		t.cart_price, t.cart_count, t.cart_key
+		FROM member m, product p, cart t
+		WHERE m.id = t.id and p.pr_key = t.pr_key
+		and m.id = #{id}
+	</select>
+
+	<delete id="deleteCart" parameterType="int">
+		DELETE FROM cart
+		WHERE
+		cart_key=#{cart_key}
+	</delete>
+
+	<!-- 구매내역관련 -->
+	<resultMap type="shopping.dto.OrdersDTO" id="listSelect"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
+		</association>
+		<association property="productDTO"
+			javaType="shopping.dto.ProductDTO">
+			<result column="pr_name" property="pr_name" />
+			<result column="pr_thumbnail" property="pr_thumbnail" />
+		</association>
+	</resultMap>
+
+	<select id="orderlist" parameterType="String"
+		resultMap="listSelect">
+		SELECT *
+		FROM(SELECT o.id, o.or_key, o.or_price, o.or_date,
+		t.pr_key, p.pr_name,
+		p.pr_thumbnail,
+		ROW_NUMBER() OVER(PARTITION BY
+		o.or_key ORDER BY t.pr_key DESC) AS RankNO
+		FROM orders o, or_detail t,
+		product p
+		WHERE o.or_key = t.or_key AND p.pr_key = t.pr_key AND
+		o.id=#{id}
+		) WHERE RankNO = 1
+	</select>
+
+
+
+	<resultMap type="shopping.dto.OrdersDTO"
+		id="detailListSelect" autoMapping="true">
+		<association property="productDTO"
+			javaType="shopping.dto.ProductDTO">
+			<result column="pr_name" property="pr_name" />
+			<result column="pr_thumbnail" property="pr_thumbnail" />
+			<result column="pr_price" property="pr_price" />
+			<result column="pr_dcprice" property="pr_dcprice" />
+		</association>
+		<association property="or_detailDTO"
+			javaType="shopping.dto.Or_detailDTO">
+			<result column="or_detail_key" property="or_detail_key" />
+			<result column="or_pr_count" property="or_pr_count" />
+		</association>
+	</resultMap>
+
+	<select id="orderDetailList" parameterType="int"
+		resultMap="detailListSelect">
+		SELECT o.or_key, t.or_detail_key, t.or_pr_count,
+		p.pr_name,
+		p.pr_thumbnail, p.pr_price, p.pr_dcprice
+		FROM orders o, or_detail t,
+		product p
+		WHERE o.or_key = t.or_key AND p.pr_key = t.pr_key AND
+		o.or_key=#{or_key}
+		ORDER BY or_detail_key ASC, or_date ASC
 	</select>
 
 </mapper>
