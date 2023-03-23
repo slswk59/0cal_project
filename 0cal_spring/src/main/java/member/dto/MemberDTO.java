@@ -8,6 +8,11 @@ public class MemberDTO {
 	private String user_name;
 	private String email;
 	private String address;
+	private String postcode;
+	private String roadAddress;
+	private String jibunAddress;
+	private String detailAddress;
+	private String extraAddress;
 	private String phone;
 	private String date_birthday;
 	private String gender;
@@ -105,5 +110,50 @@ public class MemberDTO {
 			throw new Exception();
 		this.user_pass = newPassword;
 	}
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	public String getRoadAddress() {
+		return roadAddress;
+	}
+
+	public void setRoadAddress(String roadAddress) {
+		this.roadAddress = roadAddress;
+	}
+
+	public String getJibunAddress() {
+		return jibunAddress;
+	}
+
+	public void setJibunAddress(String jibunAddress) {
+		this.jibunAddress = jibunAddress;
+	}
+
+	public String getExtraAddress() {
+		return extraAddress;
+	}
+
+	public void setExtraAddress(String extraAddress) {
+		this.extraAddress = extraAddress;
+	}
+
+	public void setRememberId(boolean rememberId) {
+		this.rememberId = rememberId;
+	}
+
+	public String getDetailAddress() {
+		return detailAddress;
+	}
+
+	public void setDetailAddress(String detailAddress) {
+		this.detailAddress = detailAddress;
+	}
+	
+	
 
 }

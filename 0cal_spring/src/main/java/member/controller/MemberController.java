@@ -37,7 +37,11 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 	
-
+	//홈화면
+//	@RequestMapping(value="/index.do", method=RequestMethod.GET)
+//	public String index() {
+//		return "redirect:/index.do";
+//	}
 
 	//회원가입 폼 불러오기
 	@RequestMapping(value="/member/signup.do", method=RequestMethod.GET)
@@ -49,17 +53,33 @@ public class MemberController {
 	//중복체크
 	@RequestMapping(value="/member/dupCheck.do", method=RequestMethod.POST)
 	@ResponseBody
-	public int dupCheck(@RequestBody HttpServletRequest request, HttpSession session) {
-		String userId = request.getParameter("userId");
-				
-		int result = memberService.dupCheckId(userId);
-		System.out.println(result);
-		return result;
+	public String dupCheck(HttpServletRequest request, HttpSession session) {
+		String key   = request.getParameter("key");
+		String value = request.getParameter("value");
+		
+		return memberService.dupCheck(key, value);
 	}
 		
 	//회원가입 처리
-	@RequestMapping(value="/member/signup.do", method=RequestMethod.POST)
-	public String addMember(MemberDTO memberDto, HttpSession session) {
+	@RequestMapping(value="/member/insertMember.do", method=RequestMethod.GET)
+	@ResponseBody
+	public String addMember(MemberDTO memberDto, HttpServletRequest request, HttpSession session) {
+		
+		memberDto.setId(request.getParameter("id"));
+		memberDto.setNick_name(request.getParameter("nick_name"));
+		memberDto.setUser_pass(request.getParameter("user_pass"));
+		memberDto.setUser_name(request.getParameter("user_name"));
+		memberDto.setEmail(request.getParameter("email"));
+		memberDto.setAddress(request.getParameter("address"));
+		memberDto.setPostcode(request.getParameter("postcode"));
+		memberDto.setRoadAddress(request.getParameter("roadAddress"));
+		memberDto.setJibunAddress(request.getParameter("jibunAddress"));
+		memberDto.setDetailAddress(request.getParameter("detailAddress"));
+		memberDto.setExtraAddress(request.getParameter("extraAddress"));
+		memberDto.setPhone(request.getParameter("phone"));
+		memberDto.setGender(request.getParameter("gender"));
+		memberDto.setDate_birthday(request.getParameter("date_birthday"));
+		
 		AuthInfo authInfo = memberService.addMemberProcess(memberDto);
 		session.setAttribute("authInfo", authInfo);
 		System.out.println(authInfo);
@@ -67,7 +87,7 @@ public class MemberController {
 	}
 	
 	//로그아웃 처리
-	@RequestMapping(value="/logout.do", method=RequestMethod.GET)
+	@RequestMapping(value="/member/logout.do", method=RequestMethod.GET)
 	public String logoutMember(HttpSession session) {
 		
 		session.invalidate();
@@ -80,7 +100,7 @@ public class MemberController {
 		return "member/login";
 	}
 	
-	// 0cal 로그인 처리
+	//로그인 처리
 	@RequestMapping(value="/member/login.do", method=RequestMethod.POST)
 	public String loginMember(MemberDTO memberDTO, HttpSession session, HttpServletResponse resp) {
 		try {
@@ -95,6 +115,7 @@ public class MemberController {
 			}
 			resp.addCookie(rememberCookie);
 			return "redirect:/index.do";
+			
 		}catch(Exception e) {
 			resp.setContentType("text/html;charset=UTF-8");
 			
@@ -102,7 +123,7 @@ public class MemberController {
 				PrintWriter out = resp.getWriter();
 //				out.print("아이디 비밀번호 불일치");
 //				out.print("<script>alert('아이디 비밀번호 불일치'); location.href='login.do';</script>");
-				out.print("<script>alert('아이디 또는 비밀번호를 확인해주세요.'); history.go(-1);</script>");
+				out.print("<script>alert('아이디 비밀번호 불일치'); history.go(-1);</script>");
 				out.flush();
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
@@ -123,12 +144,29 @@ public class MemberController {
 	
 	//회원정보 수정 처리
 	@RequestMapping(value="/member/userInfoEdit.do", method=RequestMethod.POST)
-	public String updateMember(MemberDTO memberDTO, ChangePwdCommand changePass, HttpSession session) {
-		AuthInfo authInfo = memberService.updateMemberProcess(memberDTO);
-		memberService.updatePassProcess(authInfo.getId(), changePass);
-		session.setAttribute("authInfo", authInfo);
-		return "redirect:/index.do";
-	}
+	@ResponseBody
+	public String updateMember(MemberDTO memberDto, HttpServletRequest request, HttpSession session) {
+
+			memberDto.setId(request.getParameter("id"));
+			memberDto.setNick_name(request.getParameter("nick_name"));
+			memberDto.setUser_pass(request.getParameter("user_pass"));
+			memberDto.setUser_name(request.getParameter("user_name"));
+			memberDto.setEmail(request.getParameter("email"));
+			memberDto.setPhone(request.getParameter("phone"));
+			memberDto.setAddress(request.getParameter("address"));
+			memberDto.setPostcode(request.getParameter("postcode"));
+			memberDto.setRoadAddress(request.getParameter("roadAddress"));
+			memberDto.setJibunAddress(request.getParameter("jibunAddress"));
+			memberDto.setDetailAddress(request.getParameter("detailAddress"));
+			memberDto.setExtraAddress(request.getParameter("extraAddress"));
+			memberDto.setGender(request.getParameter("gender"));
+			memberDto.setDate_birthday(request.getParameter("date_birthday"));
+			
+			AuthInfo authInfo = memberService.updateMemberProcess(memberDto);
+			session.setAttribute("authInfo", authInfo);
+			System.out.println(authInfo);
+			return "redirect:/index.do";
+		}
 	
 	//회원정보삭제 처리
 	@RequestMapping(value="/member/delete.do", method=RequestMethod.POST)
@@ -136,6 +174,7 @@ public class MemberController {
 		AuthInfo authInfo =(AuthInfo)session.getAttribute("authInfo");
 		memberService.deleteMemberProcess(authInfo.getId());
 		System.out.println(authInfo.getId());
+		session.invalidate();
 		return "redirect:/index.do";
 	}
 	

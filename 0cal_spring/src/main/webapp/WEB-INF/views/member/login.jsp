@@ -18,15 +18,6 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="<c:url value="/resources/CSS/footer.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/CSS/style.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/CSS/navbar.css" />" >
-   <%--  <link rel="stylesheet" href="<c:url value="/resources/CSS/slider.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/main.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/search.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/category.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/goods.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/cart.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/wish.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/order.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/CSS/signup.css" />" > --%>
     <link rel="stylesheet" href="<c:url value="/resources/CSS/login.css" />" >
 
     <!-- Script -->
@@ -34,10 +25,6 @@ pageEncoding="UTF-8"%>
       src="https://kit.fontawesome.com/43fd0ad460.js"
       crossorigin="anonymous"
     ></script>
-  <!--   <script src="./JavaScript/img-slider.js" defer></script>
-    <script src="./JavaScript/menu.js" defer></script>
-    <script src="./JavaScript/recommend-slider.js" defer></script>
-    <script src="./JavaScript/advertisement.js" defer></script> -->
     <script src="./JavaScript/login.js" defer></script>
     
     <!-- 파비콘 -->
