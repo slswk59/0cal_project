@@ -47,7 +47,9 @@ pageEncoding="UTF-8"%>
    <!--  <script type="text/javascript" src="../resources/JavaScript/menu.js" defer></script> -->
     <script type="text/javascript" src="../resources/JavaScript/goodscount.js" defer></script>
     
-    
+          <!-- 파비콘 -->
+<link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon"> 
 
   </head>
   <body>
@@ -139,7 +141,7 @@ pageEncoding="UTF-8"%>
                   </div>
                   <div class="goods_choice_countdiv_price">
                     <span class="goods_choice_countdiv_price_span"
-                      ><fmt:formatNumber type="number" value="${dto.pr_dcprice}" />원</span
+                      >${dto.pr_dcprice}원</span
                     >
                  
                   </div>
