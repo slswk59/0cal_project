@@ -134,7 +134,7 @@
 			</section>
 
 			<section class="recommend-items_cate">
-				<h2>드라마 정주행 추천</h2>
+				<h2>드라마 정주행하며 즐기는 디저트</h2>
 				<div class="recommend-slide">
 					<div class="recommend-slide-items">
 						<c:forEach items="${dramaList}" var="dto">
@@ -179,7 +179,7 @@
 			</section>
 
 			<section class="recommend-items_cate">
-				<h2>올가닉 제품</h2>
+				<h2>나의 건강! 올가닉 디저트</h2>
 				<div class="recommend-slide">
 					<div class="recommend-slide-items">
 

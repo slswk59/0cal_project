@@ -12,7 +12,7 @@ public class ProductDaoImp implements ProductDAO{
 	private SqlSession sqlSession;
 	
 	public ProductDaoImp() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public void setSqlSession(SqlSession sqlSession) {
@@ -51,7 +51,6 @@ public class ProductDaoImp implements ProductDAO{
 
 	@Override
 	public List<ProductDTO> ctgProductList(PageDTO pv) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList("shopping.ctgProductList", pv);
 	}
 
@@ -67,15 +66,13 @@ public class ProductDaoImp implements ProductDAO{
 
 	@Override
 	public List<ProductDTO> bestList() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList("shopping.BestImages");
 	}
 
-//	@Override
-//	public List<ProductDTO> bestList(PageDTO pv) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	@Override
+	public List<ProductDTO> chuchunList() {
+		return sqlSession.selectList("shopping.chuchunButton");
+	}
 
 	
 
