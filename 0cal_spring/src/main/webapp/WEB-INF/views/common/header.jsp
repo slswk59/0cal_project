@@ -119,7 +119,7 @@
 								src="${pageContext.request.contextPath}/resources/img/heart.svg"
 								alt="관심있는 상품" />
 						</a></li>
-						<li><a href="#"> <img
+						<li><a href="${pageContext.request.contextPath}/shopping/cart.do"> <img
 								src="${pageContext.request.contextPath}/resources/img/cart.svg"
 								alt="장바구니" />
 						</a></li>

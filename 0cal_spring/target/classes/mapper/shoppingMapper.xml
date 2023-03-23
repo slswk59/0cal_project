@@ -94,7 +94,56 @@
 		
 		]]>
 	</select>
+	
+	
+	<!-- 장바구니 내역 관련 -->
 
+	 <insert id="insertCart" parameterType="shopping.dto.CartDTO">
+ 		INSERT INTO cart(cart_key, cart_count, cart_price, cart_reg_date, pr_key, id)
+ 		VALUES(cart_key_seq.nextval, #{cart_count}, #{cart_price}, to_char(sysdate, 'YYYY-MM-DD HH24:mi:SS'), #{pr_key}, #{id, jdbcType=VARCHAR})	
+	 </insert>
+
+	<select id="countCart" resultType="int">
+		SELECT count(*) FROM cart WHERE id=#{id, jdbcType=VARCHAR} and pr_key=#{pr_key}
+	</select>
+	
+	
+	<update id="modifyCart" parameterType="shopping.dto.CartDTO">
+ 		UPDATE cart
+ 		SET cart_count=#{cart_count}, cart_price=#{cart_price}, cart_reg_date=to_char(sysdate, 'YYYY-MM-DD HH24:mi:SS')
+ 		WHERE id=#{id,jdbcType=VARCHAR} and pr_key=#{pr_key}
+ 	</update>
+ 	
+ 	<update id="updateCart" parameterType="shopping.dto.CartDTO">
+ 		UPDATE cart
+ 		SET cart_count=cart_count+#{cart_count}, cart_price=cart_price+#{cart_price}, cart_reg_date=to_char(sysdate, 'YYYY-MM-DD HH24:mi:SS')
+ 		WHERE id=#{id,jdbcType=VARCHAR} and pr_key=#{pr_key}
+ 	</update>
+ 
+ 	
+ 	 <resultMap type="shopping.dto.CartDTO" id="cartlistSelect" autoMapping="true">
+		<association property="memberDTO" javaType="member.dto.MemberDTO">
+			<result column="id" property="id"/>
+		</association>
+		<association property="productDTO" javaType="shopping.dto.ProductDTO">
+			<result column="pr_key" property="pr_key"/>
+			<result column="pr_name" property="pr_name"/>
+			<result column="pr_thumbnail" property="pr_thumbnail"/>
+			<result column="pr_dcprice" property="pr_dcprice"/>
+		</association>
+	</resultMap>
+	
+	<select id="cartlist" parameterType="String" resultMap="cartlistSelect">
+		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id, t.cart_price, t.cart_count, t.cart_key, p.pr_dcprice
+		FROM member m, product p, cart t
+		WHERE m.id = t.id and p.pr_key = t.pr_key
+		and m.id = #{id}
+	</select>
+ 
+ 	<delete id="deleteCart" parameterType="int">
+ 		DELETE FROM cart
+ 		WHERE cart_key=#{cart_key}
+ 	</delete>
 
 	<!-- 구매내역관련 -->
 	 <resultMap type="shopping.dto.OrdersDTO" id="listSelect" autoMapping="true">

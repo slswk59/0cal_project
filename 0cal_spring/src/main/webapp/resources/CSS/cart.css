@@ -154,8 +154,9 @@ p.cart_gooslist_goodsname {
 }
 
 div.cart_goods_price {
-  display: flex;
-  flex-direction: column;
+  /*  display: flex;
+  flex-direction: column;*/
+  display: inline-flex;
   width: 127px;
   text-align: right;
   word-break: break-all;
@@ -166,9 +167,10 @@ span.cart_goods_dcprice {
   font-size: 16px;
   line-height: 24px;
   color: rgb(51, 51, 51);
+  width : 100px;
 }
 
-span.cart_goods_price {
+span.cart_goods_price_span {
   font-size: 14px;
   line-height: 24px;
   color: rgb(181, 181, 181);
@@ -317,4 +319,21 @@ span.cart_order_button_text {
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
+}
+
+div.goods_choice_countdiv_countplus_cart{
+	display: inline-flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 200px;
+  border-radius: 3px;
+}
+
+button.cart_buttons{
+	border: 1px solid rgb(221, 223, 225);
+}
+
+div.cart_buttons{
+	border: 1px solid rgb(221, 223, 225);
 }
