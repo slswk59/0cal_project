@@ -39,7 +39,6 @@
 <!-- Script -->
 <script type="text/javascript" src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous" ></script>
 <script type="text/javascript" src="../resources/JavaScript/img-slider.js" defer ></script> 
-<script type="text/javascript" src="../resources/JavaScript/menu.js" defer ></script> 
 <script type="text/javascript" src="../resources/JavaScript/recommend-slider.js" defer ></script> 
 <script type="text/javascript" src="../resources/JavaScript/advertisement.js" defer ></script> 
 <script type="text/javascript" src="../resources/JavaScript/roulette.js" defer ></script> 

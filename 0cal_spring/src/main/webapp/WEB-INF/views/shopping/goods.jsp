@@ -156,7 +156,7 @@ pageEncoding="UTF-8"%>
           <div class="goods_cartprice_div">
             <span class="goods_cartprice_div_title">총 상품금액 :</span>
             <span class="goods_cartprice_div_price">
-            	<fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
+            	${dto.pr_dcprice}
             </span>
             <span class="goods_cartprice_div_text">원</span>
           </div>
