@@ -29,24 +29,30 @@
 <link rel="stylesheet" href="<c:url value="/resources/CSS/slider.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/CSS/main.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/CSS/search.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/category.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/CSS/category.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/CSS/goods.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/CSS/cart.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/CSS/wish.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/CSS/order.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/roulette.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/CSS/roulette.css"/>">
 
 <!-- Script -->
-<script type="text/javascript" src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous" ></script>
-<script type="text/javascript" src="../resources/JavaScript/img-slider.js" defer ></script> 
-<script type="text/javascript" src="../resources/JavaScript/recommend-slider.js" defer ></script> 
-<script type="text/javascript" src="../resources/JavaScript/advertisement.js" defer ></script> 
-<script type="text/javascript" src="../resources/JavaScript/roulette.js" defer ></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script> 
-
-          <!-- 파비콘 -->
-<link rel="shortcut icon" href="../resources/img/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon"> 
+<script type="text/javascript"
+	src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
+<script type="text/javascript"
+	src="../resources/JavaScript/img-slider.js" defer></script>
+<script type="text/javascript" src="../resources/JavaScript/menu.js"
+	defer></script>
+<script type="text/javascript"
+	src="../resources/JavaScript/recommend-slider.js" defer></script>
+<script type="text/javascript"
+	src="../resources/JavaScript/advertisement.js" defer></script>
+<script type="text/javascript" src="../resources/JavaScript/roulette.js"
+	defer></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -65,8 +71,20 @@
 		</div>
 
 		<section class="recommend-items_cate">
-			<h2>빵빵이 추천</h2>
+			<h2>맞춤 추천</h2>
 
+			<!-- 추천 배너 -->
+			<div class="banner-container">
+				<img
+					src="${pageContext.request.contextPath}/resources/img/chuchun_banner.jpg"
+					alt="banner" />
+			</div>
+
+			<br> 
+			<br>
+
+			<h2>오늘의 빵빵이 추천</h2>
+			<br> 
 			<div class="recommend-slide">
 				<div class="recommend-slide-items">
 
@@ -76,12 +94,11 @@
 							<ul class="recommend-slide-items">
 								<li class="recommend-slide-item">
 									<div class="item-img-container">
-										<span style="display:none;">{$dto.pr_key}</span>
-						                <c:url var="path" value="goods.do">
+										<span style="display: none;">${dto.pr_key}</span>
+										<c:url var="path" value="goods.do">
 											<c:param name="pr_key" value="${dto.pr_key}" />
 										</c:url>
-										<a href="${path}"> 
-										<img class="item-img"
+										<a href="${path}"> <img class="item-img"
 											src="${dto.pr_thumbnail}" alt="추천 상품" />
 										</a>
 
@@ -94,34 +111,31 @@
 												</button>
 											</a>
 										</div>
-									</div> 
-									
-									<!-- 서브배너 -->
+									</div>
+
 									<div class="recommend-slide">
 										<ul class="recommend-slide-items">
 										</ul>
-									</div>
-									
-									<a href="${path}">
-                <h3 class="item-name">${dto.pr_name}</h3>
-              </a>
-              <a href="${path}">
-                <p class="current-price">
-                  <span class="discount-rate"><fmt:formatNumber type="percent" value="${dto.pr_dcper}" /></span>
-                  <fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
-										원
-                </p>
-              </a>
-              <a href="${path}">
-                <p class="regular-price">
-                <fmt:formatNumber type="number" value="${dto.pr_price}" />
-										원</p>
-              </a>
-            </div>
-            </c:forEach>
-          </div>
-        </div>
-        
+									</div> <a href="${path}">
+										<h3 class="item-name">${dto.pr_name}</h3>
+								</a> <a href="${path}">
+										<p class="current-price">
+											<span class="discount-rate"><fmt:formatNumber
+													type="percent" value="${dto.pr_dcper}" /></span>
+											<fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
+											원
+										</p>
+								</a> <a href="${path}">
+										<p class="regular-price">
+											<fmt:formatNumber type="number" value="${dto.pr_price}" />
+											원
+										</p>
+								</a>
+						</div>
+					</c:forEach>
+				</div>
+			</div>
+
 		</section>
 	</main>
 	<footer>
