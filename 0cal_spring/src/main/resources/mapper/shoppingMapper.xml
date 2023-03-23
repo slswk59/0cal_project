@@ -113,7 +113,7 @@
 	<!-- best 데이터베이스 -->
 	<select id="BestImages" resultType="shopping.dto.ProductDTO">
 		<![CDATA[
-	SELECT t.PR_THUMBNAIL, p.PR_NAME, p.PR_PRICE, p.PR_DCPRICE, p.PR_DCper
+	SELECT t.PR_THUMBNAIL, p.PR_NAME, p.PR_PRICE, p.PR_DCPRICE, p.PR_DCper, p.pr_key
 	FROM product t
 	JOIN (
 	    SELECT PR_KEY, PR_NAME, PR_PRICE, PR_DCPRICE, PR_DCper
@@ -199,7 +199,7 @@
 			javaType="member.dto.MemberDTO">
 			<result column="id" property="id" />
 		</association>
-<<<<<<< HEAD
+
 		<association property="productDTO" javaType="shopping.dto.ProductDTO">
 			<result column="pr_key" property="pr_key"/>
 			<result column="pr_name" property="pr_name"/>
@@ -210,20 +210,6 @@
 	
 	<select id="cartlist" parameterType="String" resultMap="cartlistSelect">
 		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id, t.cart_price, t.cart_count, t.cart_key, p.pr_dcprice
-=======
-		<association property="productDTO"
-			javaType="shopping.dto.ProductDTO">
-			<result column="pr_key" property="pr_key" />
-			<result column="pr_name" property="pr_name" />
-			<result column="pr_thumbnail" property="pr_thumbnail" />
-		</association>
-	</resultMap>
-
-	<select id="cartlist" parameterType="String"
-		resultMap="cartlistSelect">
-		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id,
-		t.cart_price, t.cart_count, t.cart_key
->>>>>>> 5f62bf5a9e9d548a3ff3249a26692fee02a31c66
 		FROM member m, product p, cart t
 		WHERE m.id = t.id and p.pr_key = t.pr_key
 		and m.id = #{id}

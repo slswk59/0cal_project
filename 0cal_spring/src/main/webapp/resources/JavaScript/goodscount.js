@@ -21,7 +21,7 @@ if (count > 1)  // 수량은 최소 1개 이상이어야 합니다.
  count--;  // 수량을 감소시킵니다.
  countElement.innerText = count;  // 수량을 표시하는 요소를 업데이트합니다.
 priceElement.innerText = (price * count).toLocaleString() + '원';  // 가격을 표시하는 요소를 업데이트합니다.
-totPriceElement.innerText = (price * count).toLocaleString();
+totPriceElement.innerText = (price * count);
 //totPriceElement.innerText = (price * count);
 });
 
@@ -31,7 +31,7 @@ plusButton.addEventListener('click', () => {
   if(count >= 1 ) plusButton.style.backgroundImage = 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xNiAxMHY0aDR2MmgtNHY0aC0ydi00aC00di0yaDR2LTRoMnoiIGZpbGw9IiMzMzMiIGZpbGwtcnVsZT0ibm9uemVybyIvPgo8L3N2Zz4K)';
   countElement.innerText = count;  // 수량을 표시하는 요소를 업데이트합니다.
 priceElement.innerText = (price * count).toLocaleString() + '원';  // 가격을 표시하는 요소를 업데이트합니다.
-totPriceElement.innerText = (price * count).toLocaleString();
+totPriceElement.innerText = (price * count);
 //totPriceElement.innerText = (price * count);
 });
 

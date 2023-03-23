@@ -135,10 +135,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 >
               </li>
               <li class="main-menu-item">
-                <a href="#">베스트</a>
+                <a href="${pageContext.request.contextPath}/shopping/best.do">베스트</a>
               </li>
               <li class="main-menu-item">
-                <a href="#">추천</a>
+                <a href="${pageContext.request.contextPath}/shopping/chuchun.do">추천</a>
               </li>
               <li class="main-menu-item">
                 <a
