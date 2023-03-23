@@ -136,10 +136,11 @@ a.paging_atag {
 
 .category-name {
    margin-top: 50px;
-    font-weight: 500;
-    font-size: 28px;
+    font-weight: 600;
+    font-size: 32px;
     color: rgb(51, 51, 51);
     line-height: 35px;
     letter-spacing: -1px;
     text-align: center;	
+    padding-left: 450px;
 }
