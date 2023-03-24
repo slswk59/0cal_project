@@ -7,14 +7,14 @@ import org.apache.ibatis.session.SqlSession;
 import shopping.dto.PageDTO;
 import shopping.dto.ProductDTO;
 
-public class ProductDaoImp implements ProductDAO{
+public class ProductDaoImp implements ProductDAO {
 
 	private SqlSession sqlSession;
-	
+
 	public ProductDaoImp() {
-		
+
 	}
-	
+
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
@@ -58,7 +58,7 @@ public class ProductDaoImp implements ProductDAO{
 	public int ctgProductCount(String category) {
 		return sqlSession.selectOne("shopping.ctgProductCount", category);
 	}
-	
+
 	@Override
 	public List<ProductDTO> searchList(PageDTO pv) {
 		return sqlSession.selectList("shopping.searchList", pv);
@@ -74,11 +74,34 @@ public class ProductDaoImp implements ProductDAO{
 		return sqlSession.selectList("shopping.chuchunButton");
 	}
 
-	
+	@Override
+	public List<ProductDTO> g10afList() {
+		return sqlSession.selectList("genderage.g10afList");
+	}
 
+	@Override
+	public List<ProductDTO> g20afList() {
+		return sqlSession.selectList("genderage.g20afList");
+	}
 
-	
+	@Override
+	public List<ProductDTO> g30afList() {
+		return sqlSession.selectList("genderage.g30afList");
+	}
 
+	@Override
+	public List<ProductDTO> g10amList() {
+		return sqlSession.selectList("genderage.g10amList");
+	}
 
-	
+	@Override
+	public List<ProductDTO> g20amList() {
+		return sqlSession.selectList("genderage.g20amList");
+	}
+
+	@Override
+	public List<ProductDTO> g30amList() {
+		return sqlSession.selectList("genderage.g30amList");
+	}
+
 }

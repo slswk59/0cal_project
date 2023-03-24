@@ -165,7 +165,9 @@ ORDER BY COUNT(*) DESC;
 
 
 
-
+pr_dcper(할인율)
+pr_dcperice(할인가)
+pr_price(가격)
 
 
 

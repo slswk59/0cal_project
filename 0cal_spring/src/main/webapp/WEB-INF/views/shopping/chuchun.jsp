@@ -17,9 +17,7 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap"
-	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap rel="stylesheet" />
 
 <!-- CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/CSS/header.css"/>">
@@ -71,6 +69,11 @@
 		</div>
 
 		<section class="recommend-items_cate">
+			</div>
+
+			<br> 
+			<br>
+
 			<h2>맞춤 추천</h2>
 
 			<!-- 추천 배너 -->
@@ -82,7 +85,7 @@
 
 			<br> 
 			<br>
-
+      
 			<h2>오늘의 빵빵이 추천</h2>
 			<br> 
 			<div class="recommend-slide">
@@ -94,7 +97,9 @@
 							<ul class="recommend-slide-items">
 								<li class="recommend-slide-item">
 									<div class="item-img-container">
+                  
 										<span style="display: none;">${dto.pr_key}</span>
+
 										<c:url var="path" value="goods.do">
 											<c:param name="pr_key" value="${dto.pr_key}" />
 										</c:url>

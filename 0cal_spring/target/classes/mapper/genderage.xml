@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="genderage">
+
+  <resultMap type="shopping.dto.ProductDTO" id="g10afListt"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
+			<result column="gender" property="gender" />
+			<result column="date_birthday" property="date_birthday" />
+		</association>
+
+		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key"/>
+		</association>
+		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count"/>
+		</association>
+	</resultMap>
+
+	<select id="g10afList" resultMap="g10afListt">
+		<![CDATA[
+	SELECT DISTINCT pr_key, pr_dcprice, pr_dcper, pr_price, pr_thumbnail, pr_name
+	FROM (
+	  SELECT t.or_pr_count, o.or_key, p.pr_key, p.pr_dcprice, p.pr_dcper, p.pr_price, p.pr_thumbnail, p.pr_name, m.id, m.gender, m.date_birthday 
+	  FROM or_detail t, member m, orders o, product p
+	  WHERE t.pr_key = p.pr_key and o.or_key = t.or_key and m.id = o.id and m.id IN (
+	    SELECT ID
+	    FROM member
+	    WHERE GENDER = 'F' AND TRUNC(MONTHS_BETWEEN(SYSDATE, TO_DATE(date_birthday, 'YYYY-MM-DD'))/12) BETWEEN 10 AND 19
+	  )
+	  ORDER BY t.or_pr_count DESC
+	) 
+	WHERE ROWNUM <= 5
+		]]>
+	</select>
+
+
+<resultMap type="shopping.dto.ProductDTO" id="g20afListt"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
+			<result column="gender" property="gender" />
+			<result column="date_birthday" property="date_birthday" />
+		</association>
+
+		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key"/>
+		</association>
+		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count"/>
+		</association>
+	</resultMap>
+
+	<!-- g20af -->
+	<select id="g20afList" resultMap="g20afListt">
+		<![CDATA[
+	SELECT pr_key, pr_dcprice, pr_dcper, pr_price, pr_thumbnail, pr_name
+FROM (
+  SELECT t.or_pr_count, o.or_key, p.pr_key, p.pr_dcprice, p.pr_dcper, p.pr_price, p.pr_thumbnail, p.pr_name, m.id, m.gender, m.date_birthday 
+  FROM or_detail t, member m, orders o, product p
+  WHERE t.pr_key = p.pr_key and o.or_key = t.or_key and m.id = o.id and m.id IN (
+    SELECT ID
+    FROM member
+    WHERE GENDER = 'F' AND TRUNC(MONTHS_BETWEEN(SYSDATE, TO_DATE(date_birthday, 'YYYY-MM-DD'))/12) BETWEEN 20 AND 29
+  )
+  ORDER BY t.or_pr_count DESC
+) 
+WHERE ROWNUM <= 4
+		]]>
+	</select>
+	
+	<resultMap type="shopping.dto.ProductDTO" id="g30afListt"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
+			<result column="gender" property="gender" />
+			<result column="date_birthday" property="date_birthday" />
+		</association>
+
+		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key"/>
+		</association>
+		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count"/>
+		</association>
+	</resultMap>
+
+	<!-- g30af -->
+	<select id="g30afList" resultMap="g30afListt">
+		<![CDATA[
+	SELECT pr_key, pr_dcprice, pr_dcper, pr_price, pr_thumbnail, pr_name
+FROM (
+  SELECT t.or_pr_count, o.or_key, p.pr_key, p.pr_dcprice, p.pr_dcper, p.pr_price, p.pr_thumbnail, p.pr_name, m.id, m.gender, m.date_birthday 
+  FROM or_detail t, member m, orders o, product p
+  WHERE t.pr_key = p.pr_key and o.or_key = t.or_key and m.id = o.id and m.id IN (
+    SELECT ID
+    FROM member
+    WHERE GENDER = 'F' AND TRUNC(MONTHS_BETWEEN(SYSDATE, TO_DATE(date_birthday, 'YYYY-MM-DD'))/12) >= 30
+  )
+  ORDER BY t.or_pr_count DESC
+) 
+WHERE ROWNUM <= 4
+		]]>
+	</select>
+
+	<!-- g10af -->
+	
+	
+	<resultMap type="shopping.dto.ProductDTO" id="g10amListt"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
+			<result column="gender" property="gender" />
+			<result column="date_birthday" property="date_birthday" />
+		</association>
+
+		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key"/>
+		</association>
+		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count"/>
+		</association>
+	</resultMap>
+	
+	<select id="g10amList" resultMap="g10amListt">
+		<![CDATA[
+	SELECT pr_key, pr_dcprice, pr_dcper, pr_price, pr_thumbnail, pr_name
+FROM (
+  SELECT t.or_pr_count, o.or_key, p.pr_key, p.pr_dcprice, p.pr_dcper, p.pr_price, p.pr_thumbnail, p.pr_name, m.id, m.gender, m.date_birthday 
+  FROM or_detail t, member m, orders o, product p
+  WHERE t.pr_key = p.pr_key and o.or_key = t.or_key and m.id = o.id and m.id IN (
+    SELECT ID
+    FROM member
+    WHERE GENDER = 'M' AND TRUNC(MONTHS_BETWEEN(SYSDATE, TO_DATE(date_birthday, 'YYYY-MM-DD'))/12) BETWEEN 10 AND 19
+  )
+  ORDER BY t.or_pr_count DESC
+) 
+WHERE ROWNUM <= 4
+		]]>
+	</select>
+	
+	<resultMap type="shopping.dto.ProductDTO" id="g20amListt"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
+			<result column="gender" property="gender" />
+			<result column="date_birthday" property="date_birthday" />
+		</association>
+
+		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key"/>
+		</association>
+		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count"/>
+		</association>
+	</resultMap>
+
+	<!-- g20am -->
+	<select id="g20amList" resultMap="g20amListt">
+		<![CDATA[
+	SELECT pr_key, pr_dcprice, pr_dcper, pr_price, pr_thumbnail, pr_name
+FROM (
+  SELECT t.or_pr_count, o.or_key, p.pr_key, p.pr_dcprice, p.pr_dcper, p.pr_price, p.pr_thumbnail, p.pr_name, m.id, m.gender, m.date_birthday 
+  FROM or_detail t, member m, orders o, product p
+  WHERE t.pr_key = p.pr_key and o.or_key = t.or_key and m.id = o.id and m.id IN (
+    SELECT ID
+    FROM member
+    WHERE GENDER = 'M' AND TRUNC(MONTHS_BETWEEN(SYSDATE, TO_DATE(date_birthday, 'YYYY-MM-DD'))/12) BETWEEN 20 AND 29
+  )
+  ORDER BY t.or_pr_count DESC
+) 
+WHERE ROWNUM <= 4
+		]]>
+	</select>
+	
+	<resultMap type="shopping.dto.ProductDTO" id="g30amListt"
+		autoMapping="true">
+		<association property="memberDTO"
+			javaType="member.dto.MemberDTO">
+			<result column="id" property="id" />
+			<result column="gender" property="gender" />
+			<result column="date_birthday" property="date_birthday" />
+		</association>
+
+		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key"/>
+		</association>
+		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count"/>
+		</association>
+	</resultMap>
+
+	<!-- g30am -->
+	<select id="g30amList" resultMap="g30amListt">
+		<![CDATA[
+	SELECT pr_key, pr_dcprice, pr_dcper, pr_price, pr_thumbnail, pr_name
+FROM (
+  SELECT t.or_pr_count, o.or_key, p.pr_key, p.pr_dcprice, p.pr_dcper, p.pr_price, p.pr_thumbnail, p.pr_name, m.id, m.gender, m.date_birthday,
+    ROW_NUMBER() OVER (ORDER BY t.or_pr_count DESC) AS row_num
+  FROM or_detail t, member m, orders o, product p
+  WHERE t.pr_key = p.pr_key and o.or_key = t.or_key and m.id = o.id and m.id IN (
+    SELECT ID
+    FROM member
+    WHERE GENDER = 'M' AND TRUNC(MONTHS_BETWEEN(SYSDATE, TO_DATE(date_birthday, 'YYYY-MM-DD'))/12) >= 30
+  )
+)
+WHERE row_num <= 4
+		]]>
+	</select>
+
+</mapper>
