@@ -18,4 +18,10 @@ public interface ProductDAO {
 	public List<ProductDTO> searchList(PageDTO pv);
 	public List<ProductDTO> bestList();
 	public List<ProductDTO> chuchunList();
+	public List<ProductDTO> g10afList();
+	public List<ProductDTO> g20afList();
+	public List<ProductDTO> g30afList();
+	public List<ProductDTO> g10amList();
+	public List<ProductDTO> g20amList();
+	public List<ProductDTO> g30amList();
 }

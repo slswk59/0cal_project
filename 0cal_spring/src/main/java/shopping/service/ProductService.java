@@ -19,4 +19,10 @@ public interface ProductService {
 	public List<ProductDTO> searchProcess(PageDTO pv);
 	public List<ProductDTO> bestListProcess();
 	public List<ProductDTO> chuchunListProcess();
+	public List<ProductDTO> g10afListProcess();
+	public List<ProductDTO> g20afListProcess();
+	public List<ProductDTO> g30afListProcess();
+	public List<ProductDTO> g10amListProcess();
+	public List<ProductDTO> g20amListProcess();
+	public List<ProductDTO> g30amListProcess();
 }

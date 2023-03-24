@@ -74,4 +74,34 @@ public class ProductServiceImp implements ProductService {
 		return productDao.chuchunList();
 	}
 
+	@Override
+	public List<ProductDTO> g10afListProcess() {
+		return productDao.g10afList();
+	}
+
+	@Override
+	public List<ProductDTO> g20afListProcess() {
+		return productDao.g20afList();
+	}
+
+	@Override
+	public List<ProductDTO> g30afListProcess() {
+		return productDao.g30afList();
+	}
+
+	@Override
+	public List<ProductDTO> g10amListProcess() {
+		return productDao.g10amList();
+	}
+
+	@Override
+	public List<ProductDTO> g20amListProcess() {
+		return productDao.g20amList();
+	}
+
+	@Override
+	public List<ProductDTO> g30amListProcess() {
+		return productDao.g30amList();
+	}
+	
 }
