@@ -74,6 +74,18 @@
 			<br> 
 			<br>
 
+			<h2>맞춤 추천</h2>
+
+			<!-- 추천 배너 -->
+			<div class="banner-container">
+				<img
+					src="${pageContext.request.contextPath}/resources/img/chuchun_banner.jpg"
+					alt="banner" />
+			</div>
+
+			<br> 
+			<br>
+      
 			<h2>오늘의 빵빵이 추천</h2>
 			<br> 
 			<div class="recommend-slide">
@@ -85,7 +97,9 @@
 							<ul class="recommend-slide-items">
 								<li class="recommend-slide-item">
 									<div class="item-img-container">
-										<span style="display: none;">{$dto.pr_key}</span>
+                  
+										<span style="display: none;">${dto.pr_key}</span>
+
 										<c:url var="path" value="goods.do">
 											<c:param name="pr_key" value="${dto.pr_key}" />
 										</c:url>
