@@ -2,6 +2,7 @@ package shopping.dao;
 
 import java.util.List;
 
+import shopping.dto.AddressDTO;
 import shopping.dto.CartDTO;
 
 public interface CartDAO {
@@ -11,4 +12,5 @@ public interface CartDAO {
 	public void updateCart(CartDTO dto);
 	public List<CartDTO> listCart(String id);
 	public void deleteCart(int cart_key);
+	public List<AddressDTO> deliListCart(String id);
 }

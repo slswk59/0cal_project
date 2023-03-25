@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 
+import shopping.dto.AddressDTO;
 import shopping.dto.CartDTO;
 
 public class CartDaoImp implements CartDAO{
@@ -23,7 +24,7 @@ public class CartDaoImp implements CartDAO{
 	
 	@Override
 	public void insertCart(CartDTO dto) {
-		sqlSession.insert("shopping.insertCart", dto);
+		sqlSession.insert("cart.insertCart", dto);
 	}
 
 
@@ -32,13 +33,13 @@ public class CartDaoImp implements CartDAO{
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("id", id);
 		map.put("pr_key", pr_key);
-		return sqlSession.selectOne("shopping.countCart", map);
+		return sqlSession.selectOne("cart.countCart", map);
 	}
 
 
 	@Override
 	public void updateCart(CartDTO dto) {
-		sqlSession.update("shopping.updateCart", dto);
+		sqlSession.update("cart.updateCart", dto);
 		
 	}
 
@@ -46,20 +47,27 @@ public class CartDaoImp implements CartDAO{
 	@Override
 	public List<CartDTO> listCart(String id) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("shopping.cartlist", id);
+		return sqlSession.selectList("cart.cartlist", id);
 	}
 
 
 	@Override
 	public void deleteCart(int cart_key) {
-		sqlSession.delete("shopping.deleteCart", cart_key);
+		sqlSession.delete("cart.deleteCart", cart_key);
 		
 	}
 
 
 	@Override
 	public void modifyCart(CartDTO dto) {
-		sqlSession.update("shopping.modifyCart", dto);
+		sqlSession.update("cart.modifyCart", dto);
 		
+	}
+
+
+	@Override
+	public List<AddressDTO> deliListCart(String id) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("cart.cartDeliList", id);
 	}
 }

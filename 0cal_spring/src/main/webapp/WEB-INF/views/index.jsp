@@ -161,33 +161,106 @@
 										</div>
 									</div>
 
-									<a href="${path}">
-										<h3 class="item-name">${dto.pr_name}</h3>
-									</a> <a href="${path}">
-										<p class="current-price">
-											<span class="discount-rate"><fmt:formatNumber
-													type="percent" value="${dto.pr_dcper}" /></span>
-											<fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
-											원
-										</p>
-									</a> <a href="${path}">
-										<p class="regular-price">
-											<fmt:formatNumber type="number" value="${dto.pr_price}" />
-											원
-										</p>
+	
+
+
+			<section id="advertise">
+				<div class="ad-img"></div>
+			</section>
+
+			<section class="recommend-items_cate">
+				<h2>드라마 정주행하며 즐기는 디저트</h2>
+				<div class="recommend-slide">
+					<div class="recommend-slide-items">
+						<c:forEach items="${dramaList}" var="dto">
+							<div class="recommend-slide-item">
+								<div class="item-img-container">
+									<span style="display: none;">${dto.pr_key}</span>
+									<c:url var="path" value="/shopping/goods.do">
+										<c:param name="pr_key" value="${dto.pr_key}" />
+									</c:url>
+									<a href="${path}"> <img class="item-img"
+										src="${dto.pr_thumbnail}" alt="추천 상품" />
 									</a>
+									<div class="cart_button_class">
+										<a href="${path}">
+											<button type="button" class="cart_button" alt="장바구니 아이콘">
+												<i class="fa-solid fa-cart-shopping fa-2x"
+													style="color: grey"></i>
+											</button>
+										</a>
+									</div>
 								</div>
-							</c:forEach>
-						</div>
+
+								<a href="${path}">
+									<h3 class="item-name">${dto.pr_name}</h3>
+								</a> <a href="${path}">
+									<p class="current-price">
+										<span class="discount-rate"><fmt:formatNumber
+												type="percent" value="${dto.pr_dcper}" /></span>
+										<fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
+										원
+									</p>
+								</a> <a href="${path}">
+									<p class="regular-price">
+										<fmt:formatNumber type="number" value="${dto.pr_price}" />
+										원
+									</p>
+								</a>
+							</div>
+						</c:forEach>
 					</div>
-				</section>
-				
-						<!-- 서브배너 -->
-				<section id="advertise">
-					<div class="ad-img"></div>
-				</section>
-				
-				<section class="main-items_cate">
+				</div>
+			</section>
+
+			<section class="recommend-items_cate">
+				<h2>나의 건강! 올가닉 디저트</h2>
+				<div class="recommend-slide">
+					<div class="recommend-slide-items">
+
+						<c:forEach items="${organicList}" var="dto">
+
+							<div class="recommend-slide-item">
+								<div class="item-img-container">
+									<span style="display: none;">{$dto.pr_key}</span>
+									<c:url var="path" value="/shopping/goods.do">
+										<c:param name="pr_key" value="${dto.pr_key}" />
+									</c:url>
+									<a href="${path}"> <img class="item-img"
+										src="${dto.pr_thumbnail}" alt="추천 상품" />
+									</a>
+									<div class="cart_button_class">
+										<a href="${path}">
+											<button type="button" class="cart_button" alt="장바구니 아이콘">
+												<i class="fa-solid fa-cart-shopping fa-2x"
+													style="color: grey"></i>
+											</button>
+										</a>
+									</div>
+								</div>
+
+								<a href="${path}">
+									<h3 class="item-name">${dto.pr_name}</h3>
+								</a> <a href="${path}">
+									<p class="current-price">
+										<span class="discount-rate"><fmt:formatNumber
+												type="percent" value="${dto.pr_dcper}" /></span>
+										<fmt:formatNumber type="number" value="${dto.pr_dcprice}" />
+										원
+									</p>
+								</a> <a href="${path}">
+									<p class="regular-price">
+										<fmt:formatNumber type="number" value="${dto.pr_price}" />
+										원
+									</p>
+								</a>
+							</div>
+						</c:forEach>
+					</div>
+				</div>
+			</section>
+			
+					<section class="main-items_cate">
 				<h2>놓치면 후회 할 가격</h2>
 				<div class="leftBtn items"></div>
 				<div class="rightBtn items"></div>
@@ -208,7 +281,8 @@
 												src="${saleL[j].pr_thumbnail}" alt="추천 상품" />
 											</a>
 
-										</div> <a href="${path}">
+										</div>
+										 <a href="${path}">
 											<h3 class="item-name">${saleL[j].pr_name}</h3>
 									</a> <a href="${path}">
 											<p class="current-price">
@@ -231,7 +305,6 @@
 					</c:if>
 				</div>
 			</section>
-				
 		</main>
 		<footer>
 			<jsp:include page="/WEB-INF/views/common/footer.jsp" />

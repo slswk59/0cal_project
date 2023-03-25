@@ -204,6 +204,7 @@ pageEncoding="UTF-8"%>
   </body>
   <script >
   		$(document).ready(function() {
+  			// 장바구니 담기
   			$(".goods_cart_button").on("click", function(e) {
   				e.preventDefault();
   				
@@ -231,6 +232,7 @@ pageEncoding="UTF-8"%>
 		  	  		headers: { 'Content-Type': 'application/json'},
 		  	  		data: JSON.stringify(data),
 		  	  		success: function (response) {
+		  	  			alert("장바구니 담기 완료!");
 		  	  			console.log("success!");
 		  	  		},
 		  	  		error: function (err) {
