@@ -63,6 +63,7 @@ public class CartController {
 		public ModelAndView ordersExecute(HttpSession session, ModelAndView mav) {
 			AuthInfo authInfo =(AuthInfo)session.getAttribute("authInfo");
 			System.out.println(authInfo.getId());
+			mav.addObject("bList", cartService.deliListCartProcess(authInfo.getId()));
 			mav.addObject("aList", cartService.listCartProcess(authInfo.getId()));
 			mav.setViewName("shopping/cart");
 			return mav;
@@ -77,7 +78,6 @@ public class CartController {
 			System.out.println(authInfo.getId());
 			return "redirect:/shopping/cart.do";
 		}
-	
-	
+		
 
 }

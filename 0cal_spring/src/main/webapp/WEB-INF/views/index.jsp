@@ -82,51 +82,7 @@
 		<main role="main">
 
 
-			<section class="main-items_cate">
-				<h2>놓치면 후회 할 가격</h2>
-				<div class="leftBtn items"></div>
-				<div class="rightBtn items"></div>
-				<div class="main-slide">
-					<c:if test="${not empty saleL}">
-						<c:forEach var="i" begin="0" end="${fn:length(saleL)-1}" step="4">
-							<ul class="main-slide-items <c:if test="${i>0}">hidden</c:if>">
-								<c:forEach var="j" begin="${i}"
-									end="${(fn:length(saleL)-i)>=4?i+3:fn:length(saleL)-1}"
-									step="1">
-									<li class="main-slide-item">
-										<div class="item-img-container">
-											<span style="display: none;">${saleL[j].pr_key}</span>
-											<c:url var="path" value="/shopping/goods.do">
-												<c:param name="pr_key" value="${saleL[j].pr_key}" />
-											</c:url>
-											<a href="${path}"> <img class="item-img"
-												src="${saleL[j].pr_thumbnail}" alt="추천 상품" />
-											</a>
-
-										</div>
-										 <a href="${path}">
-											<h3 class="item-name">${saleL[j].pr_name}</h3>
-									</a> <a href="${path}">
-											<p class="current-price">
-												<span class="discount-rate"><fmt:formatNumber
-														value="${saleL[j].pr_dcper}" type="percent" /></span>
-												<fmt:formatNumber value="${saleL[j].pr_dcprice}"
-													type="number" />
-												원
-											</p>
-									</a> <a href="${path}">
-											<p class="regular-price">
-												<fmt:formatNumber value="${saleL[j].pr_price}" type="number" />
-												원
-											</p>
-									</a>
-									</li>
-								</c:forEach>
-							</ul>
-						</c:forEach>
-					</c:if>
-				</div>
-			</section>
+	
 
 
 			<section id="advertise">
@@ -222,6 +178,52 @@
 							</div>
 						</c:forEach>
 					</div>
+				</div>
+			</section>
+			
+					<section class="main-items_cate">
+				<h2>놓치면 후회 할 가격</h2>
+				<div class="leftBtn items"></div>
+				<div class="rightBtn items"></div>
+				<div class="main-slide">
+					<c:if test="${not empty saleL}">
+						<c:forEach var="i" begin="0" end="${fn:length(saleL)-1}" step="4">
+							<ul class="main-slide-items <c:if test="${i>0}">hidden</c:if>">
+								<c:forEach var="j" begin="${i}"
+									end="${(fn:length(saleL)-i)>=4?i+3:fn:length(saleL)-1}"
+									step="1">
+									<li class="main-slide-item">
+										<div class="item-img-container">
+											<span style="display: none;">${saleL[j].pr_key}</span>
+											<c:url var="path" value="/shopping/goods.do">
+												<c:param name="pr_key" value="${saleL[j].pr_key}" />
+											</c:url>
+											<a href="${path}"> <img class="item-img"
+												src="${saleL[j].pr_thumbnail}" alt="추천 상품" />
+											</a>
+
+										</div>
+										 <a href="${path}">
+											<h3 class="item-name">${saleL[j].pr_name}</h3>
+									</a> <a href="${path}">
+											<p class="current-price">
+												<span class="discount-rate"><fmt:formatNumber
+														value="${saleL[j].pr_dcper}" type="percent" /></span>
+												<fmt:formatNumber value="${saleL[j].pr_dcprice}"
+													type="number" />
+												원
+											</p>
+									</a> <a href="${path}">
+											<p class="regular-price">
+												<fmt:formatNumber value="${saleL[j].pr_price}" type="number" />
+												원
+											</p>
+									</a>
+									</li>
+								</c:forEach>
+							</ul>
+						</c:forEach>
+					</c:if>
 				</div>
 			</section>
 		</main>

@@ -2,6 +2,7 @@ package shopping.service;
 
 import java.util.List;
 
+import shopping.dto.AddressDTO;
 import shopping.dto.CartDTO;
 
 public interface CartService {
@@ -11,6 +12,7 @@ public interface CartService {
 	public void modifyCartProcess(CartDTO dto);
 	public List<CartDTO> listCartProcess(String id);
 	public void deleteCartProcess(int cart_key);
+	public List<AddressDTO> deliListCartProcess(String id);
 
 }
 

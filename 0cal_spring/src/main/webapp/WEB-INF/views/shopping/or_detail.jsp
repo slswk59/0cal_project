@@ -121,7 +121,7 @@ pageEncoding="UTF-8"%>
                     </dl>
                     <dl class="orderlist_group_div_text_dl">
                       <dt class="orderlist_group_div_text_dt">결제금액</dt>
-                      <dd class="orderlist_group_div_text_dd">${dto.productDTO.pr_dcprice}원</dd>
+                      <dd class="orderlist_group_div_text_dd">${dto.or_detailDTO.or_pr_price}원</dd>
                     </dl>
                   </div>
                 </div>

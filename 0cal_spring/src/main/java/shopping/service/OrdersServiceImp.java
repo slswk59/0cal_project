@@ -3,6 +3,7 @@ package shopping.service;
 import java.util.List;
 
 import shopping.dao.OrdersDAO;
+import shopping.dto.Or_detailDTO;
 import shopping.dto.OrdersDTO;
 
 public class OrdersServiceImp implements OrdersService{
@@ -22,8 +23,22 @@ public class OrdersServiceImp implements OrdersService{
 		return ordersDao.orderslist(id);
 	}
 	@Override
-	public List<OrdersDTO> ordersDetailProcess(int or_key) {
+	public List<OrdersDTO> ordersDetailProcess(String or_key) {
 		// TODO Auto-generated method stub
 		return ordersDao.ordersDetailList(or_key);
+	}
+	@Override
+	public void addOrdersProcess(OrdersDTO dto) {
+		ordersDao.insertOrders(dto);
+		
+	}
+	@Override
+	public void addOrderDetailProcess(Or_detailDTO dto) {
+		ordersDao.insertOrderDetail(dto);
+	}
+	@Override
+	public void deleteAllCartProcess(String id) {
+		ordersDao.deleteAllCart(id);
+		
 	}
 }

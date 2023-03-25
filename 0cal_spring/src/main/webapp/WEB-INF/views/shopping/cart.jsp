@@ -51,18 +51,10 @@ pageEncoding="UTF-8"%>
  
   		$(document).ready(function() {
   			
-	  	   	let totalPrice = 0;
-	  	    
-  			document.querySelectorAll(".cart_goods_dcprice").forEach(function (item) {
- 	            var price =  parseInt(item.getAttribute('value'));
- 				console.log("price:" + price);
- 				totalPrice += price;
- 				console.log("totalPrice:" + totalPrice);
- 				
- 	        }, this); 
-  				let sum_price = $(".cart_price_group_value_strong").text();
-  				console.log("sum_price" + sum_price);
-  				$(".cart_price_group_value_strong").text(totalPrice);
+  			// 초기 장바구니 수량 및 결제금액 계산
+  		  	$(".cart_price_group_value_strong").text(recalPrice());
+		    $(".cart_price_group_count_span").text(recalCount());
+  		
   			
   			 // 장바구니 삭제버튼구현
   			$(".cart_cancle_button").on("click", function(e) {
@@ -76,7 +68,8 @@ pageEncoding="UTF-8"%>
   			
 	  	  	const listItem = $(this).closest('.cart_goodslist'); // 삭제 버튼의 부모 요소인 li.cart_goodslist 요소를 가져옵니다.
 		    listItem.remove(); // 해당 li.cart_goodslist 요소를 삭제합니다.
-		    $(".cart_price_group_value_strong").text(recal());
+		    $(".cart_price_group_value_strong").text(recalPrice());
+		    $(".cart_price_group_count_span").text(recalCount());
 		    
 		  	});
   			 
@@ -90,7 +83,8 @@ pageEncoding="UTF-8"%>
   				$(this).parent("div").find(".goods_countnumber").text(++quantity);
   				$(this).parent("div").find(".cart_goods_dcprice").text(goods_price*quantity).toLocaleString();
   				console.log("cart_price : ", cart_price);
-  				$(".cart_price_group_value_strong").text(recal());
+  				$(".cart_price_group_value_strong").text(recalPrice());
+  				$(".cart_price_group_count_span").text(recalCount());
   			});
   			 
   			 //마이너스 버튼
@@ -103,24 +97,32 @@ pageEncoding="UTF-8"%>
   	  				$(this).parent("div").find(".cart_goods_dcprice").text(goods_price*quantity).toLocaleString();
   	  			console.log("goods_price*quantity:" , goods_price*quantity);
   	  			
-  	  		$(".cart_price_group_value_strong").text(recal());
-  	  
-  	
-  				
+  	  			$(".cart_price_group_value_strong").text(recalPrice());
+  	  			$(".cart_price_group_count_span").text(recalCount());
   				} 
   			});
   			
-  			// 재계산하기
-  			function recal(){
-  				let total = 0;
+  			// 금액재계산하기
+  			function recalPrice(){
+  				let totalPrice = 0;
   				console.log($(".cart_goods_dcprice").length);
   				$(".cart_goods_dcprice").each(function(index, item){
-  					total += parseInt($(item).text());
+  					totalPrice += parseInt($(item).text());
   				})
- 				return total;
+ 				return totalPrice;
   			};
   			
-
+  			// 수량재계산하기
+  			function recalCount(){
+  				let totalCount = 0;
+  				console.log($(".goods_countnumber").length);
+  				$(".goods_countnumber").each(function(index, item){
+  					totalCount += parseInt($(item).text());
+  				})
+ 				return totalCount;
+  			};
+  			
+  			
  		});
   </script>
     
@@ -153,6 +155,8 @@ pageEncoding="UTF-8"%>
                     </a>
                   </div>
                   <div class="goods_choice_countdiv_countplus_cart" >
+                  <span style="display:none;" class="pr_key_span">${dto.productDTO.pr_key}</span>
+                  <span style="display:none;" class="cart_key_span">${dto.cart_key}</span>
                   <input type="hidden" class="goods_dcprice_hidden" value="${dto.productDTO.pr_dcprice}">
                     <button
                       class="goods_minusbutton cart_buttons"
@@ -177,18 +181,7 @@ pageEncoding="UTF-8"%>
                       >${dto.cart_price}</span
                    ><div class="cart_buttons_won">원</div>
                   </div>
-                     
                   </div>
-               <!--   <div class="cart_goods_price">
-                    <span
-                      aria-label="판매 가격"
-                      data-testid="product-price"
-                      class="cart_goods_dcprice"
-                      ><fmt:formatNumber value="${dto.cart_price}" pattern="#,### 원" /></span
-                    >
-                    
-
-                  </div> --> 
                   <button
                     class="cart_cancle_button"
                     type="button"
@@ -205,12 +198,18 @@ pageEncoding="UTF-8"%>
             </div>
           </div>
           <div class="cart_delivery_dest_group">
+           <form class="order_form" action="${pageContext.request.contextPath}/shopping/insertOrder.do" method="post">
             <div class="cart_delivery_dest">
               <div class="cart_destination">
                 <h3 class="cart_destination_name">배송지</h3>
+              
+                <c:forEach items="${bList}" var="deli" >
                 <div class="cart_destination_address_group">
+                <input type="hidden" name="del_key" value="${deli.del_key}" />
+                 <span class="del_key" style="display:none;">${deli.del_key}</span>
                   <p class="cart_destination_address">
-                    서울 서초구 서초대로77길 54 서초더블유타워 13층
+                    ${deli.del_address}
+                    ${deli.del_detailaddress}
                   </p>
                   <button
                     class="cart_destination_change"
@@ -223,10 +222,12 @@ pageEncoding="UTF-8"%>
                     새 배송지 추가
                   </button>
                 </div>
+                </c:forEach>
               </div>
               <div class="cart_price_group">
                 <div class="cart_price_group_under">
                   <span class="cart_price_title">결제예정금액</span>
+                  <span class="cart_price_group_count_span" style="display:none;">0</span>
                   <span class="cart_price_group_value">
                     <strong class="cart_price_group_value_strong" id="sum_p_price"
                       >0000</strong
@@ -241,12 +242,13 @@ pageEncoding="UTF-8"%>
                   type="button"
                   height="56"
                   radius="3"
-                >
-                  <span class="cart_order_button_text">주문하기</span>
+                ><span class="cart_order_button_text">주문하기</span>
                 </button>
               </div>
             </div>
+           </form>
           </div>
+         
         </div>
       </section>
     </main>
@@ -254,4 +256,52 @@ pageEncoding="UTF-8"%>
       <jsp:include page="../common/footer.jsp" />
     </footer>
   </body>
+  <script >
+  		$(document).ready(function() {
+  			$(".cart_order_button").on("click", function(e) {
+  				
+  				const or_count = parseInt(($(".goods_countnumber").length));
+  				const or_price = parseInt($(".cart_price_group_value_strong").text());
+  				//const del_key = parseInt($(".del_key_span").val());
+  			
+		  	  	console.log("or_count = " + or_count);
+		  	  	console.log("or_price = " + or_price);
+		  	  	//console.log("del_key = " + del_key);
+		  		/* 상품정보 */
+		  		let form_contents = ''; 
+		  		let or_price_input = "<input name='or_price' type='hidden' value='" + or_price + "'>";
+		  		form_contents += or_price_input;
+		  		let or_count_input = "<input name='or_count' type='hidden' value='" + or_count + "'>";
+		  		form_contents += or_count_input;
+		  		//let del_key_input = "<input name='del_key' type='hidden' value='" + del_key + "'>";
+		  		//form_contents += del_key_input;
+		  		
+		  		$(".goods_choice_countdiv_countplus_cart").each(function(index, element){
+		  			let pr_key = parseInt($(element).find(".pr_key_span").text());
+		  			let or_pr_count = parseInt($(element).find(".goods_countnumber").text());
+		  			let or_pr_price = parseInt($(element).find(".cart_goods_dcprice").text());
+		  			let cart_key = parseInt($(element).find(".cart_key_span").text());
+		  			
+		  			let pr_key_input = "<input name='orders[" + index + "].pr_key' type='hidden' value='" + pr_key + "'>";
+		  			form_contents += pr_key_input;
+		  			let or_pr_count_input = "<input name='orders[" + index + "].or_pr_count' type='hidden' value='" + or_pr_count + "'>";
+		  			form_contents += or_pr_count_input;
+		  			let or_pr_price_input = "<input name='orders[" + index + "].or_pr_price' type='hidden' value='" + or_pr_price + "'>";
+		  			form_contents += or_pr_price_input;
+		  			let cart_key_input = "<input name='orders[" + index + "].cart_key' type='hidden' value='" + cart_key + "'>";
+		  			form_contents += cart_key_input;
+		  			
+		  			console.log("pr_key :" + pr_key_input);
+		  			console.log("or_pr_count :" + or_pr_count_input);
+		  			console.log("or_pr_price :" + or_pr_price_input);
+		  			console.log("cart_key :" + cart_key_input);
+		  		});
+		  		
+		  		$(".order_form").append(form_contents);	
+		  		
+		  		/* 서버 전송 */
+		  		$(".order_form").submit();	
+  			});
+  		});
+  </script>
 </html>
