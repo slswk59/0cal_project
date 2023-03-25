@@ -27,6 +27,7 @@
 				<value>classpath:mapper/shoppingMapper.xml</value>
 				<value>classpath:mapper/memberMapper.xml</value>
 				<value>classpath:mapper/cartMapper.xml</value>
+				<value>classpath:mapper/genderage.xml</value>
 			</list>
 		</property>
 		

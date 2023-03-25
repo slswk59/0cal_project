@@ -109,6 +109,26 @@ public class ProductController {
 
 		return "index";
 	}
+	
+	//genderage
+	@RequestMapping(value = "/shopping/genderage.do", method = RequestMethod.GET)
+	public ModelAndView curatingListExecute(ModelAndView mav) {
+		List<ProductDTO> g10afList = productService.g10afListProcess();
+		List<ProductDTO> g20afList = productService.g20afListProcess();
+		List<ProductDTO> g30afList = productService.g30afListProcess();
+		List<ProductDTO> g10amList = productService.g10amListProcess();
+		List<ProductDTO> g20amList = productService.g20amListProcess();
+		List<ProductDTO> g30amList = productService.g30amListProcess();
+		mav.addObject("g10afList", g10afList);
+		mav.addObject("g20afList", g20afList);
+		mav.addObject("g30afList", g30afList);
+		mav.addObject("g10amList", g10amList);
+		mav.addObject("g20amList", g20amList);
+		mav.addObject("g30amList", g30amList);
+		mav.setViewName("shopping/genderage");
+
+		return mav;
+	}
 
 	// 검색
 	@RequestMapping(value = "/search.do", method = RequestMethod.GET)
@@ -143,38 +163,4 @@ public class ProductController {
 		return mav;
 	}
 	
-	
-//	  추천페이지-드라마 로딩 // 
-//	   @RequestMapping("/shopping/dThemeList.do") public ModelAndView 
-//	  dThemeListExecute(@ModelAttribute("pv") PageDTO pv, ModelAndView mav) { int totalRecord = productService.countProcess(); 
-//	  mav.addObject("pv", this.pdto);
-//	  mav.addObject("aList", productService.dThemeListProcess(this.pdto)); } 
-//	  mav.setViewName("shopping/dThemeList"); 
-//	  return mav; 
-//	  }
-
-//		//상세페이지 로딩
-//		@RequestMapping("/shopping/goods.do")
-//		public ModelAndView cateListExecute(int cate_key, ModelAndView mav) {
-//			mav.addObject("dto", productService.selectOneProcess(cate_key));
-//			mav.setViewName("shopping/goods");
-//		return mav;
-//		}
-
-	// 추천페이지-올가닉 로딩
-//	@RequestMapping("/shopping/oThemeList.do")
-//	public ModelAndView oThemeListExecute(@ModelAttribute("pv") PageDTO pv, ModelAndView mav) {
-//		int totalRecord = productService.countProcess();
-//		//mav.addObject("count", totalRecord);
-//		if(totalRecord >=1) {
-//			if(pv.getCurrentPage() == 0)
-//				pv.setCurrentPage(1);
-//			this.pdto = new PageDTO(pv.getCurrentPage(), totalRecord);
-//			mav.addObject("pv", this.pdto);
-//			mav.addObject("aList", productService.oThemeListProcess(this.pdto));
-//		}
-//		mav.setViewName("shopping/oThemeList");
-//		return mav;
-//	}
-
 }
