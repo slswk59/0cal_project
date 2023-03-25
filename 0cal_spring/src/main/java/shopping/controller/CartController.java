@@ -1,8 +1,10 @@
 package shopping.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -63,6 +65,7 @@ public class CartController {
 		public ModelAndView ordersExecute(HttpSession session, ModelAndView mav) {
 			AuthInfo authInfo =(AuthInfo)session.getAttribute("authInfo");
 			System.out.println(authInfo.getId());
+			mav.addObject("bList", cartService.deliListCartProcess(authInfo.getId()));
 			mav.addObject("aList", cartService.listCartProcess(authInfo.getId()));
 			mav.setViewName("shopping/cart");
 			return mav;
@@ -77,7 +80,24 @@ public class CartController {
 			System.out.println(authInfo.getId());
 			return "redirect:/shopping/cart.do";
 		}
-	
-	
+		
+		//로그아웃상태에서 카드 접근시 로그인 창으로 리다이렉트 
+		@GetMapping("/shopping/cart.do")
+		public ModelAndView cartback(HttpServletRequest request) {
+		    HttpSession session = request.getSession();
+		    AuthInfo authInfo =(AuthInfo)session.getAttribute("authInfo");
+		    ModelAndView mav = new ModelAndView();
+		    if(authInfo == null || authInfo.getId() == null) {
+		        mav.setViewName("redirect:/member/login.do");
+		    } else {
+		        mav.addObject("bList", cartService.deliListCartProcess(authInfo.getId()));
+		        mav.addObject("aList", cartService.listCartProcess(authInfo.getId()));
+		        mav.setViewName("shopping/cart");
+		    }
+		    return mav;
+		}
+
+
+		
 
 }

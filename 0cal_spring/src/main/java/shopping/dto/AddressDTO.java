@@ -1,13 +1,19 @@
 package shopping.dto;
 
+import member.dto.MemberDTO;
+
 public class AddressDTO {
 
 	private int del_key;
-	private String receiver_name;
-	private String del_phone;
-	private String del_post;
-	private String del_address;
-	private String del_reg_date;
+	private String receiver_name="";
+	private String del_phone="";
+	private String del_post="";
+	private String del_address="";
+	private String del_postcode="";
+	private String del_detailaddress="";
+	private MemberDTO memberDTO;
+	private String del_reg_date="";
+	private String id="";
 	
 	public AddressDTO() {
 		// TODO Auto-generated constructor stub
@@ -59,6 +65,30 @@ public class AddressDTO {
 
 	public void setDel_reg_date(String del_reg_date) {
 		this.del_reg_date = del_reg_date;
+	}
+
+	public MemberDTO getMemberDTO() {
+		return memberDTO;
+	}
+
+	public void setMemberDTO(MemberDTO memberDTO) {
+		this.memberDTO = memberDTO;
+	}
+	
+	public String getDel_postcode() {
+		return del_postcode;
+	}
+
+	public void setDel_postcode(String del_postcode) {
+		this.del_postcode = del_postcode;
+	}
+
+	public String getDel_detailaddress() {
+		return del_detailaddress;
+	}
+
+	public void setDel_detailaddress(String del_detailaddress) {
+		this.del_detailaddress = del_detailaddress;
 	}
 	
 	

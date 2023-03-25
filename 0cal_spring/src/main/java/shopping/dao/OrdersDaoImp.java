@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 
+import shopping.dto.Or_detailDTO;
 import shopping.dto.OrdersDTO;
 
 public class OrdersDaoImp implements OrdersDAO {
@@ -21,13 +22,31 @@ public class OrdersDaoImp implements OrdersDAO {
 	@Override
 	public List<OrdersDTO> orderslist(String id) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("shopping.orderlist", id);
+		return sqlSession.selectList("cart.orderlist", id);
 	}
 
 	@Override
-	public List<OrdersDTO> ordersDetailList(int or_key) {
+	public List<OrdersDTO> ordersDetailList(String or_key) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("shopping.orderDetailList", or_key);
+		return sqlSession.selectList("cart.orderDetailList", or_key);
+	}
+
+	@Override
+	public void insertOrders(OrdersDTO dto) {
+		sqlSession.insert("cart.insertOrders", dto);
+		
+	}
+
+	@Override
+	public void insertOrderDetail(Or_detailDTO dto) {
+		sqlSession.insert("cart.insertOrderDetail", dto);
+		
+	}
+
+	@Override
+	public void deleteAllCart(String id) {
+		sqlSession.delete("cart.deleteAllCart", id);
+		
 	}
 	
 

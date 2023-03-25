@@ -4,7 +4,8 @@ public class Or_detailDTO {
 	private int or_detail_key;
 	private int or_pr_count;
 	private int or_pr_price;
-	
+	private String or_key;
+	private int pr_key;
 	 public Or_detailDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -32,7 +33,22 @@ public class Or_detailDTO {
 	public void setOr_pr_price(int or_pr_price) {
 		this.or_pr_price = or_pr_price;
 	}
-	
+
+	public String getOr_key() {
+		return or_key;
+	}
+
+	public void setOr_key(String or_key) {
+		this.or_key = or_key;
+	}
+
+	public int getPr_key() {
+		return pr_key;
+	}
+
+	public void setPr_key(int pr_key) {
+		this.pr_key = pr_key;
+	}	
 	 
 
 }

@@ -14,27 +14,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>0칼로리 :: 디저트는 빵칼로리</title>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap"
-	rel="stylesheet">
-
-<!-- CSS -->
-<link rel="stylesheet" href="<c:url value="/resources/CSS/header.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/footer.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/style.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/navbar.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/slider.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/main.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/search.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/category.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/goods.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/cart.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/wish.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/order.css"/>">
-
 <!-- Script -->
 <script type="text/javascript"
 	src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
@@ -54,16 +33,11 @@
 
 </head>
 <body>
-	<header>
-		<jsp:include page="/WEB-INF/views/common/header.jsp" />
-	</header>
-
 	<main role="main">
-	
-	<!-- 서브배너 -->
-      <section id="advertise_cate">
-        <div class="ad-img"></div>
-      </section>
+		<!-- 서브배너 -->
+		<section id="advertise_cate">
+			<div class="ad-img"></div>
+		</section>
 
 		<section class="recommend-items_cate">
 			<h2>10대 여성에게 인기있어요</h2>
@@ -157,8 +131,5 @@
 			</div>
 		</section>
 	</main>
-	<footer>
-		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
-	</footer>
 </body>
 </html>

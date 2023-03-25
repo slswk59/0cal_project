@@ -3,6 +3,7 @@ package shopping.service;
 import java.util.List;
 
 import shopping.dao.CartDAO;
+import shopping.dto.AddressDTO;
 import shopping.dto.CartDTO;
 
 public class CartServiceImp implements CartService{
@@ -50,6 +51,12 @@ public class CartServiceImp implements CartService{
 	public void modifyCartProcess(CartDTO dto) {
 		cartDto.modifyCart(dto);
 		
+	}
+
+	@Override
+	public List<AddressDTO> deliListCartProcess(String id) {
+		// TODO Auto-generated method stub
+		return cartDto.deliListCart(id);
 	}
 	
 	

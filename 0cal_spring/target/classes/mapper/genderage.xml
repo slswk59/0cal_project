@@ -5,7 +5,7 @@
 
 <mapper namespace="genderage">
 
-  <resultMap type="shopping.dto.ProductDTO" id="g10afListt"
+	<resultMap type="shopping.dto.ProductDTO" id="g10afListt"
 		autoMapping="true">
 		<association property="memberDTO"
 			javaType="member.dto.MemberDTO">
@@ -14,11 +14,13 @@
 			<result column="date_birthday" property="date_birthday" />
 		</association>
 
-		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
-			<result column="or_key" property="or_key"/>
+		<association property="ordersDTO"
+			javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key" />
 		</association>
-		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
-			<result column="or_pr_count" property="or_pr_count"/>
+		<association property="or_detailDTO"
+			javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count" />
 		</association>
 	</resultMap>
 
@@ -40,7 +42,7 @@
 	</select>
 
 
-<resultMap type="shopping.dto.ProductDTO" id="g20afListt"
+	<resultMap type="shopping.dto.ProductDTO" id="g20afListt"
 		autoMapping="true">
 		<association property="memberDTO"
 			javaType="member.dto.MemberDTO">
@@ -49,11 +51,13 @@
 			<result column="date_birthday" property="date_birthday" />
 		</association>
 
-		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
-			<result column="or_key" property="or_key"/>
+		<association property="ordersDTO"
+			javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key" />
 		</association>
-		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
-			<result column="or_pr_count" property="or_pr_count"/>
+		<association property="or_detailDTO"
+			javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count" />
 		</association>
 	</resultMap>
 
@@ -74,7 +78,7 @@ FROM (
 WHERE ROWNUM <= 4
 		]]>
 	</select>
-	
+
 	<resultMap type="shopping.dto.ProductDTO" id="g30afListt"
 		autoMapping="true">
 		<association property="memberDTO"
@@ -84,11 +88,13 @@ WHERE ROWNUM <= 4
 			<result column="date_birthday" property="date_birthday" />
 		</association>
 
-		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
-			<result column="or_key" property="or_key"/>
+		<association property="ordersDTO"
+			javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key" />
 		</association>
-		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
-			<result column="or_pr_count" property="or_pr_count"/>
+		<association property="or_detailDTO"
+			javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count" />
 		</association>
 	</resultMap>
 
@@ -111,8 +117,8 @@ WHERE ROWNUM <= 4
 	</select>
 
 	<!-- g10af -->
-	
-	
+
+
 	<resultMap type="shopping.dto.ProductDTO" id="g10amListt"
 		autoMapping="true">
 		<association property="memberDTO"
@@ -122,14 +128,16 @@ WHERE ROWNUM <= 4
 			<result column="date_birthday" property="date_birthday" />
 		</association>
 
-		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
-			<result column="or_key" property="or_key"/>
+		<association property="ordersDTO"
+			javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key" />
 		</association>
-		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
-			<result column="or_pr_count" property="or_pr_count"/>
+		<association property="or_detailDTO"
+			javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count" />
 		</association>
 	</resultMap>
-	
+
 	<select id="g10amList" resultMap="g10amListt">
 		<![CDATA[
 	SELECT pr_key, pr_dcprice, pr_dcper, pr_price, pr_thumbnail, pr_name
@@ -146,7 +154,7 @@ FROM (
 WHERE ROWNUM <= 4
 		]]>
 	</select>
-	
+
 	<resultMap type="shopping.dto.ProductDTO" id="g20amListt"
 		autoMapping="true">
 		<association property="memberDTO"
@@ -156,11 +164,13 @@ WHERE ROWNUM <= 4
 			<result column="date_birthday" property="date_birthday" />
 		</association>
 
-		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
-			<result column="or_key" property="or_key"/>
+		<association property="ordersDTO"
+			javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key" />
 		</association>
-		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
-			<result column="or_pr_count" property="or_pr_count"/>
+		<association property="or_detailDTO"
+			javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count" />
 		</association>
 	</resultMap>
 
@@ -181,7 +191,7 @@ FROM (
 WHERE ROWNUM <= 4
 		]]>
 	</select>
-	
+
 	<resultMap type="shopping.dto.ProductDTO" id="g30amListt"
 		autoMapping="true">
 		<association property="memberDTO"
@@ -191,11 +201,13 @@ WHERE ROWNUM <= 4
 			<result column="date_birthday" property="date_birthday" />
 		</association>
 
-		<association property="ordersDTO" javaType="shopping.dto.OrdersDTO">
-			<result column="or_key" property="or_key"/>
+		<association property="ordersDTO"
+			javaType="shopping.dto.OrdersDTO">
+			<result column="or_key" property="or_key" />
 		</association>
-		<association property="or_detailDTO" javaType="shopping.dto.Or_detailDTO">
-			<result column="or_pr_count" property="or_pr_count"/>
+		<association property="or_detailDTO"
+			javaType="shopping.dto.Or_detailDTO">
+			<result column="or_pr_count" property="or_pr_count" />
 		</association>
 	</resultMap>
 

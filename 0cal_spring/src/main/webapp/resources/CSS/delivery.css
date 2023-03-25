@@ -1,0 +1,31 @@
+table {
+  border-collapse: separate;
+  border-spacing: 1px;
+  background-color: #f5deb3;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font: 10px;
+  color: #9d6806;
+}
+
+.del_delete_td {
+  background-color: #f9f6f0;
+}
+
+.del_delete_td button {
+  color: #fff;
+  width: 100px;
+}
+
+.del_update_td {
+  background-color: #f9f6f0;
+}
+
+.del_update_td button {
+  color: #fff;
+}
+

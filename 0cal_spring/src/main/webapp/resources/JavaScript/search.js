@@ -10,8 +10,6 @@ searchBtn.addEventListener('click', () => {
 })
 
 
-
-
 function submitSearchForm() {
   var keyword = document.forms["searchForm"]["keyword"].value;
   if (validateSearchForm()) {

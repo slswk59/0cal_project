@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="baseLayout"
+		template="/WEB-INF/tiles/baseLayout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="body" value=" " />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="index" extends="baseLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/index.jsp" />
+	</definition>
+
+	<definition name="search" extends="baseLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/search.jsp" />
+	</definition>
+
+	<definition name="shoppingLayout" extends="baseLayout">
+	</definition>
+
+	<definition name="shopping/goods" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/goods.jsp" />
+	</definition>
+
+	<definition name="shopping/newList" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/newList.jsp" />
+	</definition>
+
+	<definition name="shopping/salesList"
+		extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/salesList.jsp" />
+	</definition>
+
+	<definition name="shopping/ctgProductList"
+		extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/ctgProductList.jsp" />
+	</definition>
+
+	<definition name="shopping/best" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/best.jsp" />
+	</definition>
+
+	<definition name="shopping/chuchun" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/chuchun.jsp" />
+	</definition>
+
+	<definition name="shopping/cart" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/cart.jsp" />
+	</definition>
+
+	<definition name="shopping/orders" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/orders.jsp" />
+	</definition>
+
+	<definition name="shopping/or_detail"
+		extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/or_detail.jsp" />
+	</definition>
+
+	<definition name="shopping/wish" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/wish.jsp" />
+	</definition>
+
+	<definition name="shopping/genderage" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/shopping/genderage.jsp" />
+	</definition>
+
+	<definition name="member/signup" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/member/signup.jsp" />
+	</definition>
+
+	<definition name="member/login" extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/member/login.jsp" />
+	</definition>
+
+	<definition name="member/userInfoEdit"
+		extends="shoppingLayout">
+		<put-attribute name="content"
+			value="/WEB-INF/views/member/userInfoEdit.jsp" />
+	</definition>
+
+</tiles-definitions>

@@ -5,8 +5,6 @@ import java.util.List;
 import shopping.dto.PageDTO;
 import shopping.dto.ProductDTO;
 
-
-
 public interface ProductService {
 	public int countProcess(); 
 	public ProductDTO selectOneProcess(int pr_key);

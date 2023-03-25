@@ -1,44 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>0칼로리 :: 디저트는 빵칼로리</title>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap"
+	rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./resources/CSS/header.css" />
-    <link rel="stylesheet" href="./resources/CSS/footer.css" />
-    <link rel="stylesheet" href="./resources/CSS/style.css" />
-    <link rel="stylesheet" href="./resources/CSS/navbar.css" />
-    <link rel="stylesheet" href="./resources/CSS/slider.css" />
-    <link rel="stylesheet" href="./resources/CSS/main.css" />
-    <link rel="stylesheet" href="./resources/CSS/search.css" />
-    <link rel="stylesheet" href="./resources/CSS/category.css" />
-    <link rel="stylesheet" href="./resources/CSS/goods.css" />
-    <link rel="stylesheet" href="./resources/CSS/cart.css" />
-    <link rel="stylesheet" href="./resources/CSS/wish.css" />
-    <link rel="stylesheet" href="./resources/CSS/order.css" />
+<!-- CSS -->
+<link rel="stylesheet" href="/resources/CSS/header.css" />
+<link rel="stylesheet" href="/resources/CSS/footer.css" />
+<link rel="stylesheet" href="/resources/CSS/style.css" />
+<link rel="stylesheet" href="/resources/CSS/navbar.css" />
+<link rel="stylesheet" href="/resources/CSS/slider.css" />
+<link rel="stylesheet" href="/resources/CSS/main.css" />
+<link rel="stylesheet" href="/resources/CSS/search.css" />
+<link rel="stylesheet" href="/resources/CSS/category.css" />
+<link rel="stylesheet" href="/resources/CSS/goods.css" />
+<link rel="stylesheet" href="/resources/CSS/cart.css" />
+<link rel="stylesheet" href="/resources/CSS/wish.css" />
+<link rel="stylesheet" href="/resources/CSS/order.css" />
 
-    <!-- Script -->
-    <script
-      src="https://kit.fontawesome.com/43fd0ad460.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./resources/JavaScript/menu.js" defer></script>
-    <script src="./resources/JavaScript/search.js" defer></script>
-  </head>
+<!-- Script -->
+<script type="text/javascript"
+	src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/resources/JavaScript/img-slider.js"
+	defer></script>
+<script type="text/javascript" src="/resources/JavaScript/menu.js" defer></script>
+<script type="text/javascript" src="/resources/JavaScript/search.js"
+	defer></script>
+<script type="module" defer src="/resources/JavaScript/jquery-1.12.4.js"></script>
+<script type="module" defer
+	src="/myapp/resources/JavaScript/jquery-1.12.4.min.js"></script>
+<!-- 로그인 상태 체크 ajax 호출하기 위해 header.jsp import 하는 파일에서 선언 필요 -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <div id="wrap">
     <div id="container">
@@ -60,9 +58,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 class="link_menu"
                 ><span id="userMenu2Text">로그인</span></a
               >
-            </li>
-            <li id="csCenter" class="menu-item">
-              <a href="#" class="link_menu">고객센터</a>
             </li>
           </ul>
         </div>
@@ -175,7 +170,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div>
             <ul class="icons">
               <li>
-                <a href="#">
+                <a href="${pageContext.request.contextPath}/shopping/wish.do">
                   <img
                     src="${pageContext.request.contextPath}/resources/img/heart.svg"
                     alt="관심있는 상품"

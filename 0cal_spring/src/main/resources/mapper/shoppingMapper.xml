@@ -15,7 +15,6 @@
 		SELECT * FROM product WHERE pr_key=#{pr_key}
 	</select>
 
-
 	<select id="productNewList" parameterType="shopping.dto.PageDTO"
 		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
@@ -92,23 +91,16 @@
 		]]>
 	</select>
 
-
-	<!-- 상품 구입횟수가 많은 상품은 추후 구현! 어려움. 구매횟수가 많은 것 -->
-	<!-- 상품 검색어 기능은 추후 구현! 너무 어려움. -->
-
 	<select id="searchList" parameterType="shopping.dto.PageDTO"
 		resultType="shopping.dto.ProductDTO">
 		<![CDATA[ 
 		SELECT b.*
 			FROM(SELECT rownum AS rm, a.*
                 FROM(SELECT * FROM product WHERE REPLACE(pr_name,' ','') LIKE '%' ||  REPLACE(#{searchWord},' ','') || '%') a
-                )b
-		
+                )b		
 		]]>
 	</select>
 
-
-	<!-- 장바구니 내역 관련 -->
 
 	<!-- best 데이터베이스 -->
 	<select id="BestImages" resultType="shopping.dto.ProductDTO">
@@ -128,10 +120,10 @@
 	WHERE ROWNUM <= 16
 		]]>
 		</select>
-		
 
-		<!-- chuchun -->
-		<select id="chuchunButton" resultType="shopping.dto.ProductDTO">
+
+	<!-- chuchun -->
+	<select id="chuchunButton" resultType="shopping.dto.ProductDTO">
 	<![CDATA[
 	SELECT 
 	  PR_KEY, 
@@ -154,9 +146,9 @@
 	)
 	WHERE rn <= 12
 		]]>
-		</select>
+	</select>
 
-	
+
 	<insert id="insertCart" parameterType="shopping.dto.CartDTO">
 		INSERT INTO cart(cart_key,
 		cart_count, cart_price, cart_reg_date, pr_key,
@@ -200,19 +192,24 @@
 			<result column="id" property="id" />
 		</association>
 
-		<association property="productDTO" javaType="shopping.dto.ProductDTO">
-			<result column="pr_key" property="pr_key"/>
-			<result column="pr_name" property="pr_name"/>
-			<result column="pr_thumbnail" property="pr_thumbnail"/>
-			<result column="pr_dcprice" property="pr_dcprice"/>
+		<association property="productDTO"
+			javaType="shopping.dto.ProductDTO">
+			<result column="pr_key" property="pr_key" />
+			<result column="pr_name" property="pr_name" />
+			<result column="pr_thumbnail" property="pr_thumbnail" />
+			<result column="pr_dcprice" property="pr_dcprice" />
 		</association>
 	</resultMap>
-	
-	<select id="cartlist" parameterType="String" resultMap="cartlistSelect">
-		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id, t.cart_price, t.cart_count, t.cart_key, p.pr_dcprice
-		FROM member m, product p, cart t
+
+	<select id="cartlist" parameterType="String"
+		resultMap="cartlistSelect">
+		SELECT p.pr_key, p.pr_name, p.pr_thumbnail, m.id,
+		t.cart_price, t.cart_count, t.cart_key, p.pr_dcprice
+		FROM member m,
+		product p, cart t
 		WHERE m.id = t.id and p.pr_key = t.pr_key
-		and m.id = #{id}
+		and m.id =
+		#{id}
 	</select>
 
 	<delete id="deleteCart" parameterType="int">
@@ -280,4 +277,82 @@
 		ORDER BY or_detail_key ASC, or_date ASC
 	</select>
 
+	<!-- 배송지 관련 -->
+	<!-- 배송지 수정 -->
+	<update id="updateAddress"
+		parameterType="shopping.dto.AddressDTO">
+		UPDATE delivery_address
+		SET
+		receiver_name=#{receiver_name}, del_phone=#{del_phone},
+		del_address=#{del_address}
+		WHERE del_key=#{del_key}
+	</update>
+
+	<!-- 배송지 삭제 -->
+	<delete id="deleteAddress" parameterType="int">
+		DELETE FROM
+		delivery_address
+		WHERE del_key=#{del_key}
+	</delete>
+
+	<!-- 회원의 배송지 리스트 불러오기 -->
+	<select id="selectAllAddresses" parameterType="String"
+		resultType="shopping.dto.AddressDTO">
+		SELECT del_key, id, receiver_name, del_phone, del_address
+		FROM delivery_address
+		WHERE id=#{id}
+	</select>
+
+	<!-- 배송지 추가 -->
+	<insert id="insertAddress"
+		parameterType="shopping.dto.AddressDTO">
+		INSERT INTO delivery_address(del_key, receiver_name,
+		del_phone, del_address)
+		VALUES(#{del_key}, #{receiver_name},
+		#{del_phone}, #{del_address})
+	</insert>
+
+	<resultMap type="shopping.dto.WishDTO" id="wishListSelect"
+		autoMapping="true">
+		<association property="productDTO"
+			javaType="shopping.dto.ProductDTO">
+			<result column="pr_name" property="pr_name" />
+			<result column="pr_thumbnail" property="pr_thumbnail" />
+			<result column="pr_price" property="pr_price" />
+			<result column="pr_dcprice" property="pr_dcprice" />
+			<result column="pr_dcper" property="pr_dcper" />
+		</association>
+	</resultMap>
+
+	<!-- 찜 관련 -->
+	<!-- 회원의 찜목록(wish_key) 불러오기 -->
+	<select id="selectWishList" parameterType="String"
+		resultMap="wishListSelect">
+		SELECT w.wish_key, w.pr_key, p.pr_name, p.pr_price, p.pr_thumbnail,
+		p.pr_dcprice, p.pr_dcper
+		FROM wish w JOIN product p ON w.pr_key = p.pr_key
+		WHERE w.id = #{id}
+	</select>
+
+	<!-- (wish_key)찜목록에서 pr_key 삭제 -->
+	<delete id="deleteWishByWishKey" parameterType="int">
+		DELETE FROM wish
+		WHERE wish_key=#{wish_key}
+	</delete>
+
+	<!-- (상품)pr_key를 (찜목록)wish_key에 추가 -->
+	<insert id="insertWish" parameterType="shopping.dto.WishDTO">
+		INSERT INTO wish (wish_key, wish_reg_date, pr_key, id)
+		VALUES (wish_key_seq.nextval,to_char(sysdate,'YYYY-MM-DD HH24:mi:SS'),
+		#{pr_key}, #{id})
+	</insert>
+
+	<!-- (wish_key)찜목록에있는 (상품)pr_key를 장바구니(cart)에 추가 -->
+	<insert id="insertCartByWishKey"
+		parameterType="shopping.dto.CartDTO">
+		INSERT INTO cart(cart_key, cart_count, cart_price, cart_reg_date, pr_key,
+		id)
+		VALUES(cart_key_seq.nextval, #{cart_count}, #{cart_price}, to_char(sysdate, 'YYYY-MM-DD
+		HH24:mi:SS'), #{pr_key}, #{id, jdbcType=VARCHAR})
+	</insert>
 </mapper>

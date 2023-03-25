@@ -5,11 +5,13 @@ import member.dto.MemberDTO;
 
 public class OrdersDTO {
 
-	private int or_key;
+	private String or_key;
 	private int or_count;
 	private int or_price;
 	private String or_date;
 	private String del_status;
+	private String id;
+	private int del_key;
 	private MemberDTO memberDTO;
 	private ProductDTO productDTO;
 	private Or_detailDTO or_detailDTO;
@@ -19,11 +21,11 @@ public class OrdersDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getOr_key() {
+	public String getOr_key() {
 		return or_key;
 	}
 
-	public void setOr_key(int or_key) {
+	public void setOr_key(String or_key) {
 		this.or_key = or_key;
 	}
 
@@ -82,6 +84,23 @@ public class OrdersDTO {
 	public void setOr_detailDTO(Or_detailDTO or_detailDTO) {
 		this.or_detailDTO = or_detailDTO;
 	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public int getDel_key() {
+		return del_key;
+	}
+
+	public void setDel_key(int del_key) {
+		this.del_key = del_key;
+	}
+
 
 
 	

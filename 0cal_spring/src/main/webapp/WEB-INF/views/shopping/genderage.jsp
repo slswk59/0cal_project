@@ -12,29 +12,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>0칼로리 :: 디저트는 빵칼로리</title>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700;900&display=swap"
-	rel="stylesheet" />
-
-<!-- CSS -->
-<link rel="stylesheet" href="<c:url value="/resources/CSS/header.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/footer.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/style.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/navbar.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/slider.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/main.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/search.css"/>">
-<link rel="stylesheet"
-	href="<c:url value="/resources/CSS/category.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/goods.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/cart.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/wish.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/CSS/order.css"/>">
 <!-- Script -->
 <script type="text/javascript"
 	src="https://kit.fontawesome.com/43fd0ad460.js" crossorigin="anonymous"></script>
@@ -49,16 +27,9 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- 파비콘 -->
-<link rel="shortcut icon" href="../resources/img/favicon.ico"
-	type="image/x-icon">
-<link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-	<header>
-		<jsp:include page="../common/header.jsp" />
-	</header>
-	<main role="main">
+		<main role="main">
 	
 	<!-- 서브배너 -->
 				<section id="advertise">
@@ -337,11 +308,7 @@
 					</c:forEach>
 				</div>
 			</div>
-		</section>
-		
+		</section>	
 	</main>
-	<footer>
-		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
-	</footer>
 </body>
 </html>
